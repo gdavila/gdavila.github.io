@@ -9,7 +9,7 @@ minimal_mistakes_skin    : "default" # "air", "contrast", "dark", "dirt", "mint"
 remote_theme             : "mmistakes/minimal-mistakes@4.20.1"
 # Site Settings
 locale                   : "en"
-title                    : "Gabriel Davila Revelo"
+title                    : "Gabriel Davila"
 title_separator          : "-"
 name                     : "Video, Software and Data Communications"
 description              : "A tech blog to share some thoughts about Video, Software development and Data Communications issues."
@@ -83,7 +83,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Tech Architect <br/> Video and Software"
   location         : "Buenos Aires"
-  email            : "gdavila.revelo@gmail.com"
+  email            : 
   uri              :
   bitbucket        :
   codepen          :
