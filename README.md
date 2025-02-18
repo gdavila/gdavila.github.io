@@ -1,3 +1,3 @@
 # gdavila.github.io
 
-This is a Profesional Blog based on github-pages to share thoughts, experiences and first steps researches about Nework engineering issues. 
+This is a professional blog hosted on GitHub Pages, dedicated to sharing insights, experiences, and initial research on network/video engineering topics.
