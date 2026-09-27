@@ -93,3 +93,28 @@ Coordinator review should confirm the Phase 1 exit condition and transfer these 
 ### Coordinator gate
 
 **Local setup accepted; remote setup deferred.** I reviewed the independent Git history, imported evidence, configuration, build-only workflow, clean working tree, and passing local production build. Automatic approval review blocked creation of `gdavila/site-chirpy`, so the remote repository, Pages-disabled setting, and Actions build remain open Phase 2 requirements. Agent 3 may proceed with content migration in this local checkout because that work does not depend on the remote. Agent 2 remains the owner of remote setup when access is resolved. No production deployment may start until the remote requirements and an independent validation pass are complete.
+
+## Phase 3 — content migration (local executor)
+
+**Input:** Coordinator-accepted local Phase 2 checkout at `63d3d3e`; frozen legacy checkout `/Users/gabriel/gdavila.github.io` at `ecf40cbb96ee4aa317f2724bd7522966c9293a78`; [manifest](content-manifest.json) and [known issues](known-issues.md). The candidate had a clean working tree and no remote. Only the candidate was edited; the legacy `HEAD` remained at the frozen commit.
+
+### Result
+
+- Content implementation commit: `55fd6734129d6c5cc485714472d4546a1cbf28e8` on candidate `main`. This handoff entry is committed separately after that implementation commit.
+- Copied the six articles to the manifest's `_posts/` destinations. Existing front matter values and all bytes after each closing delimiter remain unchanged. Added explicit legacy permalinks, single section categories, publication dates with `-0300` offset, and layouts. The candidate has no old `video`, `internet`, or `software` article collections, so each legacy route has one generated owner.
+- Copied About with its complete unchanged body. Added Software, Video & Media, Data Communications, and About sidebar tabs in that order; the Software tab remains empty. The Video and Data Communications tabs list their original three titles and excerpts each, newest first. Adapted the homepage front matter into a Chirpy layout that renders its title, introduction, project embed, topic list, section descriptions/links, background photo, and credit. The About layout also displays the retained bio, location, LinkedIn, and GitHub profile links.
+- Copied all 94 manifest assets to the planned paths, including the 58 ParisTraceroute dependencies, seven `raw/` files, and verification file. A post-write hook restores the two R Markdown download files byte for byte because Jekyll otherwise renders their YAML/Liquid content. `_internet/.Rhistory` remains source-only.
+- The ParisTraceroute article uses an iframe `srcdoc` layout. Its document whitespace is encoded in the HTML attribute so Chirpy's compressor cannot alter its code or text; decoding the generated `srcdoc` reproduces the frozen authored body exactly. Its original relative dependency targets resolve against the unchanged article route and retain the six documented failures.
+- A hidden from navigation `/categories/` landing page supports Chirpy's generated category archives without adding another sidebar item. Starter Archives, Tags, and Categories sidebar tabs were removed to retain the four legacy section/About entries.
+
+### Verification
+
+1. `JEKYLL_ENV=production bundle exec jekyll build --destination _site`: passed.
+2. `ruby docs/migration/verify_phase3.rb /Users/gabriel/gdavila.github.io`: passed. It checked all seven frozen and candidate authored body hashes, 94 source/candidate/generated asset hashes, 11 unique routes and canonical URLs, metadata/category/date mapping, section titles/excerpts, six search entries and original URLs, homepage/profile content, and exact decoded ParisTraceroute HTML.
+3. Compared the [live baseline HTTP inventory](baseline-http.json) against links and images parsed from the generated pages and nested ParisTraceroute `srcdoc`: all **20 of 20** previously broken targets remain emitted with their exact URLs. No aliases or target repairs were introduced.
+4. `bundle exec htmlproofer _site --disable-external`: reported 30 failures from preserved authored content: six `/broadcast/PartialService/` PNG targets counted as both images and links, nine external equation images without `alt`, eight empty anchors in the RTT article, and one HTTP link. The six ParisTraceroute relative dependency failures live inside `srcdoc` and are not inspected by HTMLProofer. These are Phase 4 baseline exceptions to review precisely; the new `/categories/` link failure found during implementation was fixed.
+5. `git diff --cached --check` on presentation and verification files passed before the content commit. A whole-tree whitespace check flags existing trailing whitespace in byte-preserved articles, research files, and dependencies; removing it would violate the manifest.
+
+### Next step and open prerequisites
+
+The Phase 3 local exit condition is met. Phase 4 should independently build and validate the exact candidate commit that includes this handoff, check desktop/mobile rendering and light/dark appearance, and document narrowly scoped existing-link exceptions. Candidate remote creation, Pages-disabled confirmation, and Actions build remain blocked/deferred from Phase 2; this phase did not attempt any GitHub write or deployment. Production remains on the legacy repository.
