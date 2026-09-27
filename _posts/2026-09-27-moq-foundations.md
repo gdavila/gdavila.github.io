@@ -84,7 +84,7 @@ INFO moq_relay_ietf::relay: listening on [::]:4443
 
 The publisher prepares the sample under its namespace, and the subscriber requests it from the relay:
 
-```js
+```sh
 ffmpeg ... | moq-pub --name bbb <relay-hostname>
 moq-sub --name bbb "$RELAY" | ffplay -
 ```
