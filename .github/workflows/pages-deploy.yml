@@ -1,0 +1,58 @@
+name: Deploy GitHub Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: Type deploy-gdavila.github.io to deploy the production site
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: >-
+      github.repository == 'gdavila/gdavila.github.io' &&
+      github.ref == 'refs/heads/main' &&
+      inputs.confirm == 'deploy-gdavila.github.io'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          bundler-cache: true
+      - name: Build production site at the root URL
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --destination _site
+      - name: Check generated site against exact baseline
+        run: bundle exec ruby tools/check_htmlproofer_baseline.rb _site
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
