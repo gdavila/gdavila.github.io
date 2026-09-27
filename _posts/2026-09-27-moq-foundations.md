@@ -5,6 +5,9 @@ layout: post
 permalink: /video/moq-foundations/
 categories: ["Video & Media"]
 tags: [moq, quic]
+image:
+  path: /video/moq-foundations/preview.png
+  alt: "Four media distribution paths: HLS/DASH, WebRTC, IP multicast, and MoQ"
 date: 2026-09-27 00:00:00 -0300
 ---
 
