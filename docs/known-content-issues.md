@@ -4,8 +4,6 @@ These are current problems in published articles. They do not prevent the site f
 
 | Article | Issue | Relevant paths |
 | --- | --- | --- |
-| `_posts/2018-02-01-PartialService.md` | Six image references point to `/broadcast/PartialService/` and return 404. The PNG files exist under `/internet/PartialService/`. | `internet/PartialService/*.png` |
-| `_posts/2018-02-01-PartialService.md` | Equation images use `render.githubusercontent.com/render/math`, an unavailable endpoint, and lack `alt` text. | Article body |
 | `_posts/2018-08-01-ParisTraceroute.html` | The embedded HTML uses relative `ParisTraceroute_files/...` URLs that resolve under the article route and return 404. The files exist under `/internet/ParisTraceroute/ParisTraceroute_files/`. These iframe dependencies are not covered by the HTMLProofer checker. | `internet/ParisTraceroute/ParisTraceroute_files/` |
 | `_posts/2017-09-01-rttReporte.md` | Eight anchors have no destination; one link uses HTTP rather than HTTPS. | Article body |
 
