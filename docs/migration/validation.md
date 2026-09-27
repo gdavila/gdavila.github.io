@@ -40,3 +40,23 @@ Screenshots: [dark desktop home](screenshots/dark-desktop-home.jpg), [light desk
 ## Scope and next gate
 
 This is a local production build inspection only. The candidate has no GitHub remote, Pages setting, or Actions run because repository creation was blocked during Phase 2. Agent 3 should fix the three implementation defects above. Agent 4 should then rebuild and rerun the affected browser, title, and full link checks against the revised commit. The coordinator must also close the deferred remote/Actions prerequisites before any deployment gate.
+
+## Revalidation history — September 27, 2026
+
+The original **FAIL** report above remains the historical result for gate `c2207ebb3f7801d9bccab7d0193b0c2792c3a735`.
+
+### Intermediate recheck at `e1868525d89257bb18b31c74f3ffc54dd145aa51` — FAIL
+
+After Agent 3's rework, Ruby 3.4 production build and both manifest checks passed. The independent HTTP audit fetched all 11 routes and 94 assets, matched seven authored bodies and 94 asset hashes, and found exactly the same 20 documented failed targets and 12 missing local targets. Chrome confirmed **Tabla-1** stayed in the original iframe and scrolled `#table1` from about 706.6 px below the viewport to its top; no nested frame appeared. The three section browser titles and the homepage/ParisTraceroute mobile top bars were corrected. [Dark mobile homepage](screenshots/revalidation-dark-mobile-home.jpg), [dark mobile ParisTraceroute](screenshots/revalidation-dark-mobile-paris.jpg), [light mobile homepage](screenshots/revalidation-light-mobile-home.jpg), and [light mobile ParisTraceroute](screenshots/revalidation-light-mobile-paris.jpg) record the appearance checks.
+
+An additional migration defect was found in this independent recheck: **all six posts displayed “This post is licensed under CC BY 4.0 by the author.”** The claim was absent from the frozen rendered pages and conflicts with the migration plan's attribution rule. [Browser evidence](screenshots/revalidation-license-claim.jpg). Agent 4 added an exact license assertion to `validate_phase4.py`; against `e186852` it reported six claim errors. This made the intermediate local gate **FAIL**, despite the earlier interaction fixes. No implementation file was edited by Agent 4.
+
+### Final recheck at `071c9e7952f7f7b8b2a34fc396f693fcad94cf0e` — local PASS
+
+Agent 2's license fix at `ac74961cdabd07a7c8fd85b60ee5660e3c295b0b` was followed by handoff commit `071c9e7`. Agent 4 rebuilt independently with Ruby 3.4.11 using `JEKYLL_ENV=production bundle exec jekyll build --destination _site`; the build passed. `ruby docs/migration/verify_phase3.rb /Users/gabriel/gdavila.github.io` passed. The full independent `validate_phase4.py` audit, including its license assertion and root URL HTTP checks at `http://127.0.0.1:8768`, returned **`errors: []`**: seven authored bodies, 94 assets, 11 routes, 105 HTTP requests, six search URLs, sections/categories, dates, homepage/profile, feed/sitemap/canonicals, and exact decoded iframe payload all passed. Direct inspection of each of the six built posts found no license sentence, `CC BY 4.0`, or Creative Commons license URL.
+
+The full, unsuppressed `bundle exec htmlproofer _site --disable-external` run reported **the same 30 failures with the same referring files and messages** as the intermediate run: 12 reports for six existing `/broadcast/PartialService/` targets, nine existing equation images without alt text, eight existing RTT anchors without references, and one existing HTTP link. The separate link scan again found exactly the 20 baseline failed targets and 12 missing same-site targets; there were **no new local link failures**. The frozen legacy checkout remained at `ecf40cbb96ee4aa317f2724bd7522966c9293a78` with no tracked changes.
+
+Chrome spot checks at the final commit confirmed the **Tabla-1** iframe click changes internal scroll from `0` to `706.5`, places `#table1` at the top, leaves zero nested frames, and keeps the outer URL unchanged. Browser titles are `software | Gabriel Davila`, `Video & Media | Gabriel Davila`, and `Data Communications | Gabriel Davila`. At 390 px, the home and ParisTraceroute top bars display `Tech & software` and `Campos del datagrama ip en paris-traceroute`; the page width remains 390 px in [light](screenshots/final-mobile-paris-light.jpg) and [dark](screenshots/final-mobile-paris-dark.jpg) modes. [Final fragment screenshot](screenshots/final-paris-fragment.jpg).
+
+**Local Phase 4 recommendation: PASS for candidate `071c9e7`.** This does not cover GitHub candidate creation, Pages-disabled confirmation, Actions, or live-domain validation; those Phase 2 and Phase 5 steps remain blocked or pending. No deployment was attempted.

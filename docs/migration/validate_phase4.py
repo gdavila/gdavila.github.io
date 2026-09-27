@@ -9,6 +9,7 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import subprocess
 import sys
 from urllib.parse import urljoin, urlparse, unquote
 from urllib.request import Request, urlopen
@@ -100,6 +101,10 @@ def main():
         canonicals = [a.get("href") for tag, a in rendered.tags if tag == "link" and a.get("rel") == "canonical"]
         check(canonicals == [entry["public_url"]], f"Canonical wrong: {entry['public_url']} => {canonicals}")
         if entry in MANIFEST["articles"]:
+            check("This post is licensed under" not in output.read_text() and
+                  "CC BY 4.0" not in output.read_text() and
+                  "creativecommons.org/licenses/by/4.0" not in output.read_text(),
+                  f"Unrequested CC BY 4.0 claim: {entry['public_url']}")
             top = new.read_text().split("---", 2)[1]
             for key in ("title", "excerpt"):
                 check(entry["metadata"][key] in top, f"Original {key} changed: {new}")
@@ -246,7 +251,8 @@ def main():
                 errors.append(f"HTTP {kind} failed: {path}: {exc}")
         stats["http_checked"] = len(checks)
 
-    result = {"candidate_commit": "c2207ebb3f7801d9bccab7d0193b0c2792c3a735", "frozen_commit": MANIFEST["frozen_source_commit"], "stats": stats, "errors": errors}
+    candidate_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    result = {"candidate_commit": candidate_commit, "frozen_commit": MANIFEST["frozen_source_commit"], "stats": stats, "errors": errors}
     print(json.dumps(result, indent=2, ensure_ascii=False))
     return 1 if errors else 0
 
