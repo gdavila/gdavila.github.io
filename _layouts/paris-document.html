@@ -2,4 +2,31 @@
 layout: post
 ---
 
-<iframe title="{{ page.title | escape }}" srcdoc="&#10;{{ content | escape_srcdoc }}" style="display:block;width:100%;height:85vh;min-height:640px;border:0" loading="lazy"></iframe>
+<iframe id="paris-document" title="{{ page.title | escape }}" srcdoc="&#10;{{ content | escape_srcdoc }}" style="display:block;width:100%;height:85vh;min-height:640px;border:0" loading="lazy"></iframe>
+
+<script>
+  (() => {
+    const frame = document.getElementById('paris-document');
+    const bound = new WeakSet();
+
+    function bindFragmentLinks() {
+      const inner = frame.contentDocument;
+      if (!inner || inner.URL !== 'about:srcdoc' || bound.has(inner)) return;
+      bound.add(inner);
+
+      inner.addEventListener('click', (event) => {
+        const link = event.target.closest('a[href^="#"]');
+        if (!link) return;
+
+        const target = inner.getElementById(decodeURIComponent(link.getAttribute('href').slice(1)));
+        if (!target) return;
+
+        event.preventDefault();
+        target.scrollIntoView({ block: 'start' });
+      });
+    }
+
+    frame.addEventListener('load', bindFragmentLinks);
+    bindFragmentLinks();
+  })();
+</script>
