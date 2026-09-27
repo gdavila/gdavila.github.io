@@ -11,7 +11,7 @@ We approach Media over QUIC (MoQ) from broadcast multicast and HTTP Live Streami
 
 We examine these questions through small use cases and implementation traces. This first installment follows connection establishment and the first object flow in a publisher–relay–subscriber deployment. We use `draft-ietf-moq-transport-16` (called **MOQT** here) as the protocol reference and the draft-16 [Cloudflare `moq-rs` implementation](https://github.com/cloudflare/moq-rs) as the concrete example. MoQ names the broader IETF effort; MOQT is its transport protocol. We first establish the roles and naming model, then read the setup, control, and data exchanges. Later installments can compare `moq-dev`, `moq-rs`, and `moqtail` and examine the questions outside this case.
 
-## 1.1 MOQ Motivations
+## MOQ Motivations
 
 The distribution approaches familiar from broadcast make different trade-offs. HLS and DASH scale through HTTP caches, but live latency depends on how quickly segments or parts are published and how much the player buffers; low-latency HLS narrows that delay without removing the trade-off ([Apple's Low-Latency HLS guide](https://developer.apple.com/documentation/http-live-streaming/enabling-low-latency-http-live-streaming-hls)). WebRTC supports interactive latency, while distribution to a large audience commonly adds selective forwarding units (SFUs) and per-session forwarding state ([RFC 7667 §3.7](https://www.rfc-editor.org/rfc/rfc7667#section-3.7)). Managed Internet Protocol (IP) multicast efficiently replicates one flow to many receivers, but a multicast tree cannot adapt its sending rate to each receiver; loss handling and receiver differences need additional design ([RFC 8085 §4.1](https://www.rfc-editor.org/rfc/rfc8085#section-4.1)).
 
@@ -44,7 +44,7 @@ Publisher and subscriber are roles relative to a particular track, not fixed kin
 
 Figure 1.2 separates session initiation from object delivery. The subscriber initiates toward the relay even though the objects travel toward the subscriber. To follow its request, we first need the MOQT naming hierarchy.
 
-## 1.2 The MOQT data model
+## The MOQT data model
 
 MOQT names media without prescribing its codec or container. Throughout this chapter, `/bbb` is a sample namespace and `1.m4s` is its video track in the `moq-rs` deployment described next. A **Track Namespace** groups related track names for publication and discovery. A **Full Track Name** is the namespace plus one **Track Name**, such as `/bbb` plus `1.m4s` in this deployment. We write this pair as `(/bbb, 1.m4s)` for clarity; the parentheses are explanatory notation, not a URL or a wire encoding. A **track** is a sequence of groups and the target of a subscription.
 
@@ -70,7 +70,7 @@ Figure 1.3 follows a track into groups, subgroups, and objects. Its alternative 
 
 An HTTP cache can obtain an uncached file from an upstream cache or origin, then serve later requests locally. MoQ has a similar demand-driven shape, but a subscriber requests a Full Track Name rather than a file. The track is the requested live sequence; if a relay caches, the individual objects are identified by Full Track Name, Group ID, and Object ID [draft-16 §2.4.1] [draft-16 §8.1] [draft-16 §8.4]. A relay can aggregate downstream interest into an upstream subscription, but caching is optional. With only one subscriber in this case, we can observe the upstream request, not aggregation across subscribers or a cache hit.
 
-## 1.3 A small `moq-rs` deployment
+## A small `moq-rs` deployment
 
 The reference deployment has one publisher, one relay, one subscriber, and one video rendition. The publisher uses the namespace `/bbb` for the Big Buck Bunny sample. It offers two media tracks, `1.m4s` (video) and `2.m4s` (audio), plus an initialization track `0.mp4` and a `.catalog` track. We consider two subscriber request sequences using this architecture: one requests the initialization and media tracks, while the other explicitly requests the catalog first. These names and the Common Media Application Format (CMAF) packaging are `moq-rs` choices, not MOQT naming rules. The example clients and relay are provided by the [`moq-rs` repository](https://github.com/cloudflare/moq-rs); its README describes them as development examples.
 
@@ -98,13 +98,13 @@ The input MP4 contains two encoded streams:
 | Video | H.264 | 1280×720; 24 frames per second |
 | Audio | AAC | Stereo; 44.1 kHz sample rate |
 
-The publisher wrapper copies these streams into CMAF-style fragmented MP4. FFmpeg's [`separate_moof` and `frag_every_frame` options](https://ffmpeg.org/ffmpeg-formats.html) produce separate video and audio fragments, with one encoded video frame or AAC frame per fragment in this run. As Figure 1.4 shows, the initialization boxes (`ftyp` and `moov`) describe the file and its tracks; in each media fragment, `moof` describes the coded sample and `mdat` holds its encoded bytes. The publisher places these units into MOQT objects, as we examine in §1.6.
+The publisher wrapper copies these streams into CMAF-style fragmented MP4. FFmpeg's [`separate_moof` and `frag_every_frame` options](https://ffmpeg.org/ffmpeg-formats.html) produce separate video and audio fragments, with one encoded video frame or AAC frame per fragment in this run. As Figure 1.4 shows, the initialization boxes (`ftyp` and `moov`) describe the file and its tracks; in each media fragment, `moof` describes the coded sample and `mdat` holds its encoded bytes. The publisher places these units into MOQT objects, as we examine in [The data streams](#the-data-streams).
 
 ![Fragmented MP4 and MOQT objects in the reference deployment](/video/moq-foundations/ch1-cmaf-object-mapping.svg)
 
 **Figure 1.4** — In this run, the initialization boxes form one object; each video or audio `moof`/`mdat` pair forms another. The encoded video frame or AAC frame is carried in `mdat`, not `moof`.
 
-## 1.4 Session establishment and flow direction
+## Session establishment and flow direction
 
 Session setup crosses several protocol boundaries, which Figure 1.5 separates before we read the trace. IP and UDP carry QUIC packets. QUIC establishes the secure connection and supplies independent streams. In this `moq-rs` deployment, HTTP/3 runs over QUIC, and an HTTP extended `CONNECT` establishes a WebTransport session. MOQT uses that session's streams for its own setup, subscriptions, and objects [draft-16 §3.1.1] [draft-16 §3.3]. MOQT and HTTP/3 both operate at the application layer, but they have different roles here: MOQT defines the media delivery protocol, while HTTP/3 helps establish its WebTransport carrier. MOQT can also run directly over QUIC [draft-16 §3.1.2].
 
@@ -120,9 +120,9 @@ Both clients initiate toward the relay. This leaves the reachability requirement
 
 In the relay trace for this deployment, the publisher's QUIC connection and WebTransport session are established first. The publisher opens MOQT's bidirectional control stream and exchanges `CLIENT_SETUP` and `SERVER_SETUP`. Only after that setup does it advertise the Track Namespace `/bbb` with `PUBLISH_NAMESPACE`; this advertises available tracks under `/bbb`, not a particular Full Track Name. The subscriber then establishes a **separate** connection and WebTransport session, completes its own MOQT setup, and requests a specific track. MOQT calls the underlying carrier a *Transport Session*: it can be a raw QUIC connection or a WebTransport session. One MOQT session is established on that carrier in this example [draft-16 §1.2] [draft-16 §3.1] [draft-16 §3.3] [draft-16 §9.20].
 
-The publisher can announce a namespace before anyone subscribes. Here the relay registers `/bbb` and waits; when a subscriber requests a Full Track Name within that namespace, it originates an upstream subscription for the same track and delivery begins. The session, namespace advertisement, and track subscription are therefore separate steps. This is the demand-driven behavior described in §1.1. If a subscriber arrives before the publisher, MOQT has a separate namespace-discovery mechanism for interest in a prefix [draft-16 §6.1]; that mechanism is outside this case.
+The publisher can announce a namespace before anyone subscribes. Here the relay registers `/bbb` and waits; when a subscriber requests a Full Track Name within that namespace, it originates an upstream subscription for the same track and delivery begins. The session, namespace advertisement, and track subscription are therefore separate steps. This is the demand-driven behavior described in [MOQ Motivations](#moq-motivations). If a subscriber arrives before the publisher, MOQT has a separate namespace-discovery mechanism for interest in a prefix [draft-16 §6.1]; that mechanism is outside this case.
 
-## 1.5 The control stream
+## The control stream
 
 MOQT's first stream is client-initiated and bidirectional. Its setup exchange establishes the MOQT session, and the stream stays open for the session's lifetime [draft-16 §3.3]. It then carries requests, confirmations, and later changes in subscription state. A `SUBSCRIBE` request can express a starting point, filter, and priority; `SUBSCRIBE_OK` confirms it and supplies the Track Alias [draft-16 §9.9] [draft-16 §9.10]. In this guide, **control channel** means that single stream; **data channel** means the collection of streams carrying objects. MOQT also uses another kind of bidirectional stream for namespace subscription, which this case does not exercise [draft-16 §3.3].
 
@@ -160,7 +160,7 @@ moq_transport::control: MoQT control message direction="sent" msg_type="SUBSCRIB
 
 Each `SUBSCRIBE` carries a Track Namespace and a Track Name. In the first line, `/bbb` and `0.mp4` together form the Full Track Name `(/bbb, 0.mp4)`: the subscriber asks for that track, not for the whole namespace. The relay sends its own `SUBSCRIBE` for the **same Full Track Name** toward the publisher. Figure 1.7 places these requests on separate sessions. The downstream request uses ID `0` and receives alias `0`; the upstream request uses ID `1` and receives alias `1`.
 
-Likewise, `(/bbb, 1.m4s)` uses request ID `2` and alias `2` downstream, but ID `3` and alias `3` upstream. The log calls the request identifier `subscribe_id`; the draft calls it a Request ID. These IDs pair each `SUBSCRIBE` with its `SUBSCRIBE_OK`, while Track Aliases identify tracks on data streams. Both are local to their session; the Full Track Name remains the same across the relay's two requests [draft-16 §2.4.1] [draft-16 §9.1] [draft-16 §9.9] [draft-16 §9.10] [draft-16 §10.1]. The relay thus acts as a subscriber on its publisher-facing session and as a publisher on its subscriber-facing session, as described in §1.1. The audio confirmation is omitted for brevity.
+Likewise, `(/bbb, 1.m4s)` uses request ID `2` and alias `2` downstream, but ID `3` and alias `3` upstream. The log calls the request identifier `subscribe_id`; the draft calls it a Request ID. These IDs pair each `SUBSCRIBE` with its `SUBSCRIBE_OK`, while Track Aliases identify tracks on data streams. Both are local to their session; the Full Track Name remains the same across the relay's two requests [draft-16 §2.4.1] [draft-16 §9.1] [draft-16 §9.9] [draft-16 §9.10] [draft-16 §10.1]. The relay thus acts as a subscriber on its publisher-facing session and as a publisher on its subscriber-facing session, as described in [MOQ Motivations](#moq-motivations). The audio confirmation is omitted for brevity.
 
 Notice that the first track requested by the suscriber is `track_name=0.mp4`. The choice to ask for `0.mp4` first is specific to this `moq-rs` media workflow: its fragmented MP4 (fMP4) initialization data lets the subscriber identify `1.m4s` as video and `2.m4s` as audio. Immediately after that subscription, the subscriber logs reports:
 
@@ -184,7 +184,7 @@ moq_transport::control: MoQT control message direction="sent" msg_type="SUBSCRIB
 
 Take into account that the control stream carries the Full Track Name in `SUBSCRIBE` only, either for `.catalog` or `0.mp4`, not the catalog payload or init data. The actual information  is delivered as any other track trough a data stream.
 
-## 1.6 The data streams
+## The data streams
 
 After a subscription is accepted, objects can move on unidirectional streams. In the common **subgroup** forwarding mode used here, a stream begins with a `SUBGROUP_HEADER` identifying the Track Alias, Group ID, and Subgroup ID, then carries one or more objects [draft-16 §3.3] [draft-16 §10.4.2]. The control response establishes the alias that the data-stream header uses in place of repeating the Full Track Name [draft-16 §10.1]. MOQT also defines object datagrams and fetch streams; this case follows subscribed subgroup streams [draft-16 §10].
 
@@ -205,7 +205,7 @@ The initialization-first subscriber requests `0.mp4` before the video and audio 
 
 This mapping is a `moq-rs` packaging choice, not a requirement of MOQT draft-16: MOQT leaves encoding and packaging to MoQ Streaming Formats and treats object payloads as application-defined bytes [draft-16 §1] [draft-16 §2.1]. The choice lets the example accept FFmpeg's fragmented MP4 output and use an [existing compatible web player](https://github.com/cloudflare/moq-rs#interoperability); publishing one frame per fragment also makes frames individually addressable without waiting for a longer segment. This practical motivation follows from the example workflow and draft-16's goal of reusing existing packaging [draft-16 §1.1.3]; it is not a measured browser-compatibility result. Related drafts describe [MSF](https://datatracker.ietf.org/doc/draft-ietf-moq-msf/), its CMAF-based [CMSF](https://datatracker.ietf.org/doc/draft-ietf-moq-cmsf/) extension, and the [Low Overhead Media Container (LOC)](https://datatracker.ietf.org/doc/draft-ietf-moq-loc/). Draft-16 does not prescribe or enumerate these formats; a later experiment can compare them.
 
-The following extract shows the first video group transmitted on the data channel in this run. The `SUBSCRIBE` line names `(/bbb, 1.m4s)`, the track the subscriber identifies as video from the initialization data (§1.5). `SUBSCRIBE_OK` assigns Track Alias `3`, which then appears in the subgroup header. Retained lines follow their original order in the publisher capture. Wall-clock timestamps, colors, and module prefixes are removed; ellipses mark omitted fields, intermediate video objects, and interleaved audio lines:
+The following extract shows the first video group transmitted on the data channel in this run. The `SUBSCRIBE` line names `(/bbb, 1.m4s)`, the track the subscriber identifies as video from the initialization data (see [The control stream](#the-control-stream)). `SUBSCRIBE_OK` assigns Track Alias `3`, which then appears in the subgroup header. Retained lines follow their original order in the publisher capture. Wall-clock timestamps, colors, and module prefixes are removed; ellipses mark omitted fields, intermediate video objects, and interleaved audio lines:
 
 ```js
 moq_transport::control: MoQT control message direction="recv" msg_type="SUBSCRIBE" subscribe_id=3 namespace=/bbb track_name=1.m4s
@@ -303,7 +303,7 @@ Figure 1.10 illustrates this selective response to congestion while control stat
 
 **Figure 1.10** — Conceptual response to congestion: one data stream can be interrupted while the control stream and subscription remain open.
 
-## 1.7 Session lifecycle
+## Session lifecycle
 
 Figure 1.11 puts the initialization-first path on a timeline. The relay listens, and the publisher establishes a session and announces `/bbb`. The subscriber then establishes a separate session and requests `(/bbb, 0.mp4)`, followed by `(/bbb, 1.m4s)` and `(/bbb, 2.m4s)`. Objects cross the relay only after those requests, although the publisher is already processing media. Both sessions eventually end. This order distinguishes **announcing availability** from **transmitting objects**: the relay registers the namespace before the first subscriber request and starts its upstream subscriptions only after that request.
 
@@ -335,7 +335,7 @@ This shows timeout-driven teardown and namespace deregistration, not an acknowle
 
 **Figure 1.11** — Conceptual session lifecycle. The observed teardown was timeout-driven.
 
-## 1.8 Terminology, evidence, and outlook
+## Terminology, evidence, and outlook
 
 | Term | Meaning in this chapter |
 |---|---|
@@ -348,7 +348,7 @@ This shows timeout-driven teardown and namespace deregistration, not an acknowle
 | Track Alias | Compact identifier for a track in a particular session's data delivery. |
 | Object | Addressable payload with metadata; the cached unit if a relay caches. |
 
-These terms should not be substituted for neighboring formats' units. An HLS or DASH *segment* is an HTTP media resource; a MOQT track, group, and object have distinct naming and delivery roles. Here a *CMAF chunk* is one `moof`/`mdat` pair inside a media object, while a logged `payload chunk` is merely an implementation write-buffer portion (§1.6). Neither is a separate level of MOQT naming.
+These terms should not be substituted for neighboring formats' units. An HLS or DASH *segment* is an HTTP media resource; a MOQT track, group, and object have distinct naming and delivery roles. Here a *CMAF chunk* is one `moof`/`mdat` pair inside a media object, while a logged `payload chunk` is merely an implementation write-buffer portion (see [The data streams](#the-data-streams)). Neither is a separate level of MOQT naming.
 
 `[draft-16 §N]` refers to the [frozen `draft-ietf-moq-transport-16`](https://www.ietf.org/archive/id/draft-ietf-moq-transport-16.txt), dated 13 January 2026. Protocol rules come from that draft; the track names, command examples, and trace excerpts describe the `moq-rs` reference deployment above.
 
