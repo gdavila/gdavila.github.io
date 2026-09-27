@@ -17,7 +17,7 @@ This is the **production source repository** for <https://gdavila.github.io/>: `
 | Inspect current content and link issues | `docs/known-content-issues.md` |
 | Change build or publication | `.github/workflows/` |
 
-The homepage is the default Chirpy post index. It displays posts by **publication `date`**, newest first. `_plugins/posts-lastmod-hook.rb` may set `last_modified_at` after a post is edited; that does not change its publication date or the intended homepage order.
+The homepage is the default Chirpy post index. It displays posts by **publication `date`**, newest first. `_plugins/posts-lastmod-hook.rb` may set `last_modified_at` after a post is edited; that does not change its publication date or the intended homepage order. The sidebar panel "Recently Posted" also follows publication date: `_includes/update-list.html` overrides Chirpy's "Recently Updated" list, which sorts by `last_modified_at`.
 
 ## Sections and URLs
 

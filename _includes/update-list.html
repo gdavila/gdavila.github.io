@@ -1,0 +1,22 @@
+<!--
+  Overrides Chirpy's update-list.html: list the 5 most recently published
+  posts (site.posts is sorted by publication date, newest first) instead of
+  the most recently modified ones.
+-->
+
+{% assign MAX_SIZE = 5 %}
+
+{% if site.posts.size > 0 %}
+  <section id="access-lastmod">
+    <h2 class="panel-heading">Recently Posted</h2>
+    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+      {% for post in site.posts limit: MAX_SIZE %}
+        {% assign url = post.url | relative_url %}
+        <li class="text-truncate lh-lg">
+          <a href="{{ url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <!-- #access-lastmod -->
+{% endif %}
