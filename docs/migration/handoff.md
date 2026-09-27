@@ -130,3 +130,23 @@ The Phase 3 local exit condition is met. Phase 4 should independently build and 
 The Ruby 3.4 production build passed. The independent [Phase 4 audit](validate_phase4.py) recomputed all seven authored body and 94 asset hashes, fetched all 11 routes and 94 assets from a loopback server at `/`, and checked metadata, dates, categories, search, feed, sitemap, canonicals, homepage/profile, and exact decoded ParisTraceroute payload. The preservation and HTTP checks passed. Browser inspection covered all 11 routes at desktop/mobile widths and sampled light/dark appearance; screenshots and the complete evidence are in [validation.md](validation.md).
 
 **Gate recommendation: FAIL.** Clicking a ParisTraceroute `#table1` link in its `srcdoc` iframe loads a nested Chirpy article instead of scrolling to the table, which regresses the frozen rendered page. The three section tabs also have blank browser titles, and mobile top bars expose `Migration-home` and `Paris-document`. These are implementation findings for the coordinator to route to Agent 3; Agent 4 made no implementation edits. The full HTMLProofer run reported 30 precisely classified baseline-content failures, and the separate link scan found exactly the 12 pre-existing missing local targets, with no new missing route or asset. The Phase 2 candidate remote/Pages/Actions prerequisites remain blocked; Phase 4 was local only. Rerun Phase 4 after Agent 3 fixes the reported defects, then resolve the remote prerequisite before deployment.
+
+## Phase 3 rework — content migration executor
+
+**Input:** Agent 4's [validation report](validation.md) and screenshots at candidate `1351f543881548787ff220343974af3b29652818`. The candidate was clean at that commit. The frozen legacy checkout remained at `ecf40cbb96ee4aa317f2724bd7522966c9293a78`.
+
+**Implementation commit:** `d2012bb327f0b4739c3e911671decaa1e19ba63c`. This handoff entry is committed separately after the implementation.
+
+### Fixes
+
+- Added a click handler outside the unchanged ParisTraceroute `srcdoc`. It intercepts only fragment links with matching IDs in the iframe document and scrolls to the target. The authored HTML, its link targets, and the iframe payload remain unchanged. In Chrome, clicking the first **Tabla-1** link kept the iframe at `about:srcdoc`, changed its scroll offset from `0` to `706.5`, placed `#table1` at the top of the iframe, and left zero nested frames.
+- Added migration locale labels derived from the existing page titles. Chirpy now renders browser titles `software | Gabriel Davila`, `Video & Media | Gabriel Davila`, and `Data Communications | Gabriel Davila`. At 390 px Chrome viewport width, the homepage and ParisTraceroute top bars display their public page titles in Chirpy's capitalization style (`Tech & software` and `Campos del datagrama ip en paris-traceroute`) instead of internal layout names. The original titles remain exact in front matter, H1 headings, and browser titles.
+
+### Rework checks
+
+1. `JEKYLL_ENV=production bundle exec jekyll build --destination _site`: passed.
+2. `ruby docs/migration/verify_phase3.rb /Users/gabriel/gdavila.github.io`: passed for all seven authored body hashes, 94 asset hashes in source/candidate/output, 11 routes, and exact decoded iframe document.
+3. Ran Agent 4's unchanged `validate_phase4.py` against the rebuilt files and again against a local root HTTP server (`--base-url http://127.0.0.1:8766`): both returned `errors: []`; the HTTP run checked all 11 routes and 94 assets, and found the same 20 documented failed targets and 12 missing local targets. The script's printed `candidate_commit` field is a fixed Phase 4 gate label; these runs checked the current rebuilt files.
+4. Chrome browser tested the Tabla-1 interaction, the three section browser titles, and both affected top bars at 390 px width. The viewport override was reset after testing.
+
+Agent 4 should independently rerun Phase 4 against the new handoff commit and replace its validation recommendation. No Agent 4 script, report, or screenshot was edited. No remote creation or deployment was attempted; the Phase 2 remote prerequisite remains open.
