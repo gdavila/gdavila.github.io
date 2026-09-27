@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<article class="px-1">
+  <h1>{{ page.title }}</h1>
+  <figure>
+    <img src="{{ page.header.overlay_image | relative_url }}" alt="" class="img-fluid rounded">
+    <figcaption>{{ page.header.caption | markdownify }}</figcaption>
+  </figure>
+
+  <div class="content">
+    {{ page.excerpt | markdownify }}
+
+    {% for item in page.intro %}
+      <div class="my-4">{{ item.excerpt | markdownify }}</div>
+    {% endfor %}
+
+    <div class="row row-cols-1 row-cols-md-3 g-3 my-3">
+      {% for item in page.feature_row %}
+        <div class="col">
+          <section class="card h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">{{ item.title }}</h2>
+              <p class="card-text">{{ item.excerpt }}</p>
+              <a href="{{ item.url | relative_url }}" class="btn btn-primary">{{ item.btn_label }}</a>
+            </div>
+          </section>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</article>
