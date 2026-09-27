@@ -1,0 +1,2553 @@
+{
+  "captured_at_utc": "2026-09-27T02:10:01.860883+00:00",
+  "source_commit": "ecf40cbb96ee4aa317f2724bd7522966c9293a78",
+  "pages": [
+    {
+      "url": "https://gdavila.github.io/",
+      "snapshot": "rendered/index.html",
+      "sha256": "d392297b81909bd0f353bc49eeb2c7f6ce3116b790494955b3fdc58775e8d7ba",
+      "bytes": 8465,
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://gdavila.github.io/software/",
+      "snapshot": "rendered/software/index.html",
+      "sha256": "65f697fcdc0ccb99092880d4a9960966a9f38382b429c72c47f2084fa9712db2",
+      "bytes": 5068,
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/software/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://gdavila.github.io/video/",
+      "snapshot": "rendered/video/index.html",
+      "sha256": "c37a6950004e2ff64fbacbfa7c421b5544d96befcff74804ad4993976a2500e4",
+      "bytes": 6437,
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://gdavila.github.io/internet/",
+      "snapshot": "rendered/internet/index.html",
+      "sha256": "cf3c1da9a17976bc618fffdabedff839a91e51f358e3e224dc738fc876a45118",
+      "bytes": 6643,
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://gdavila.github.io/about/",
+      "snapshot": "rendered/about/index.html",
+      "sha256": "23aca76041342832d8eadb554cedc83847eea6fc04b0d82a76a99d4156d7d1a8",
+      "bytes": 7918,
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/about/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "snapshot": "rendered/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/index.html",
+      "sha256": "0d7e2bce539191754f1be391925600634f27b2c7e3ad011ab59dcd5e7a27c6d1",
+      "bytes": 14122,
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "snapshot": "rendered/video/Vmaf/2020-03-05-Vmaf/index.html",
+      "sha256": "449688974b2e467bdce798243f4d1e72116b247737717e31bfdbcfe1dd2a8ad1",
+      "bytes": 16104,
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "snapshot": "rendered/video/ffmpegClock/2019-06-05-ffmpegClock/index.html",
+      "sha256": "ca5e5deddca00584e8e329d655e87bb470106f005d46cd7a00ae599edcdf3929",
+      "bytes": 13442,
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "snapshot": "rendered/internet/2018-08-01-ParisTraceroute/index.html",
+      "sha256": "c9811e21a97f47d823829be4448a2ecc884ea331206f3d71cafbb43004323b24",
+      "bytes": 27302,
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "snapshot": "rendered/internet/PartialService/2018-02-01-PartialService/index.html",
+      "sha256": "85182734dab954d114b6bc6ed2b6901ce247ba781cc64b658b7e375cd8ef226c",
+      "bytes": 12060,
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "snapshot": "rendered/internet/rttReporte/2017-09-01-rttReporte/index.html",
+      "sha256": "ded3d6725722a3ec466da2e6e709cd31cd0d7111f9d00509c538c1f37a61ea23",
+      "bytes": 26312,
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "content_type": "text/html; charset=utf-8"
+    }
+  ],
+  "references": [
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "link",
+      "literal_target": "https://gdavila.github.io/",
+      "absolute_url": "https://gdavila.github.io/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "link",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "link",
+      "literal_target": "/assets/css/main.css",
+      "absolute_url": "https://gdavila.github.io/assets/css/main.css"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "#site-nav",
+      "absolute_url": "https://gdavila.github.io/#site-nav"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "#main",
+      "absolute_url": "https://gdavila.github.io/#main"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "#footer",
+      "absolute_url": "https://gdavila.github.io/#footer"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "/",
+      "absolute_url": "https://gdavila.github.io/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "/software/",
+      "absolute_url": "https://gdavila.github.io/software/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "/video/",
+      "absolute_url": "https://gdavila.github.io/video/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "/internet/",
+      "absolute_url": "https://gdavila.github.io/internet/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "/about/",
+      "absolute_url": "https://gdavila.github.io/about/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "iframe",
+      "literal_target": "https://ghbtns.com/github-btn.html?user=gdavila&type=follow&count=false&size=large",
+      "absolute_url": "https://ghbtns.com/github-btn.html?user=gdavila&type=follow&count=false&size=large"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "https://flic.kr/p/omaQ4C",
+      "absolute_url": "https://flic.kr/p/omaQ4C"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "/software/",
+      "absolute_url": "https://gdavila.github.io/software/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "/video/",
+      "absolute_url": "https://gdavila.github.io/video/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "/internet/",
+      "absolute_url": "https://gdavila.github.io/internet/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "https://jekyllrb.com",
+      "absolute_url": "https://jekyllrb.com"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "a",
+      "literal_target": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/",
+      "absolute_url": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "script",
+      "literal_target": "/assets/js/main.min.js",
+      "absolute_url": "https://gdavila.github.io/assets/js/main.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "script",
+      "literal_target": "https://kit.fontawesome.com/4eee35f757.js",
+      "absolute_url": "https://kit.fontawesome.com/4eee35f757.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/",
+      "tag": "script",
+      "literal_target": "https://www.google-analytics.com/analytics.js",
+      "absolute_url": "https://www.google-analytics.com/analytics.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "link",
+      "literal_target": "https://gdavila.github.io/software/",
+      "absolute_url": "https://gdavila.github.io/software/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "link",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "link",
+      "literal_target": "/assets/css/main.css",
+      "absolute_url": "https://gdavila.github.io/assets/css/main.css"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "a",
+      "literal_target": "#site-nav",
+      "absolute_url": "https://gdavila.github.io/software/#site-nav"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "a",
+      "literal_target": "#main",
+      "absolute_url": "https://gdavila.github.io/software/#main"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "a",
+      "literal_target": "#footer",
+      "absolute_url": "https://gdavila.github.io/software/#footer"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "a",
+      "literal_target": "/",
+      "absolute_url": "https://gdavila.github.io/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "a",
+      "literal_target": "/software/",
+      "absolute_url": "https://gdavila.github.io/software/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "a",
+      "literal_target": "/video/",
+      "absolute_url": "https://gdavila.github.io/video/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "a",
+      "literal_target": "/internet/",
+      "absolute_url": "https://gdavila.github.io/internet/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "a",
+      "literal_target": "/about/",
+      "absolute_url": "https://gdavila.github.io/about/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "a",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "a",
+      "literal_target": "https://jekyllrb.com",
+      "absolute_url": "https://jekyllrb.com"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "a",
+      "literal_target": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/",
+      "absolute_url": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "script",
+      "literal_target": "/assets/js/main.min.js",
+      "absolute_url": "https://gdavila.github.io/assets/js/main.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "script",
+      "literal_target": "https://kit.fontawesome.com/4eee35f757.js",
+      "absolute_url": "https://kit.fontawesome.com/4eee35f757.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/software/",
+      "tag": "script",
+      "literal_target": "https://www.google-analytics.com/analytics.js",
+      "absolute_url": "https://www.google-analytics.com/analytics.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "link",
+      "literal_target": "https://gdavila.github.io/video/",
+      "absolute_url": "https://gdavila.github.io/video/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "link",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "link",
+      "literal_target": "/assets/css/main.css",
+      "absolute_url": "https://gdavila.github.io/assets/css/main.css"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "#site-nav",
+      "absolute_url": "https://gdavila.github.io/video/#site-nav"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "#main",
+      "absolute_url": "https://gdavila.github.io/video/#main"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "#footer",
+      "absolute_url": "https://gdavila.github.io/video/#footer"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "/",
+      "absolute_url": "https://gdavila.github.io/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "/software/",
+      "absolute_url": "https://gdavila.github.io/software/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "/video/",
+      "absolute_url": "https://gdavila.github.io/video/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "/internet/",
+      "absolute_url": "https://gdavila.github.io/internet/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "/about/",
+      "absolute_url": "https://gdavila.github.io/about/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "absolute_url": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "/video/Vmaf/2020-03-05-Vmaf/",
+      "absolute_url": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "absolute_url": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "https://jekyllrb.com",
+      "absolute_url": "https://jekyllrb.com"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "a",
+      "literal_target": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/",
+      "absolute_url": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "script",
+      "literal_target": "/assets/js/main.min.js",
+      "absolute_url": "https://gdavila.github.io/assets/js/main.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "script",
+      "literal_target": "https://kit.fontawesome.com/4eee35f757.js",
+      "absolute_url": "https://kit.fontawesome.com/4eee35f757.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/",
+      "tag": "script",
+      "literal_target": "https://www.google-analytics.com/analytics.js",
+      "absolute_url": "https://www.google-analytics.com/analytics.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "link",
+      "literal_target": "https://gdavila.github.io/internet/",
+      "absolute_url": "https://gdavila.github.io/internet/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "link",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "link",
+      "literal_target": "/assets/css/main.css",
+      "absolute_url": "https://gdavila.github.io/assets/css/main.css"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "#site-nav",
+      "absolute_url": "https://gdavila.github.io/internet/#site-nav"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "#main",
+      "absolute_url": "https://gdavila.github.io/internet/#main"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "#footer",
+      "absolute_url": "https://gdavila.github.io/internet/#footer"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "/",
+      "absolute_url": "https://gdavila.github.io/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "/software/",
+      "absolute_url": "https://gdavila.github.io/software/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "/video/",
+      "absolute_url": "https://gdavila.github.io/video/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "/internet/",
+      "absolute_url": "https://gdavila.github.io/internet/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "/about/",
+      "absolute_url": "https://gdavila.github.io/about/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "/internet/2018-08-01-ParisTraceroute/",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "/internet/PartialService/2018-02-01-PartialService/",
+      "absolute_url": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "/internet/rttReporte/2017-09-01-rttReporte/",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "https://jekyllrb.com",
+      "absolute_url": "https://jekyllrb.com"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "a",
+      "literal_target": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/",
+      "absolute_url": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "script",
+      "literal_target": "/assets/js/main.min.js",
+      "absolute_url": "https://gdavila.github.io/assets/js/main.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "script",
+      "literal_target": "https://kit.fontawesome.com/4eee35f757.js",
+      "absolute_url": "https://kit.fontawesome.com/4eee35f757.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/",
+      "tag": "script",
+      "literal_target": "https://www.google-analytics.com/analytics.js",
+      "absolute_url": "https://www.google-analytics.com/analytics.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "link",
+      "literal_target": "https://gdavila.github.io/about/",
+      "absolute_url": "https://gdavila.github.io/about/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "link",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "link",
+      "literal_target": "/assets/css/main.css",
+      "absolute_url": "https://gdavila.github.io/assets/css/main.css"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "a",
+      "literal_target": "#site-nav",
+      "absolute_url": "https://gdavila.github.io/about/#site-nav"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "a",
+      "literal_target": "#main",
+      "absolute_url": "https://gdavila.github.io/about/#main"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "a",
+      "literal_target": "#footer",
+      "absolute_url": "https://gdavila.github.io/about/#footer"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "a",
+      "literal_target": "/",
+      "absolute_url": "https://gdavila.github.io/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "a",
+      "literal_target": "/software/",
+      "absolute_url": "https://gdavila.github.io/software/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "a",
+      "literal_target": "/video/",
+      "absolute_url": "https://gdavila.github.io/video/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "a",
+      "literal_target": "/internet/",
+      "absolute_url": "https://gdavila.github.io/internet/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "a",
+      "literal_target": "/about/",
+      "absolute_url": "https://gdavila.github.io/about/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "a",
+      "literal_target": "https://www.linkedin.com/in/gdavilarevelo",
+      "absolute_url": "https://www.linkedin.com/in/gdavilarevelo"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "a",
+      "literal_target": "https://cnet.fi.uba.ar/",
+      "absolute_url": "https://cnet.fi.uba.ar/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "a",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "a",
+      "literal_target": "https://jekyllrb.com",
+      "absolute_url": "https://jekyllrb.com"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "a",
+      "literal_target": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/",
+      "absolute_url": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "script",
+      "literal_target": "/assets/js/main.min.js",
+      "absolute_url": "https://gdavila.github.io/assets/js/main.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "script",
+      "literal_target": "https://kit.fontawesome.com/4eee35f757.js",
+      "absolute_url": "https://kit.fontawesome.com/4eee35f757.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/about/",
+      "tag": "script",
+      "literal_target": "https://www.google-analytics.com/analytics.js",
+      "absolute_url": "https://www.google-analytics.com/analytics.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "link",
+      "literal_target": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "absolute_url": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "link",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "link",
+      "literal_target": "/assets/css/main.css",
+      "absolute_url": "https://gdavila.github.io/assets/css/main.css"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "#site-nav",
+      "absolute_url": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/#site-nav"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "#main",
+      "absolute_url": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/#main"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "#footer",
+      "absolute_url": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/#footer"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "/",
+      "absolute_url": "https://gdavila.github.io/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "/software/",
+      "absolute_url": "https://gdavila.github.io/software/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "/video/",
+      "absolute_url": "https://gdavila.github.io/video/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "/internet/",
+      "absolute_url": "https://gdavila.github.io/internet/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "/about/",
+      "absolute_url": "https://gdavila.github.io/about/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "https://github.com/Netflix/vmaf",
+      "absolute_url": "https://github.com/Netflix/vmaf"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "https://netflixtechblog.com/vmaf-the-journey-continues-44b51ee9ed12",
+      "absolute_url": "https://netflixtechblog.com/vmaf-the-journey-continues-44b51ee9ed12"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "https://github.com/itu-p1203/itu-p1203",
+      "absolute_url": "https://github.com/itu-p1203/itu-p1203"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "https://telecommunication-telemedia-assessment.github.io/bitstream_based_models/documents/tech-report-bitstream-based-models.pdf",
+      "absolute_url": "https://telecommunication-telemedia-assessment.github.io/bitstream_based_models/documents/tech-report-bitstream-based-models.pdf"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "img",
+      "literal_target": "https://render.githubusercontent.com/render/math?math=\\frac{vmaf}{20}",
+      "absolute_url": "https://render.githubusercontent.com/render/math?math=\\frac{vmaf}{20}"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "img",
+      "literal_target": "/video/vmaf_vs_p1203/vmaf_p1203.png",
+      "absolute_url": "https://gdavila.github.io/video/vmaf_vs_p1203/vmaf_p1203.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "https://docs.google.com/document/d/1dJczEhXO0MZjBSNyKmd3ARiCTdFVMNPBykH4_HMPoyY/edit",
+      "absolute_url": "https://docs.google.com/document/d/1dJczEhXO0MZjBSNyKmd3ARiCTdFVMNPBykH4_HMPoyY/edit"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "https://github.com/Netflix/vmaf/issues/661#issuecomment-685993791",
+      "absolute_url": "https://github.com/Netflix/vmaf/issues/661#issuecomment-685993791"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "img",
+      "literal_target": "/video/vmaf_vs_p1203/cv_x264.png",
+      "absolute_url": "https://gdavila.github.io/video/vmaf_vs_p1203/cv_x264.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "img",
+      "literal_target": "/video/vmaf_vs_p1203/cv_encoderA.png",
+      "absolute_url": "https://gdavila.github.io/video/vmaf_vs_p1203/cv_encoderA.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "img",
+      "literal_target": "/video/vmaf_vs_p1203/cv_encoderB.png",
+      "absolute_url": "https://gdavila.github.io/video/vmaf_vs_p1203/cv_encoderB.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "img",
+      "literal_target": "/video/vmaf_vs_p1203/encoders_vmaf.png",
+      "absolute_url": "https://gdavila.github.io/video/vmaf_vs_p1203/encoders_vmaf.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "img",
+      "literal_target": "/video/vmaf_vs_p1203/encoders_p1203.png",
+      "absolute_url": "https://gdavila.github.io/video/vmaf_vs_p1203/encoders_p1203.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "/video/Vmaf/2020-03-05-Vmaf/",
+      "absolute_url": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "#",
+      "absolute_url": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/#"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "https://jekyllrb.com",
+      "absolute_url": "https://jekyllrb.com"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "a",
+      "literal_target": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/",
+      "absolute_url": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "script",
+      "literal_target": "/assets/js/main.min.js",
+      "absolute_url": "https://gdavila.github.io/assets/js/main.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "script",
+      "literal_target": "https://kit.fontawesome.com/4eee35f757.js",
+      "absolute_url": "https://kit.fontawesome.com/4eee35f757.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "tag": "script",
+      "literal_target": "https://www.google-analytics.com/analytics.js",
+      "absolute_url": "https://www.google-analytics.com/analytics.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "link",
+      "literal_target": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "absolute_url": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "link",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "link",
+      "literal_target": "/assets/css/main.css",
+      "absolute_url": "https://gdavila.github.io/assets/css/main.css"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "#site-nav",
+      "absolute_url": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/#site-nav"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "#main",
+      "absolute_url": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/#main"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "#footer",
+      "absolute_url": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/#footer"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "/",
+      "absolute_url": "https://gdavila.github.io/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "/software/",
+      "absolute_url": "https://gdavila.github.io/software/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "/video/",
+      "absolute_url": "https://gdavila.github.io/video/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "/internet/",
+      "absolute_url": "https://gdavila.github.io/internet/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "/about/",
+      "absolute_url": "https://gdavila.github.io/about/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "https://github.com/Netflix/vmaf",
+      "absolute_url": "https://github.com/Netflix/vmaf"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "https://netflixtechblog.com/vmaf-the-journey-continues-44b51ee9ed12",
+      "absolute_url": "https://netflixtechblog.com/vmaf-the-journey-continues-44b51ee9ed12"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "https://github.com/gdavila/easyVmaf",
+      "absolute_url": "https://github.com/gdavila/easyVmaf"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "absolute_url": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "absolute_url": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "https://jekyllrb.com",
+      "absolute_url": "https://jekyllrb.com"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "a",
+      "literal_target": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/",
+      "absolute_url": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "script",
+      "literal_target": "/assets/js/main.min.js",
+      "absolute_url": "https://gdavila.github.io/assets/js/main.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "script",
+      "literal_target": "https://kit.fontawesome.com/4eee35f757.js",
+      "absolute_url": "https://kit.fontawesome.com/4eee35f757.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "tag": "script",
+      "literal_target": "https://www.google-analytics.com/analytics.js",
+      "absolute_url": "https://www.google-analytics.com/analytics.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "link",
+      "literal_target": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "absolute_url": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "link",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "link",
+      "literal_target": "/assets/css/main.css",
+      "absolute_url": "https://gdavila.github.io/assets/css/main.css"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "#site-nav",
+      "absolute_url": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/#site-nav"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "#main",
+      "absolute_url": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/#main"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "#footer",
+      "absolute_url": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/#footer"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "/",
+      "absolute_url": "https://gdavila.github.io/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "/software/",
+      "absolute_url": "https://gdavila.github.io/software/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "/video/",
+      "absolute_url": "https://gdavila.github.io/video/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "/internet/",
+      "absolute_url": "https://gdavila.github.io/internet/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "/about/",
+      "absolute_url": "https://gdavila.github.io/about/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "https://ffmpeg.org/",
+      "absolute_url": "https://ffmpeg.org/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "https://stackoverflow.com/users/5726027/gyan",
+      "absolute_url": "https://stackoverflow.com/users/5726027/gyan"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "https://stackoverflow.com/questions/47543426/ffmpeg-embed-current-time-in-milliseconds-into-video",
+      "absolute_url": "https://stackoverflow.com/questions/47543426/ffmpeg-embed-current-time-in-milliseconds-into-video"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "https://ffmpeg.org/",
+      "absolute_url": "https://ffmpeg.org/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "https://ffmpeg.org/doxygen/2.4/aeval_8c_source.html",
+      "absolute_url": "https://ffmpeg.org/doxygen/2.4/aeval_8c_source.html"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "img",
+      "literal_target": "/video/ffmpegClock/ffplay1.png",
+      "absolute_url": "https://gdavila.github.io/video/ffmpegClock/ffplay1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "img",
+      "literal_target": "/video/ffmpegClock/ffplay2.png",
+      "absolute_url": "https://gdavila.github.io/video/ffmpegClock/ffplay2.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "#",
+      "absolute_url": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/#"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "/video/Vmaf/2020-03-05-Vmaf/",
+      "absolute_url": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "https://jekyllrb.com",
+      "absolute_url": "https://jekyllrb.com"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "a",
+      "literal_target": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/",
+      "absolute_url": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "script",
+      "literal_target": "/assets/js/main.min.js",
+      "absolute_url": "https://gdavila.github.io/assets/js/main.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "script",
+      "literal_target": "https://kit.fontawesome.com/4eee35f757.js",
+      "absolute_url": "https://kit.fontawesome.com/4eee35f757.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "tag": "script",
+      "literal_target": "https://www.google-analytics.com/analytics.js",
+      "absolute_url": "https://www.google-analytics.com/analytics.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "link",
+      "literal_target": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "link",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "link",
+      "literal_target": "/assets/css/main.css",
+      "absolute_url": "https://gdavila.github.io/assets/css/main.css"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "#site-nav",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/#site-nav"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "#main",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/#main"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "#footer",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/#footer"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "/",
+      "absolute_url": "https://gdavila.github.io/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "/software/",
+      "absolute_url": "https://gdavila.github.io/software/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "/video/",
+      "absolute_url": "https://gdavila.github.io/video/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "/internet/",
+      "absolute_url": "https://gdavila.github.io/internet/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "/about/",
+      "absolute_url": "https://gdavila.github.io/about/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "script",
+      "literal_target": "ParisTraceroute_files/jquery-1.11.3/jquery.min.js",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/jquery-1.11.3/jquery.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "script",
+      "literal_target": "ParisTraceroute_files/bootstrap-3.3.5/js/bootstrap.min.js",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/js/bootstrap.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "script",
+      "literal_target": "ParisTraceroute_files/bootstrap-3.3.5/shim/html5shiv.min.js",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/shim/html5shiv.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "script",
+      "literal_target": "ParisTraceroute_files/bootstrap-3.3.5/shim/respond.min.js",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/shim/respond.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "script",
+      "literal_target": "ParisTraceroute_files/navigation-1.1/tabsets.js",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/navigation-1.1/tabsets.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "script",
+      "literal_target": "ParisTraceroute_files/highlightjs-1.1/highlight.js",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/highlightjs-1.1/highlight.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "https://paris-traceroute.net/",
+      "absolute_url": "https://paris-traceroute.net/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "https://paris-traceroute.net/publications",
+      "absolute_url": "https://paris-traceroute.net/publications"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "https://www.caida.org/tools/measurement/scamper/",
+      "absolute_url": "https://www.caida.org/tools/measurement/scamper/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "http://www.tracebox.org/",
+      "absolute_url": "http://www.tracebox.org/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "https://www.measurementlab.net/tests/paris_traceroute/",
+      "absolute_url": "https://www.measurementlab.net/tests/paris_traceroute/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "http://www.caida.org/projects/ark/",
+      "absolute_url": "http://www.caida.org/projects/ark/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "#table1",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/#table1"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "#udp",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/#udp"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "#table1",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/#table1"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "#icmp",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/#icmp"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "#ipheader",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/#ipheader"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "#udpheader",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/#udpheader"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "https://tools.ietf.org/html/rfc792",
+      "absolute_url": "https://tools.ietf.org/html/rfc792"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "https://tools.ietf.org/html/rfc4884",
+      "absolute_url": "https://tools.ietf.org/html/rfc4884"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "https://tools.ietf.org/html/rfc4884",
+      "absolute_url": "https://tools.ietf.org/html/rfc4884"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "https://tools.ietf.org/html/rfc4884",
+      "absolute_url": "https://tools.ietf.org/html/rfc4884"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "https://tools.ietf.org/html/rfc4884",
+      "absolute_url": "https://tools.ietf.org/html/rfc4884"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "/internet/PartialService/2018-02-01-PartialService/",
+      "absolute_url": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "#",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/#"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "https://jekyllrb.com",
+      "absolute_url": "https://jekyllrb.com"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "a",
+      "literal_target": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/",
+      "absolute_url": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "script",
+      "literal_target": "/assets/js/main.min.js",
+      "absolute_url": "https://gdavila.github.io/assets/js/main.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "script",
+      "literal_target": "https://kit.fontawesome.com/4eee35f757.js",
+      "absolute_url": "https://kit.fontawesome.com/4eee35f757.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "tag": "script",
+      "literal_target": "https://www.google-analytics.com/analytics.js",
+      "absolute_url": "https://www.google-analytics.com/analytics.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "link",
+      "literal_target": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "absolute_url": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "link",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "link",
+      "literal_target": "/assets/css/main.css",
+      "absolute_url": "https://gdavila.github.io/assets/css/main.css"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "a",
+      "literal_target": "#site-nav",
+      "absolute_url": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/#site-nav"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "a",
+      "literal_target": "#main",
+      "absolute_url": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/#main"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "a",
+      "literal_target": "#footer",
+      "absolute_url": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/#footer"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "a",
+      "literal_target": "/",
+      "absolute_url": "https://gdavila.github.io/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "a",
+      "literal_target": "/software/",
+      "absolute_url": "https://gdavila.github.io/software/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "a",
+      "literal_target": "/video/",
+      "absolute_url": "https://gdavila.github.io/video/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "a",
+      "literal_target": "/internet/",
+      "absolute_url": "https://gdavila.github.io/internet/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "a",
+      "literal_target": "/about/",
+      "absolute_url": "https://gdavila.github.io/about/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "https://render.githubusercontent.com/render/math?math=rtt",
+      "absolute_url": "https://render.githubusercontent.com/render/math?math=rtt"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "https://render.githubusercontent.com/render/math?math=mss",
+      "absolute_url": "https://render.githubusercontent.com/render/math?math=mss"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "https://render.githubusercontent.com/render/math?math=p",
+      "absolute_url": "https://render.githubusercontent.com/render/math?math=p"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "https://render.githubusercontent.com/render/math?math=T",
+      "absolute_url": "https://render.githubusercontent.com/render/math?math=T"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "https://render.githubusercontent.com/render/math?math=T_{tcp}= \\dfrac{mss}{rtt}*\\dfrac{1}{\\sqrt{p}}",
+      "absolute_url": "https://render.githubusercontent.com/render/math?math=T_{tcp}= \\dfrac{mss}{rtt}*\\dfrac{1}{\\sqrt{p}}"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "https://render.githubusercontent.com/render/math?math=p",
+      "absolute_url": "https://render.githubusercontent.com/render/math?math=p"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "https://render.githubusercontent.com/render/math?math=n_{ch}",
+      "absolute_url": "https://render.githubusercontent.com/render/math?math=n_{ch}"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "https://render.githubusercontent.com/render/math?math=p \\approx cer*\\dfrac{ip_{size}}{codeword{size}} *\\dfrac{1}{n_{ch}} \\approx \\dfrac {7 * cer}{n_{ch}}",
+      "absolute_url": "https://render.githubusercontent.com/render/math?math=p \\approx cer*\\dfrac{ip_{size}}{codeword{size}} *\\dfrac{1}{n_{ch}} \\approx \\dfrac {7 * cer}{n_{ch}}"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "/broadcast/PartialService/unnamed-chunk-1-1.png",
+      "absolute_url": "https://gdavila.github.io/broadcast/PartialService/unnamed-chunk-1-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "/broadcast/PartialService/unnamed-chunk-3-1.png",
+      "absolute_url": "https://gdavila.github.io/broadcast/PartialService/unnamed-chunk-3-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "/broadcast/PartialService/unnamed-chunk-2-1.png",
+      "absolute_url": "https://gdavila.github.io/broadcast/PartialService/unnamed-chunk-2-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "/broadcast/PartialService/interferencia1CH-1.png",
+      "absolute_url": "https://gdavila.github.io/broadcast/PartialService/interferencia1CH-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "/broadcast/PartialService/interferencia2CH-1.png",
+      "absolute_url": "https://gdavila.github.io/broadcast/PartialService/interferencia2CH-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "img",
+      "literal_target": "/broadcast/PartialService/table.png",
+      "absolute_url": "https://gdavila.github.io/broadcast/PartialService/table.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "a",
+      "literal_target": "/internet/rttReporte/2017-09-01-rttReporte/",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "a",
+      "literal_target": "/internet/2018-08-01-ParisTraceroute/",
+      "absolute_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "a",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "a",
+      "literal_target": "https://jekyllrb.com",
+      "absolute_url": "https://jekyllrb.com"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "a",
+      "literal_target": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/",
+      "absolute_url": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "script",
+      "literal_target": "/assets/js/main.min.js",
+      "absolute_url": "https://gdavila.github.io/assets/js/main.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "script",
+      "literal_target": "https://kit.fontawesome.com/4eee35f757.js",
+      "absolute_url": "https://kit.fontawesome.com/4eee35f757.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "tag": "script",
+      "literal_target": "https://www.google-analytics.com/analytics.js",
+      "absolute_url": "https://www.google-analytics.com/analytics.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "link",
+      "literal_target": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "link",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "link",
+      "literal_target": "/assets/css/main.css",
+      "absolute_url": "https://gdavila.github.io/assets/css/main.css"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "#site-nav",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/#site-nav"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "#main",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/#main"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "#footer",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/#footer"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "/",
+      "absolute_url": "https://gdavila.github.io/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "/software/",
+      "absolute_url": "https://gdavila.github.io/software/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "/video/",
+      "absolute_url": "https://gdavila.github.io/video/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "/internet/",
+      "absolute_url": "https://gdavila.github.io/internet/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "/about/",
+      "absolute_url": "https://gdavila.github.io/about/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "https://github.com/gdavila/rttExplorer",
+      "absolute_url": "https://github.com/gdavila/rttExplorer"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "https://www.caida.org/tools/measurement/scamper/",
+      "absolute_url": "https://www.caida.org/tools/measurement/scamper/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "http://www.tracebox.org/",
+      "absolute_url": "http://www.tracebox.org/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "img",
+      "literal_target": "/internet/rttReporte/unnamed-chunk-1-1.png",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-1-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "img",
+      "literal_target": "/internet/rttReporte/unnamed-chunk-2-1.png",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-2-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "img",
+      "literal_target": "/internet/rttReporte/unnamed-chunk-3-1.png",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-3-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "img",
+      "literal_target": "/internet/rttReporte/unnamed-chunk-4-1.png",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-4-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "img",
+      "literal_target": "/internet/rttReporte/unnamed-chunk-5-1.png",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-5-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "img",
+      "literal_target": "/internet/rttReporte/unnamed-chunk-6-1.png",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-6-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "img",
+      "literal_target": "/internet/rttReporte/unnamed-chunk-7-1.png",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-7-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "img",
+      "literal_target": "/internet/rttReporte/unnamed-chunk-8-1.png",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-8-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "img",
+      "literal_target": "/internet/rttReporte/unnamed-chunk-9-1.png",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-9-1.png"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "#",
+      "absolute_url": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/#"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "/internet/PartialService/2018-02-01-PartialService/",
+      "absolute_url": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "/feed.xml",
+      "absolute_url": "https://gdavila.github.io/feed.xml"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "https://jekyllrb.com",
+      "absolute_url": "https://jekyllrb.com"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "a",
+      "literal_target": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/",
+      "absolute_url": "https://mademistakes.com/work/minimal-mistakes-jekyll-theme/"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "script",
+      "literal_target": "/assets/js/main.min.js",
+      "absolute_url": "https://gdavila.github.io/assets/js/main.min.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "script",
+      "literal_target": "https://kit.fontawesome.com/4eee35f757.js",
+      "absolute_url": "https://kit.fontawesome.com/4eee35f757.js"
+    },
+    {
+      "referrer": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "tag": "script",
+      "literal_target": "https://www.google-analytics.com/analytics.js",
+      "absolute_url": "https://www.google-analytics.com/analytics.js"
+    }
+  ],
+  "probes": {
+    "https://gdavila.github.io/about/": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/about/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://gdavila.github.io/assets/css/main.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/assets/css/main.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/assets/images/Internetmeasurement.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/assets/images/Internetmeasurement.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://gdavila.github.io/assets/images/sample1.jpg": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/assets/images/sample1.jpg",
+      "content_type": "image/jpeg"
+    },
+    "https://gdavila.github.io/assets/images/background.jpg": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/assets/images/background.jpg",
+      "content_type": "image/jpeg"
+    },
+    "https://gdavila.github.io/assets/images/sample2.jpg": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/assets/images/sample2.jpg",
+      "content_type": "image/jpeg"
+    },
+    "https://gdavila.github.io/assets/images/Docsis.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/assets/images/Docsis.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/assets/js/main.min.js": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/assets/js/main.min.js",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "https://gdavila.github.io/broadcast/PartialService/table.png": {
+      "status": 404,
+      "effective_url": "https://gdavila.github.io/broadcast/PartialService/table.png",
+      "content_type": "text/html; charset=utf-8",
+      "get_confirmation": {
+        "status": 404,
+        "effective_url": "https://gdavila.github.io/broadcast/PartialService/table.png",
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    "https://gdavila.github.io/broadcast/PartialService/interferencia1CH-1.png": {
+      "status": 404,
+      "effective_url": "https://gdavila.github.io/broadcast/PartialService/interferencia1CH-1.png",
+      "content_type": "text/html; charset=utf-8",
+      "get_confirmation": {
+        "status": 404,
+        "effective_url": "https://gdavila.github.io/broadcast/PartialService/interferencia1CH-1.png",
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    "https://gdavila.github.io/broadcast/PartialService/unnamed-chunk-1-1.png": {
+      "status": 404,
+      "effective_url": "https://gdavila.github.io/broadcast/PartialService/unnamed-chunk-1-1.png",
+      "content_type": "text/html; charset=utf-8",
+      "get_confirmation": {
+        "status": 404,
+        "effective_url": "https://gdavila.github.io/broadcast/PartialService/unnamed-chunk-1-1.png",
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    "https://gdavila.github.io/broadcast/PartialService/unnamed-chunk-2-1.png": {
+      "status": 404,
+      "effective_url": "https://gdavila.github.io/broadcast/PartialService/unnamed-chunk-2-1.png",
+      "content_type": "text/html; charset=utf-8",
+      "get_confirmation": {
+        "status": 404,
+        "effective_url": "https://gdavila.github.io/broadcast/PartialService/unnamed-chunk-2-1.png",
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    "https://gdavila.github.io/broadcast/PartialService/interferencia2CH-1.png": {
+      "status": 404,
+      "effective_url": "https://gdavila.github.io/broadcast/PartialService/interferencia2CH-1.png",
+      "content_type": "text/html; charset=utf-8",
+      "get_confirmation": {
+        "status": 404,
+        "effective_url": "https://gdavila.github.io/broadcast/PartialService/interferencia2CH-1.png",
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    "https://gdavila.github.io/broadcast/PartialService/unnamed-chunk-3-1.png": {
+      "status": 404,
+      "effective_url": "https://gdavila.github.io/broadcast/PartialService/unnamed-chunk-3-1.png",
+      "content_type": "text/html; charset=utf-8",
+      "get_confirmation": {
+        "status": 404,
+        "effective_url": "https://gdavila.github.io/broadcast/PartialService/unnamed-chunk-3-1.png",
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    "https://gdavila.github.io/feed.xml": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/feed.xml",
+      "content_type": "application/xml"
+    },
+    "https://gdavila.github.io/google6c749668d315158c.html": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/google6c749668d315158c.html",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/shim/html5shiv.min.js": {
+      "status": 404,
+      "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/shim/html5shiv.min.js",
+      "content_type": "text/html; charset=utf-8",
+      "get_confirmation": {
+        "status": 404,
+        "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/shim/html5shiv.min.js",
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/js/bootstrap.min.js": {
+      "status": 404,
+      "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/js/bootstrap.min.js",
+      "content_type": "text/html; charset=utf-8",
+      "get_confirmation": {
+        "status": 404,
+        "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/js/bootstrap.min.js",
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/jquery-1.11.3/jquery.min.js": {
+      "status": 404,
+      "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/jquery-1.11.3/jquery.min.js",
+      "content_type": "text/html; charset=utf-8",
+      "get_confirmation": {
+        "status": 404,
+        "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/jquery-1.11.3/jquery.min.js",
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/highlightjs-1.1/highlight.js": {
+      "status": 404,
+      "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/highlightjs-1.1/highlight.js",
+      "content_type": "text/html; charset=utf-8",
+      "get_confirmation": {
+        "status": 404,
+        "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/highlightjs-1.1/highlight.js",
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/shim/respond.min.js": {
+      "status": 404,
+      "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/shim/respond.min.js",
+      "content_type": "text/html; charset=utf-8",
+      "get_confirmation": {
+        "status": 404,
+        "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/shim/respond.min.js",
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/navigation-1.1/tabsets.js": {
+      "status": 404,
+      "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/navigation-1.1/tabsets.js",
+      "content_type": "text/html; charset=utf-8",
+      "get_confirmation": {
+        "status": 404,
+        "effective_url": "https://gdavila.github.io/internet/2018-08-01-ParisTraceroute/ParisTraceroute_files/navigation-1.1/tabsets.js",
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/bootstrap.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/bootstrap.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/bootstrap-theme.css.map": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/bootstrap-theme.css.map",
+      "content_type": "application/json; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/bootstrap-theme.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/bootstrap-theme.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/bootstrap-theme.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/bootstrap-theme.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/bootstrap.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/bootstrap.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/cerulean.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/cerulean.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/bootstrap.css.map": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/bootstrap.css.map",
+      "content_type": "application/json; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/cosmo.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/cosmo.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/flatly.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/flatly.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/Lato.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/Lato.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/LatoItalic.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/LatoItalic.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/LatoBold.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/LatoBold.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/NewsCycle.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/NewsCycle.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/NewsCycleBold.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/NewsCycleBold.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/OpenSans.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/OpenSans.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/OpenSansBold.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/OpenSansBold.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/OpenSansBoldItalic.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/OpenSansBoldItalic.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/OpenSansItalic.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/OpenSansItalic.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/OpenSansLight.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/OpenSansLight.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/Raleway.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/Raleway.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/OpenSansLightItalic.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/OpenSansLightItalic.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/RalewayBold.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/RalewayBold.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/Roboto.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/Roboto.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/RobotoBold.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/RobotoBold.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/RobotoLight.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/RobotoLight.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/SourceSansPro.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/SourceSansPro.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/RobotoMedium.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/RobotoMedium.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/SourceSansProBold.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/SourceSansProBold.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/SourceSansProItalic.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/SourceSansProItalic.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/SourceSansProLight.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/SourceSansProLight.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/Ubuntu.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/fonts/Ubuntu.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/journal.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/journal.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/lumen.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/lumen.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/readable.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/readable.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/paper.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/paper.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/sandstone.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/sandstone.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/simplex.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/simplex.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/spacelab.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/spacelab.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/united.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/united.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/yeti.min.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/css/yeti.min.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff",
+      "content_type": "font/woff"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.eot": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.eot",
+      "content_type": "application/vnd.ms-fontobject"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.ttf": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.ttf",
+      "content_type": "font/ttf"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.svg": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.svg",
+      "content_type": "image/svg+xml"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/js/bootstrap.min.js": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/js/bootstrap.min.js",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff2": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff2",
+      "content_type": "font/woff2"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/js/bootstrap.js": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/js/bootstrap.js",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/js/npm.js": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/js/npm.js",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/highlightjs-1.1/highlight.js": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/highlightjs-1.1/highlight.js",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/shim/html5shiv.min.js": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/shim/html5shiv.min.js",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/shim/respond.min.js": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/bootstrap-3.3.5/shim/respond.min.js",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/highlightjs-1.1/default.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/highlightjs-1.1/default.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/highlightjs-1.1/textmate.css": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/highlightjs-1.1/textmate.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/navigation-1.1/FileSaver.min.js": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/navigation-1.1/FileSaver.min.js",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/jquery-1.11.3/jquery.min.js": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/jquery-1.11.3/jquery.min.js",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/navigation-1.1/codefolding.js": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/navigation-1.1/codefolding.js",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/navigation-1.1/sourceembed.js": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/navigation-1.1/sourceembed.js",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/PartialService/2018-02-01-PartialService/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/navigation-1.1/tabsets.js": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/ParisTraceroute/ParisTraceroute_files/navigation-1.1/tabsets.js",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/PartialService/interferencia1CH-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/PartialService/interferencia1CH-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/PartialService/unnamed-chunk-1-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/PartialService/unnamed-chunk-1-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/PartialService/unnamed-chunk-2-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/PartialService/unnamed-chunk-2-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/PartialService/interferencia2CH-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/PartialService/interferencia2CH-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/PartialService/table.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/PartialService/table.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/PartialService/unnamed-chunk-3-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/PartialService/unnamed-chunk-3-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/rttReporte/2017-09-01-rttReporte/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-2-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-2-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-1-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-1-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-5-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-5-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-3-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-3-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-4-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-4-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-6-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-6-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-8-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-8-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-7-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-7-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-9-1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/internet/rttReporte/unnamed-chunk-9-1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/raw/ParisTraceroute.Rmd": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/raw/ParisTraceroute.Rmd",
+      "content_type": "application/octet-stream"
+    },
+    "https://gdavila.github.io/raw/ParisTraceroute.pcap": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/raw/ParisTraceroute.pcap",
+      "content_type": "application/vnd.tcpdump.pcap"
+    },
+    "https://gdavila.github.io/raw/PartialServTCP/CM3848VE_2CH_CHannels.csv": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/raw/PartialServTCP/CM3848VE_2CH_CHannels.csv",
+      "content_type": "text/csv; charset=utf-8"
+    },
+    "https://gdavila.github.io/raw/PartialServTCP/CM3848VE_CHannels.csv": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/raw/PartialServTCP/CM3848VE_CHannels.csv",
+      "content_type": "text/csv; charset=utf-8"
+    },
+    "https://gdavila.github.io/raw/PartialServTCP/CMSVG6582_BW.CSV": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/raw/PartialServTCP/CMSVG6582_BW.CSV",
+      "content_type": "text/csv; charset=utf-8"
+    },
+    "https://gdavila.github.io/raw/PartialServTCP/CMSVG6582_CHannels.csv": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/raw/PartialServTCP/CMSVG6582_CHannels.csv",
+      "content_type": "text/csv; charset=utf-8"
+    },
+    "https://gdavila.github.io/raw/PartialService.Rmd": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/raw/PartialService.Rmd",
+      "content_type": "application/octet-stream"
+    },
+    "https://gdavila.github.io/software/": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/software/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://gdavila.github.io/video/": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://gdavila.github.io/video/ffmpegClock/ffplay2.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/ffmpegClock/ffplay2.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/video/ffmpegClock/ffplay1.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/ffmpegClock/ffplay1.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://gdavila.github.io/video/vmaf_vs_p1203/cv_encoderA.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/vmaf_vs_p1203/cv_encoderA.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/video/vmaf_vs_p1203/cv_encoderB.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/vmaf_vs_p1203/cv_encoderB.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/video/vmaf_vs_p1203/cv_x264.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/vmaf_vs_p1203/cv_x264.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/video/vmaf_vs_p1203/vmaf_p1203.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/vmaf_vs_p1203/vmaf_p1203.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/video/vmaf_vs_p1203/encoders_vmaf.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/vmaf_vs_p1203/encoders_vmaf.png",
+      "content_type": "image/png"
+    },
+    "https://gdavila.github.io/video/vmaf_vs_p1203/encoders_p1203.png": {
+      "status": 200,
+      "effective_url": "https://gdavila.github.io/video/vmaf_vs_p1203/encoders_p1203.png",
+      "content_type": "image/png"
+    },
+    "https://render.githubusercontent.com/render/math?math=T_{tcp}= \\dfrac{mss}{rtt}*\\dfrac{1}{\\sqrt{p}}": {
+      "status": 404,
+      "effective_url": "https://render.githubusercontent.com/render/math?math=T_{tcp}=%20\\dfrac{mss}{rtt}%2A\\dfrac{1}{\\sqrt{p}}",
+      "content_type": "text/plain; charset=utf-8",
+      "get_confirmation": {
+        "status": 400,
+        "effective_url": "https://render.githubusercontent.com/render/math?math=T_{tcp}=%20\\dfrac{mss}{rtt}%2A\\dfrac{1}{\\sqrt{p}}",
+        "content_type": "text/plain; charset=utf-8"
+      }
+    },
+    "https://render.githubusercontent.com/render/math?math=T": {
+      "status": 404,
+      "effective_url": "https://render.githubusercontent.com/render/math?math=T",
+      "content_type": "text/plain; charset=utf-8",
+      "get_confirmation": {
+        "status": 400,
+        "effective_url": "https://render.githubusercontent.com/render/math?math=T",
+        "content_type": "text/plain; charset=utf-8"
+      }
+    },
+    "https://render.githubusercontent.com/render/math?math=\\frac{vmaf}{20}": {
+      "status": 404,
+      "effective_url": "https://render.githubusercontent.com/render/math?math=\\frac{vmaf}{20}",
+      "content_type": "text/plain; charset=utf-8",
+      "get_confirmation": {
+        "status": 400,
+        "effective_url": "https://render.githubusercontent.com/render/math?math=\\frac{vmaf}{20}",
+        "content_type": "text/plain; charset=utf-8"
+      }
+    },
+    "https://render.githubusercontent.com/render/math?math=n_{ch}": {
+      "status": 404,
+      "effective_url": "https://render.githubusercontent.com/render/math?math=n_{ch}",
+      "content_type": "text/plain; charset=utf-8",
+      "get_confirmation": {
+        "status": 400,
+        "effective_url": "https://render.githubusercontent.com/render/math?math=n_{ch}",
+        "content_type": "text/plain; charset=utf-8"
+      }
+    },
+    "https://render.githubusercontent.com/render/math?math=rtt": {
+      "status": 404,
+      "effective_url": "https://render.githubusercontent.com/render/math?math=rtt",
+      "content_type": "text/plain; charset=utf-8",
+      "get_confirmation": {
+        "status": 400,
+        "effective_url": "https://render.githubusercontent.com/render/math?math=rtt",
+        "content_type": "text/plain; charset=utf-8"
+      }
+    },
+    "https://render.githubusercontent.com/render/math?math=p": {
+      "status": 404,
+      "effective_url": "https://render.githubusercontent.com/render/math?math=p",
+      "content_type": "text/plain; charset=utf-8",
+      "get_confirmation": {
+        "status": 400,
+        "effective_url": "https://render.githubusercontent.com/render/math?math=p",
+        "content_type": "text/plain; charset=utf-8"
+      }
+    },
+    "https://render.githubusercontent.com/render/math?math=mss": {
+      "status": 404,
+      "effective_url": "https://render.githubusercontent.com/render/math?math=mss",
+      "content_type": "text/plain; charset=utf-8",
+      "get_confirmation": {
+        "status": 400,
+        "effective_url": "https://render.githubusercontent.com/render/math?math=mss",
+        "content_type": "text/plain; charset=utf-8"
+      }
+    },
+    "https://render.githubusercontent.com/render/math?math=p \\approx cer*\\dfrac{ip_{size}}{codeword{size}} *\\dfrac{1}{n_{ch}} \\approx \\dfrac {7 * cer}{n_{ch}}": {
+      "status": 404,
+      "effective_url": "https://render.githubusercontent.com/render/math?math=p%20\\approx%20cer%2A\\dfrac{ip_{size}}{codeword{size}}%20%2A\\dfrac{1}{n_{ch}}%20\\approx%20\\dfrac%20{7%20%2A%20cer}{n_{ch}}",
+      "content_type": "text/plain; charset=utf-8",
+      "get_confirmation": {
+        "status": 400,
+        "effective_url": "https://render.githubusercontent.com/render/math?math=p%20\\approx%20cer%2A\\dfrac{ip_{size}}{codeword{size}}%20%2A\\dfrac{1}{n_{ch}}%20\\approx%20\\dfrac%20{7%20%2A%20cer}{n_{ch}}",
+        "content_type": "text/plain; charset=utf-8"
+      }
+    }
+  }
+}

@@ -1,0 +1,375 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Simplifying the way to use vmaf - Gabriel Davila</title>
+<meta name="description" content="Simplifying the way to use vmaf ">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Gabriel Davila">
+<meta property="og:title" content="Simplifying the way to use vmaf">
+<meta property="og:url" content="https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/">
+
+
+  <meta property="og:description" content="Simplifying the way to use vmaf ">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-03-05T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://gdavila.github.io/video/Vmaf/2020-03-05-Vmaf/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Video, Software and Data Communications",
+      "url": "https://gdavila.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Gabriel Davila Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Gabriel Davila
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/software/">Software</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/video/">Video &amp; Media</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/internet/">Data Communications</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Simplifying the way to use vmaf">
+    <meta itemprop="description" content="Simplifying the way to use vmaf">
+    <meta itemprop="datePublished" content="2020-03-05T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Simplifying the way to use vmaf
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p><a href="https://github.com/Netflix/vmaf">VMAF</a> has become one of the <a href="https://netflixtechblog.com/vmaf-the-journey-continues-44b51ee9ed12">most used tools</a> for video quality assessment (VQA). In practise, VMAF analysis requires two inputs: (i) a  sample of the Source (Reference Video) and (ii) a sample of the transcoded video, tipically captured at the output of the encoder (Distorted Video).</p>
+
+<p>One of the tools where VMAF is available is <code class="language-plaintext highlighter-rouge">libvmaf</code>, a <code class="language-plaintext highlighter-rouge">c/c++</code> library implemented in <code class="language-plaintext highlighter-rouge">ffmpeg</code>  that doesn’t require uncompressing the video samples.</p>
+
+<p><code class="language-plaintext highlighter-rouge">ffmpeg</code>  usage example for VMAF computation:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> &lt;main&gt; <span class="nt">-i</span> &lt;reference&gt; <span class="nt">-lavfi</span> <span class="s2">"libvmaf=model_path=/usr/local/share/model/vmaf_v0.6.1.pkl"</span> <span class="nt">-f</span> null -
+</code></pre></div></div>
+
+<p>However, VMAF requires full frame-to-frame synchronization between samples (Reference and Distorted). This fact could be a  pain in the neck, mainly for live content analysis —where is not common to get the source and the transcoded video samples synced. The most typical reasons for this desynchronization are:</p>
+
+<ul>
+  <li>
+    <p>Interlaced sources and Progressive outputs, <em>i. e.,</em> Sources at 29.97i fps and Outputs at 29.97p fps.</p>
+  </li>
+  <li>
+    <p>Offset between Source and Output video samples, <em>i. e.,</em> the Reference video sample was captured a couple of seconds either  after or before the Output video sample was taken.</p>
+  </li>
+  <li>
+    <p>Frame rate conversion between Sources and Outputs.</p>
+  </li>
+</ul>
+
+<p>Additionally, VMAF needs that Reference and Distorted videos have the same resolution. In this way a sort <em>normalization</em> between source and reference is needed. Through this blog entry, I will go over some suggestions to deal with these issues. Finally, the techniques described here are freely available on <a href="https://github.com/gdavila/easyVmaf">easyVmaf</a>. A python based script that allows video scaling, video deinterlacing, video syncing, etc.</p>
+
+<h2 id="syncing-reference-and-distorted-video-samples">Syncing Reference and Distorted video samples</h2>
+
+<p>The syncing could be done by using a sample of the distorted video and sliding it frame-by-frame forward and backward in order to look up the best PSNR in regard to the Reference video. Once the best PSNR is found, the amount of time slided is the offset needed to get the frames synced.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   +-----------------------------------------------------------+
+   |                                                           |
+   |                     REFERENCE VIDEO                       |
+   |                                                           |
+   +-----------------------------------------------------------+
+                        ^
+                        |
+                        |PSNR computation
+                        |
+                        v
+               +-----------------+
+               |   DISTORTED     |
+   &lt;--backward--   VIDEO SAMPLE  --------forward-------------&gt;
+               |                 |
+               +-----------------+
+                  sliding window
+
+                  ---max-\
+            -----/      --\
+      ------/               --\    PSNR             /\-\
+   ---/                         ------------/\-----/    \-----
+
+   &lt;-------offset-----&gt;
+</code></pre></div></div>
+
+<p>The sliding windows and the PSNR computation could be done through <code class="language-plaintext highlighter-rouge">trim</code> and <code class="language-plaintext highlighter-rouge">psnr</code> (filters of <code class="language-plaintext highlighter-rouge">ffmpeg</code>), example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg  <span class="nt">-i</span> &lt;<span class="nb">source</span><span class="o">&gt;</span> <span class="nt">-i</span> &lt;distorted&gt; <span class="nt">-lavfi</span> <span class="s2">"[1:v]trim=start=&lt;OFFSET&gt;:duration=&lt;WINDOW_SIZE&gt;,setpts=PTS-STARTPTS[distorted];[0:v][distorted]psnr=stats_file=psnr.log"</span> <span class="nt">-f</span> null -
+</code></pre></div></div>
+
+<p>The previous command should be run by incrementing the <code class="language-plaintext highlighter-rouge">&lt;OFFSET&gt;</code> in steps of 1/fps in order to slide frame-by-frame the distorted video. Additionally, distored video is  trimmed at a sample of <code class="language-plaintext highlighter-rouge">&lt;WINDOW_SIZE&gt;</code> duration in order to simplify the PSNR computation. The <code class="language-plaintext highlighter-rouge">&lt;OFFSET&gt;</code> <code class="language-plaintext highlighter-rouge">T</code> that produces the max PSNR will be used to compute VMAF, i.e., :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> &lt;main&gt; <span class="nt">-i</span> &lt;reference&gt; <span class="nt">-lavfi</span> <span class="s2">"[1:v]trim=start=&lt;T&gt;,setpts=PTS-STARTPTS[ref];[0:v][ref]libvmaf=model_path=/usr/local/share/model/vmaf_v0.6.1.pkl"</span> <span class="nt">-f</span> null -
+</code></pre></div></div>
+
+<p>The above example considers that by computing the PSNR through a sliding window in the main video, the best value was finding at <code class="language-plaintext highlighter-rouge">T</code> seconds from the start of the reference video. In this way, in order to get VMAF properly synced, the computation  should start with the Frame located at <code class="language-plaintext highlighter-rouge">&lt;T&gt;</code> seconds within the reference video (this is done by trim filter). This means that the frame at <code class="language-plaintext highlighter-rouge">&lt;T&gt;</code> seconds  of the Reference sample matches with the first frame of the Distorted sample.</p>
+
+<h2 id="interalaced-sources">Interalaced Sources</h2>
+
+<p>Most live sources are in interlaced formats, i. e., 29.97i / 30i and then they are tipically transcoded to progresive format for ABR delivery i. e., 29.97p / 30p.</p>
+
+<p>In order to use VMAF to compare progresive outputs with interlaced references, deinterlace is needed. <code class="language-plaintext highlighter-rouge">FFmpeg</code> allows deinterlacing by using <code class="language-plaintext highlighter-rouge">yadif</code> filter.</p>
+
+<ul>
+  <li>
+    <p><strong>Reference n [fps] interlace —&gt; Distorted n [fps] progressive:</strong> deinterlacing has to be done by producing one output frame for each input frame i. e., <code class="language-plaintext highlighter-rouge">yadif=0:-1:0</code> (30i —&gt; 30p). Example:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> ffmpeg <span class="nt">-i</span> &lt;main@30i&gt; <span class="nt">-i</span> &lt;reference@30p&gt; <span class="nt">-lavfi</span> <span class="s2">"[1:v]yadif=0:-1:0[ref];[0:v][ref]libvmaf=model_path=/usr/local/share/model/vmaf_v0.6.1.pkl"</span> <span class="nt">-f</span> null -
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Reference n [fps] interlace —&gt; Distorted 2xn [fps] progressive:</strong> deinterlacing has to be done by producing one output frame for each input field i. e., <code class="language-plaintext highlighter-rouge">yadif=1:-1:0</code> (30i —&gt; 60p). Example:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> ffmpeg <span class="nt">-i</span> &lt;main@30i&gt; <span class="nt">-i</span> &lt;reference@60p&gt; <span class="nt">-lavfi</span> <span class="s2">"[1:v]yadif=1:-1:0[ref];[0:v][ref]libvmaf=model_path=/usr/local/share/model/vmaf_v0.6.1.pkl"</span> <span class="nt">-f</span> null -
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="framerate-adaptation">Framerate adaptation</h2>
+
+<p>Although it is less common, sometimes the framerate of the distorted video could not match with the frame rate of the Reference. In this case, the framerate adaptation could be done with <code class="language-plaintext highlighter-rouge">fps</code> filter. It is recommended to always adapt the framerate of the distorted video only, not reference. Example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> &lt;main@15i&gt; <span class="nt">-i</span> &lt;reference@30i&gt; <span class="nt">-lavfi</span> <span class="s2">"[1:v]fps=fps=30[ref];[0:v][ref]libvmaf=model_path=/usr/local/share/model/vmaf_v0.6.1.pkl"</span> <span class="nt">-f</span> null -
+</code></pre></div></div>
+
+<h2 id="resolution-adaptation">Resolution Adaptation</h2>
+
+<p>Resolution adaptation could be done by <code class="language-plaintext highlighter-rouge">scale</code> filter by using <code class="language-plaintext highlighter-rouge">bicubic</code> algorithm. Example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> &lt;main@720p&gt; <span class="nt">-i</span> &lt;reference@1080p&gt; <span class="nt">-lavfi</span> <span class="s2">"[0:v]scale=1920:1080:flags=bicubic[main];[main][1:v]libvmaf=model_path=/usr/local/share/model/vmaf_v0.6.1.pkl"</span> <span class="nt">-f</span> null -
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-03-05T00:00:00+00:00">March 5, 2020</time></p>
+
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/video/ffmpegClock/2019-06-05-ffmpegClock/" class="pagination--pager" title="Wall clock usando ffmpeg
+">Previous</a>
+    
+    
+      <a href="/video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/" class="pagination--pager" title="Vmaf vs ITU-p1203: An empirical comparison for HD videos
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2025 Video, Software and Data Communications. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+  <script>
+  window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+  ga('create','UA-108881902-1','auto');
+  ga('set', 'anonymizeIp', false);
+  ga('send','pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,341 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Wall clock usando ffmpeg - Gabriel Davila</title>
+<meta name="description" content="Wall clock usando ffmpeg ">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Gabriel Davila">
+<meta property="og:title" content="Wall clock usando ffmpeg">
+<meta property="og:url" content="https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/">
+
+
+  <meta property="og:description" content="Wall clock usando ffmpeg ">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2019-06-05T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://gdavila.github.io/video/ffmpegClock/2019-06-05-ffmpegClock/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Video, Software and Data Communications",
+      "url": "https://gdavila.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Gabriel Davila Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Gabriel Davila
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/software/">Software</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/video/">Video &amp; Media</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/internet/">Data Communications</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Wall clock usando ffmpeg">
+    <meta itemprop="description" content="Wall clock usando ffmpeg">
+    <meta itemprop="datePublished" content="2019-06-05T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Wall clock usando ffmpeg
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Dentro del mundo de Video Broadcast, se conoce como <em>Wall Clock</em> a un stream de video que tiene impreso un cronómetro. Típicamente se usa para medir la latencia entre dos puntos de la red de video, por ejemplo, tomando una captura del <em>time stamp</em> del cronomertro en los dos puntos de red al mismo tiempo, se puede calcular la diferencia entre ambos valores y el resultado es la latencia del punto A al punto B.</p>
+
+<p>En este breve tutorial, se muestra como construir un video con <em>Wall Clock</em> usando la herramienta open source <a href="https://ffmpeg.org/">ffmeg</a>.</p>
+
+<p>La mayor parte de este contenido fue originalmente expuesto por <a href="https://stackoverflow.com/users/5726027/gyan">Gyan</a> en <a href="https://stackoverflow.com/questions/47543426/ffmpeg-embed-current-time-in-milliseconds-into-video">stackoverflow</a></p>
+
+<h1 id="definiciones">Definiciones</h1>
+
+<ul>
+  <li>El siguiente ejemplo de ffmpeg genera un <em>Wall Clock</em> con pasos en escala de milisegundos y precisión de $\mu$s.</li>
+  <li>Bitrate video= 5 Mbps</li>
+  <li>Bitrate mux= 8 Mbps @ CBR</li>
+  <li>Codec = H.264/AVC</li>
+  <li>Frame rate = 30 fps (ntsc)</li>
+  <li>Resolución = 640x480</li>
+  <li>Output = multicast udp</li>
+  <li>GOP length = 6</li>
+</ul>
+
+<h1 id="pasos">Pasos</h1>
+
+<p>1. Instalar <a href="https://ffmpeg.org/">ffmeg</a></p>
+
+<p>2.  Ejecutar el siguiente codigo en el host que hará el stream:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg -re -f lavfi -i color=black:640x480:rate=ntsc,format=yuv420p -g 6 -r ntsc \
+-vf "settb=AVTB,setpts='trunc(PTS/1K)*1K+st(1,trunc(RTCTIME/1K))-1K*trunc(ld(1)/1K)'\
+,drawbox=y=ih/PHI:color=black@0.4:width=iw:height=48:t=max,\
+drawtext=text='%{localtime}.%{eif\:1M*t-1K*trunc(t*1K)\:d}:fontfile='/usr/share/fonts/truetype/ \
+dejavu/DejaVuSans.ttf':fontsize=40:fontcolor=white:x=(w-tw)/2:y=240'" \
+-b:v 5M -minrate:v 5M -maxrate:v 5M -bufsize:v 1M -preset ultrafast \
+-vcodec libx264  -r ntsc -tune zerolatency  -muxrate 8M  \
+-pcr_period 40 -f mpegts udp://@239.123.123.1:50000?pkt_size=1316 
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>La primera linea de código llama a <code class="language-plaintext highlighter-rouge">ffmpeg</code> tomando como formato un video sintético usando la librería lavfi (<code class="language-plaintext highlighter-rouge">-f lavfi</code>) y manteniendo el frame rate del input (<code class="language-plaintext highlighter-rouge">re</code>). Este video usa como background un lienzo negro de 640x480 a 30 fps en formato de color YUV 4:2;0 (<code class="language-plaintext highlighter-rouge">color=black:640x480:rate=ntsc,format=yuv420p</code>). La salida del video codificado tendrá un GOP de 6 y un frame rate de 30 fps (<code class="language-plaintext highlighter-rouge">-g 6 -r ntsc </code> ).</p>
+  </li>
+  <li>
+    <p>Las lineas 2-5, imprimen el wallclock en el video. El reloj saldrá en el formato  <code class="language-plaintext highlighter-rouge">yyyy-MM-dd h:m:s.ms</code>. Desafortunadamente las librerías para impresion de fecha de ffmpeg no incluyen de forma nativa la información en milisegundos. Para añadir esta información, primero se modifican los 3 dígitos menos significativos del PTS para sincronizarlos con el momento exacto donde se añade el timestamp del wallclock . Esto no impacta a la velocidad de reproducción, ya que los trés digitos menos significativos del PTS corresponden a los microsegundos y el frame rate de un video está tipicamente en el orden de los milisegundos.</p>
+  </li>
+  <li>
+    <p>En la segunda linea se usa el filtro <code class="language-plaintext highlighter-rouge">-vf</code> que añade el wallclock como un texto sobre el stream de video. Para esto se elige el timebase por defecto <code class="language-plaintext highlighter-rouge">settb=AVTB</code>, que significa una precisión de <code class="language-plaintext highlighter-rouge">10e-6</code> ($\mu$s). Adicionalmente  se añade los milisegundos del tiempo RTC en el PTS. Para esto se modifica la variable <code class="language-plaintext highlighter-rouge">setpts</code>. Primero se redondea el PTS para eliminar la información de los tres digitos menos significativos y se lo vuelve a las unidades originales ($\mu$) <code class="language-plaintext highlighter-rouge">trunc(PTS/1K)*1K</code>. En segundo lugar, se extrae los milisegundos del timer RTC <code class="language-plaintext highlighter-rouge">st(1,trunc(RTCTIME/1K))-1K*trunc(ld(1)/1K)</code> y se los suma a los dígitos menos significativos del PTS. <code class="language-plaintext highlighter-rouge">st()</code> y <code class="language-plaintext highlighter-rouge">lt()</code> sirven como métodos para almacenar y leer variables (1-10). En el código, primero se almacena la variable 	<code class="language-plaintext highlighter-rouge">1</code> y después se lee la variable <code class="language-plaintext highlighter-rouge">1</code>.</p>
+  </li>
+  <li>
+    <p>En la tercera linea, se añade un cuadro de texto a la  altura <code class="language-plaintext highlighter-rouge">ih/PHI</code> o 640/<em>Golden Ratio</em>, con relleno <code class="language-plaintext highlighter-rouge">t=fill</code> negro a una transparencia del 40% <code class="language-plaintext highlighter-rouge">color=black@0.4</code>, ancho igual al del video <code class="language-plaintext highlighter-rouge">iw</code>, altura de 48 px. En la cuarta linea se añade el texto final,  que consiste en la variable <code class="language-plaintext highlighter-rouge">{localtime}</code> seguido de un punto y los milisegundos que previamente se añadieron en el PTS. Para esto se accede a la variable <a href="https://ffmpeg.org/doxygen/2.4/aeval_8c_source.html"><code class="language-plaintext highlighter-rouge">t</code></a>, que representa el PTS en segundos y se extrae los milisegundos (digitos menos significativos) previamente agregados <code class="language-plaintext highlighter-rouge">\:1M*t-1K*trunc(t*1K)\</code>. El resto obedece a parametros para la selección de font y tamaño de letra.</p>
+  </li>
+  <li>
+    <p>Las lineas 6-8, setean los parametros de salida del stream, como la codificación (<em>H264</em>), el bitrate del video (<em>5 Mbps</em>), el bitrate del mux (<em>8 Mbps</em>) y la dirección multicast del stream.</p>
+  </li>
+</ul>
+
+<p>3. Reproducir el sream. Para hacer una prueba del stream previamente definido, se puede reproducir el video en el mismo host que hace el stream usando fflpay</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffplay -i  udp://239.123.123.1:50000 -fflags nobuffer
+</code></pre></div></div>
+<h1 id="resultados">Resultados</h1>
+<ul>
+  <li>El resultado del video con el wallclock debería ser:</li>
+</ul>
+
+<p><img src="/video/ffmpegClock/ffplay1.png" alt="ejemplo ffplay"></p>
+
+<ul>
+  <li>Se puede modificar el código anterior para añadir video dinámico en lugar de un fondo negro. Por ejemplo, usando los <em>sources test</em> incluidos en ffmpeg <code class="language-plaintext highlighter-rouge">-i testsrc2=640x480:rate=ntsc,format=yuv420p</code>, el stream luciría así:</li>
+</ul>
+
+<p><img src="/video/ffmpegClock/ffplay2.png" alt="ejemplo ffplay"></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-06-05T00:00:00+00:00">June 5, 2019</time></p>
+
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/video/Vmaf/2020-03-05-Vmaf/" class="pagination--pager" title="Simplifying the way to use vmaf
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2025 Video, Software and Data Communications. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+  <script>
+  window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+  ga('create','UA-108881902-1','auto');
+  ga('set', 'anonymizeIp', false);
+  ga('send','pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
