@@ -113,6 +113,7 @@ end
 home_urls = home.scan(/<a href="([^"]+)" class="post-preview\b/).flatten
 errors << 'Homepage posts differ from descending publication dates' unless home_urls == expected_home_urls
 errors << 'Legacy homepage content remains' if home.include?('ghbtns.com/github-btn.html') || home.include?('flic.kr/p/omaQ4C')
+errors << 'Personal GitHub link remains on homepage' if home.include?('https://github.com/gdavila')
 errors << 'Cloud Infrastructure navigation label missing' unless home.include?('CLOUD INFRASTRUCTURE')
 about = site.join('about/index.html').read
 %w[Tech\ Architect Buenos\ Aires gdavilarevelo].each do |value|

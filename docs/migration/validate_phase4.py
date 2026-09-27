@@ -156,6 +156,7 @@ def main():
     check(home_posts == expected_home_posts, "Homepage posts differ from descending publication dates")
     check("ghbtns.com/github-btn.html" not in home_html and "flic.kr/p/omaQ4C" not in home_html,
           "Legacy homepage embed or header remains")
+    check("https://github.com/gdavila" not in home_html, "Personal GitHub link remains on homepage")
     check("CLOUD INFRASTRUCTURE" in home_html, "Cloud Infrastructure navigation label missing")
     about_html = (site / "about/index.html").read_text()
     about_text = html.unescape(" ".join(parse(about_html).text))
