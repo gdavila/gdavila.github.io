@@ -1,6 +1,6 @@
 require 'cgi'
 
-module MigrationSrcdoc
+module SrcdocEscaping
   def escape_srcdoc(content)
     CGI.escapeHTML(content).gsub(/[ \t\r\n]/) do |character|
       "&##{character.ord};"
@@ -8,4 +8,4 @@ module MigrationSrcdoc
   end
 end
 
-Liquid::Template.register_filter(MigrationSrcdoc)
+Liquid::Template.register_filter(SrcdocEscaping)

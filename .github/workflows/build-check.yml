@@ -25,4 +25,4 @@ jobs:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --destination _site
       - name: Check generated site
-        run: bundle exec ruby tools/check_htmlproofer_baseline.rb _site
+        run: bundle exec ruby tools/check_htmlproofer.rb _site

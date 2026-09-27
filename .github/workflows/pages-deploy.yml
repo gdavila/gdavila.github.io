@@ -34,8 +34,8 @@ jobs:
         env:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --destination _site
-      - name: Check generated site against exact baseline
-        run: bundle exec ruby tools/check_htmlproofer_baseline.rb _site
+      - name: Check generated site against known issues
+        run: bundle exec ruby tools/check_htmlproofer.rb _site
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact

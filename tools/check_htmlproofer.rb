@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
-# Compare HTMLProofer's complete failure set against the accepted legacy baseline.
+# Reject new HTMLProofer failures while tracking the site's known content issues.
 
 require 'json'
 require 'pathname'
 require 'html_proofer'
 
 root = File.expand_path(ARGV.fetch(0, '_site'))
-baseline_path = File.expand_path('../docs/migration/htmlproofer-baseline.json', __dir__)
-baseline = JSON.parse(File.read(baseline_path))
+known_path = File.join(__dir__, 'known-htmlproofer-failures.json')
+known = JSON.parse(File.read(known_path))
 
 runner = HTMLProofer.check_directory(root, disable_external: true)
 runner.check_files
@@ -26,27 +26,27 @@ end
 
 sort_key = ->(failure) { JSON.generate(failure) }
 actual.sort_by!(&sort_key)
-baseline.sort_by!(&sort_key)
+known.sort_by!(&sort_key)
 
-if actual == baseline
-  puts "HTMLProofer matched the exact #{baseline.length}-failure legacy baseline."
+if actual == known
+  puts "HTMLProofer matched #{known.length} known content issues."
   exit 0
 end
 
 unexpected = actual.dup
-baseline.each do |known|
-  index = unexpected.index(known)
+known.each do |entry|
+  index = unexpected.index(entry)
   unexpected.delete_at(index) if index
 end
-missing = baseline.dup
+resolved = known.dup
 actual.each do |found|
-  index = missing.index(found)
-  missing.delete_at(index) if index
+  index = resolved.index(found)
+  resolved.delete_at(index) if index
 end
 
-warn "HTMLProofer failure set differs from the exact baseline."
+warn 'HTMLProofer failure set differs from known content issues.'
 warn "Unexpected failures: #{unexpected.length}"
 unexpected.each { |failure| warn "  + #{JSON.generate(failure)}" }
-warn "Missing baseline failures: #{missing.length}"
-missing.each { |failure| warn "  - #{JSON.generate(failure)}" }
+warn "Resolved or changed known issues: #{resolved.length}"
+resolved.each { |failure| warn "  - #{JSON.generate(failure)}" }
 exit 1

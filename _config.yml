@@ -149,7 +149,7 @@ assets:
     env: # [development | production]
 
 pwa:
-  enabled: false # Keep the candidate and cutover free of service-worker caching.
+  enabled: false # Avoid stale cached pages after publication.
   cache:
     enabled: false
     # Paths defined here will be excluded from the PWA cache.
