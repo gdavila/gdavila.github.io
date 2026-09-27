@@ -7,9 +7,11 @@ categories: ["Video & Media"]
 date: 2026-09-27 00:00:00 -0300
 ---
 
-We approach Media over QUIC (MoQ) from broadcast multicast and HTTP Live Streaming (HLS) or Dynamic Adaptive Streaming over HTTP (DASH). HLS and DASH usually reach viewers through HTTP resources; managed Internet Protocol television (IPTV) often carries Real-time Transport Protocol (RTP) over User Datagram Protocol (UDP) multicast. This raises two immediate questions: where does MoQ sit in the stack, and who establishes a session with whom? Questions about captions, catalogs, signaling, packet loss, and media packaging follow from those basics.
+To understand Media over QUIC (MoQ), it helps to start with two familiar delivery models: HTTP-based adaptive streaming and managed Internet Protocol television (IPTV) over multicast. HTTP Live Streaming (HLS) and Dynamic Adaptive Streaming over HTTP (DASH) typically deliver media as HTTP resources requested by individual clients. Managed IPTV commonly distributes Real-time Transport Protocol (RTP) over User Datagram Protocol (UDP) multicast to many receivers at once.
 
-We examine these questions through small use cases and implementation traces. This first installment follows connection establishment and the first object flow in a publisher–relay–subscriber deployment. We use `draft-ietf-moq-transport-16` (called **MOQT** here) as the protocol reference and the draft-16 [Cloudflare `moq-rs` implementation](https://github.com/cloudflare/moq-rs) as the concrete example. MoQ names the broader IETF effort; MOQT is its transport protocol. We first establish the roles and naming model, then read the setup, control, and data exchanges. Later installments can compare `moq-dev`, `moq-rs`, and `moqtail` and examine the questions outside this case.
+MoQ does not fit neatly into either model. This raises two basic questions: where does its transport protocol sit in the stack, and which components establish sessions with one another? Once those relationships are clear, signaling, media packaging, catalogs, captions, and loss recovery become easier to place within the system.
+
+This first installment follows connection establishment and the first object flow in a publisher–relay–subscriber deployment. We use `draft-ietf-moq-transport-16` (called **MOQT** here) as the protocol reference and the draft-16 [Cloudflare `moq-rs` implementation](https://github.com/cloudflare/moq-rs) as the concrete example. MoQ names the broader IETF effort; MOQT is its transport protocol. We first establish the roles and naming model, then read the setup, control, and data exchanges. Later installments can compare `moq-dev`, `moq-rs`, and `moqtail` and examine the questions outside this case.
 
 ## MOQ Motivations
 
