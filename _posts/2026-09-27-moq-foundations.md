@@ -78,7 +78,7 @@ For `/bbb`, the relay accepts a subscriber's request for a track and issues its 
 
 The relay in this deployment listens on port `4443`:
 
-```text
+```rust
 INFO moq_relay_ietf::relay: listening on [::]:4443
 ```
 
@@ -128,7 +128,7 @@ MOQT's first stream is client-initiated and bidirectional. Its setup exchange es
 
 The following bounded excerpt is from the relay trace of the reference deployment. Timestamps and logging prefixes have been removed, and ellipses mark omitted fields; the displayed message types and fields are unchanged. It shows the publisher's WebTransport and MOQT setup, followed by the namespace request:
 
-```text
+```rust
 // Publisher related control messages logs in the relay
 web_transport_quinn::settings: sending SETTINGS frame settings=Settings({...})
 web_transport_quinn::settings: received SETTINGS frame settings=Settings({...})
@@ -144,7 +144,7 @@ The `web_transport_quinn` lines belong to HTTP/3/WebTransport setup using the Qu
 
 The subscriber follows the same lower-layer setup, then sends `SUBSCRIBE`. The next excerpt is from the same relay trace; `recv` and `sent` are from the **relay's** point of view. The first two requests are for the initialization track, and the later requests follow the same pattern for video and audio:
 
-```text
+```rust
 // Suscriber related control messages logs in the relay
 moq_transport::control: MoQT control message direction="recv" msg_type="SUBSCRIBE" subscribe_id=0 namespace=/bbb track_name=0.mp4
 moq_transport::control: MoQT control message direction="sent" msg_type="SUBSCRIBE" subscribe_id=1 namespace=/bbb track_name=0.mp4
@@ -164,7 +164,7 @@ Likewise, `(/bbb, 1.m4s)` uses request ID `2` and alias `2` downstream, but ID `
 
 Notice that the first track requested by the suscriber is `track_name=0.mp4`. The choice to ask for `0.mp4` first is specific to this `moq-rs` media workflow: its fragmented MP4 (fMP4) initialization data lets the subscriber identify `1.m4s` as video and `2.m4s` as audio. Immediately after that subscription, the subscriber logs reports:
 
-```text
+```rust
 moq_sub::media: using 1.m4s for video
 moq_sub::media: using 2.m4s for audio
 ```
@@ -175,7 +175,7 @@ moq_sub::media: using 2.m4s for audio
 
 Alternatevely to using fragmented MP4 (fMP4) for initialization, `moq-rs` can use catalogs. A catalog can serve a discovery role analogous to a manifest in HLS or DASH: it describes available tracks and information a client can use to choose among them. MOQT itself does not require the `moq-rs` names or prescribe a universal catalog track. In this implementation, the publisher also offers `.catalog`. On the catalog-first path, the subscriber requests Full Track Name `(/bbb, .catalog)` first. On `moq-rs`, using `.catalog` or `0.mp4` is a suscriber choise:
 
-```text
+```rust
 moq_transport::control: MoQT control message direction="recv" msg_type="SUBSCRIBE" subscribe_id=0 namespace=/bbb track_name=.catalog
 moq_transport::control: MoQT control message direction="sent" msg_type="SUBSCRIBE" subscribe_id=1 namespace=/bbb track_name=.catalog
 moq_transport::control: MoQT control message direction="recv" msg_type="SUBSCRIBE_OK" subscribe_id=1 track_alias=1
@@ -207,21 +207,21 @@ This mapping is a `moq-rs` packaging choice, not a requirement of MOQT draft-16:
 
 The following extract shows the first video group transmitted on the data channel in this run. The `SUBSCRIBE` line names `(/bbb, 1.m4s)`, the track the subscriber identifies as video from the initialization data (see [The control stream](#the-control-stream)). `SUBSCRIBE_OK` assigns Track Alias `3`, which then appears in the subgroup header. Retained lines follow their original order in the publisher capture. Wall-clock timestamps, colors, and module prefixes are removed; ellipses mark omitted fields, intermediate video objects, and interleaved audio lines:
 
-```text
+```rust
 moq_transport::control: MoQT control message direction="recv" msg_type="SUBSCRIBE" subscribe_id=3 namespace=/bbb track_name=1.m4s
 moq_transport::control: MoQT control message direction="sent" msg_type="SUBSCRIBE_OK" subscribe_id=3 track_alias=3
 [PUBLISHER] serve_subgroup: opened unidirectional stream
 [PUBLISHER] serve_subgroup: sending header - track_alias=3, group_id=25, subgroup_id=Some(0), ...
-[PUBLISHER] serve_subgroup: sending object #1 - object_id=0, ...
-[PUBLISHER] serve_subgroup: sending object #2 - object_id=1, ...
+[PUBLISHER] serve_subgroup: sending object 1 - object_id=0, ...
+[PUBLISHER] serve_subgroup: sending object 2 - object_id=1, ...
 ...
-[PUBLISHER] serve_subgroup: sending object #60 - object_id=59, ... payload_length=8236, ...
+[PUBLISHER] serve_subgroup: sending object 60 - object_id=59, ... payload_length=8236, ...
 [PUBLISHER] serve_subgroup: completed subgroup (group_id=25, subgroup_id=0, 60 objects sent)
 [PUBLISHER] serve_subgroup: sending header - track_alias=3, group_id=26, subgroup_id=Some(0), ...
-[PUBLISHER] serve_subgroup: sending object #1 - object_id=0, ...
+[PUBLISHER] serve_subgroup: sending object 1 - object_id=0, ...
 ```
 
-The first group sent after this subscription has Group ID `25` because the publisher was already processing the video and forming groups before the subscriber joined. This is the video track: `track_name=1.m4s` in `SUBSCRIBE` maps to `track_alias=3` in the header. Group `25` contains 60 objects, with Object IDs `0` through `59`; group `26` then begins at the next keyframe with Object ID `0` again. The `#1` and `#60` labels are log counters, while `object_id=` identifies the objects. The [publisher](https://github.com/cloudflare/moq-rs/blob/main/moq-pub/src/media.rs) starts a new group at each detected video keyframe. In this observed GOP, 60 video objects match 60 coded frames in the received MP4. Another GOP in the source need not have the same length, and MOQT itself requires neither one GOP per group nor one frame per object. Group IDs are assigned by the original publisher and scoped to a track [draft-16 §2.3.1]; the audio track's group `25` is separate.
+The first group sent after this subscription has Group ID `25` because the publisher was already processing the video and forming groups before the subscriber joined. This is the video track: `track_name=1.m4s` in `SUBSCRIBE` maps to `track_alias=3` in the header. Group `25` contains 60 objects, with Object IDs `0` through `59`; group `26` then begins at the next keyframe with Object ID `0` again. The numbers after `sending object` (`1`, `60`) are log counters, while `object_id=` identifies the objects. The [publisher](https://github.com/cloudflare/moq-rs/blob/main/moq-pub/src/media.rs) starts a new group at each detected video keyframe. In this observed GOP, 60 video objects match 60 coded frames in the received MP4. Another GOP in the source need not have the same length, and MOQT itself requires neither one GOP per group nor one frame per object. Group IDs are assigned by the original publisher and scoped to a track [draft-16 §2.3.1]; the audio track's group `25` is separate.
 
 The log also uses `payload chunk`, but that is a portion of an object's bytes written by this implementation, not a CMAF chunk or another MOQT unit. The first video object appears as one such portion in the publisher log and 74 in the relay data trace. Forwarding changed the write-buffer boundaries, not the one-frame, one-CMAF-chunk, one-object mapping observed here.
 
@@ -268,10 +268,10 @@ The catalog pairs `commonTrackFields.namespace=/bbb` with the track names `1.m4s
 
 The publisher trace then shows what happens after the relay subscribes to `.catalog`. The excerpt removes timestamps, ANSI colors, and module prefixes, while retaining the recorded fields:
 
-```text
+```rust
 [PUBLISHER] serve_subgroup: opened unidirectional stream
 [PUBLISHER] serve_subgroup: sending header - track_alias=1, group_id=0, subgroup_id=Some(0), priority=0, header_type=SubgroupIdExt
-[PUBLISHER] serve_subgroup: sending object #1 - object_id=0, object_id_delta=0, payload_length=618, status=None, extension_headers={  }
+[PUBLISHER] serve_subgroup: sending object 1 - object_id=0, object_id_delta=0, payload_length=618, status=None, extension_headers={  }
 [PUBLISHER] serve_subgroup: completed subgroup (group_id=0, subgroup_id=0, 1 objects sent)
 ```
 
@@ -323,7 +323,7 @@ When the subscriber leaves, its subscriptions cease; the publisher may still ser
 
 The relay records the end of the two sessions and removal of `/bbb` as follows. These lines retain the reported errors and namespace while omitting timestamps and other fields:
 
-```text
+```rust
 moq_relay_ietf::relay: MoQ session error: webtransport error: session error: connection error: timed out
 moq_relay_ietf::local: deregistering namespace route source from locals namespace=/bbb
 moq_relay_ietf::relay: MoQ session error: webtransport error: session error: connection error: timed out
