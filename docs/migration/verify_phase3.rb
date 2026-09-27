@@ -51,6 +51,8 @@ items.each do |item|
     end
     item.fetch('metadata').each do |key, value|
       next if key == 'layout'
+      next if item.fetch('old_source_path') == '_pages/home.html' && key != 'permalink'
+      next if item.fetch('old_source_path') == '_pages/software.html' && key == 'title'
       errors << "Metadata changed (#{key}): #{candidate}" unless candidate_metadata[key] == value
     end
     if manifest.fetch('articles').include?(item)
@@ -90,7 +92,9 @@ manifest.fetch('articles').each do |item|
     errors << "Section #{key} missing: #{item['new_source_path']}" unless section_html.include?(item.fetch('metadata').fetch(key))
   end
 end
-errors << 'Software section acquired posts' if site.join('software/index.html').read.include?('<section class="mb-4">')
+software = site.join('software/index.html').read
+errors << 'Cloud Infrastructure section acquired posts' if software.include?('<section class="mb-4">')
+errors << 'Cloud Infrastructure title missing' unless software.include?('Cloud Infrastructure')
 
 paris = manifest.fetch('articles').find { |item| item.fetch('new_source_path').end_with?('.html') }
 paris_html = output_path(site, paris.fetch('public_url')).read
@@ -103,20 +107,20 @@ else
 end
 
 home = site.join('index.html').read
-manifest.fetch('homepage_fields').fetch('feature_row').each do |section|
-  %w[title excerpt url btn_label].each do |key|
-    errors << "Homepage #{key} missing: #{section[key]}" unless home.include?(section.fetch(key))
-  end
+expected_home_urls = manifest.fetch('articles').sort_by { |item| item.fetch('publication_date') }.reverse.map do |item|
+  item.fetch('public_url').delete_prefix('https://gdavila.github.io')
 end
-errors << 'Homepage project embed missing' unless home.include?('ghbtns.com/github-btn.html')
-errors << 'Homepage photo credit missing' unless home.include?('Photo credit:') && home.include?('flic.kr/p/omaQ4C')
+home_urls = home.scan(/<a href="([^"]+)" class="post-preview\b/).flatten
+errors << 'Homepage posts differ from descending publication dates' unless home_urls == expected_home_urls
+errors << 'Legacy homepage content remains' if home.include?('ghbtns.com/github-btn.html') || home.include?('flic.kr/p/omaQ4C')
+errors << 'Cloud Infrastructure navigation label missing' unless home.include?('CLOUD INFRASTRUCTURE')
 about = site.join('about/index.html').read
 %w[Tech\ Architect Buenos\ Aires gdavilarevelo].each do |value|
   errors << "Profile value missing: #{value}" unless about.include?(value)
 end
 
 if errors.empty?
-  puts 'Phase 3 manifest check passed: 7 authored bodies, 94 source/candidate/output assets, 11 routes, metadata, sections/search, homepage/profile, and exact HTML iframe document.'
+  puts 'Content check passed: 7 authored bodies, 94 source/candidate/output assets, 11 routes, metadata, sections/search, publication-ordered homepage, profile, and exact HTML iframe document.'
 else
   warn errors.join("\n")
   exit 1

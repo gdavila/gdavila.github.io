@@ -9,12 +9,6 @@ Jekyll::Hooks.register :site, :post_read do |site|
     tabs[File.basename(tab.path, File.extname(tab.path))] = title
   end
 
-  site.pages.each do |page|
-    next unless page.data['layout'] == 'migration-home'
-
-    layouts['migration-home'] = page.data.fetch('title')
-  end
-
   site.posts.docs.each do |post|
     next unless post.data['layout'] == 'paris-document'
 

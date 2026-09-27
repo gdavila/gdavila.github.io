@@ -141,27 +141,27 @@ def main():
         matching = [p for p in paths if p in expected_urls]
         check(len(sections) == 3 and len(matching) == 3 and len(set(matching)) == 3, f"Section {route} does not list exactly three posts")
     software_sections = re.findall(r'<section class="mb-4">.*?</section>', (site / "software/index.html").read_text(), re.S)
-    check(not software_sections, "Software contains articles")
-    for route, title in (("software", "software"), ("video", "Video & Media"), ("internet", "Data Communications")):
+    check(not software_sections, "Cloud Infrastructure contains articles")
+    for route, title in (("software", "Cloud Infrastructure"), ("video", "Video & Media"), ("internet", "Data Communications")):
         html_title = re.search(r"<title>(.*?)</title>", (site / route / "index.html").read_text(), re.S)
         check(bool(html_title and title in html.unescape(html_title.group(1))), f"Section browser title missing: /{route}/")
 
     home_html = (site / "index.html").read_text()
-    home_text = html.unescape(" ".join(parse(home_html).text))
-    fields = MANIFEST["homepage_fields"]
-    check(fields["title"] in home_text and "Just a personal tech blog" in home_text, "Homepage title or introduction missing")
-    check("ghbtns.com/github-btn.html" in home_html and "flic.kr/p/omaQ4C" in home_html, "Homepage embed or photo credit missing")
-    for section in fields["feature_row"]:
-        for key in ("title", "excerpt", "url", "btn_label"):
-            check(section[key] in home_html, f"Homepage feature missing: {key}={section[key]}")
-    for word in ("IPTV", "OTT", "FFmpeg", "TCP/IP", "Internet Meassurements", "Internet Topology"):
-        check(word in home_text, f"Homepage topic missing: {word}")
-    check("Migration-home" not in home_html, "Homepage mobile top bar exposes internal layout name 'Migration-home'")
+    home_doc = parse(home_html)
+    home_posts = [a.get("href") for tag, a in home_doc.tags if tag == "a" and "post-preview" in a.get("class", "").split()]
+    expected_home_posts = [
+        e["public_url"].removeprefix(PRODUCTION)
+        for e in sorted(MANIFEST["articles"], key=lambda e: e["publication_date"], reverse=True)
+    ]
+    check(home_posts == expected_home_posts, "Homepage posts differ from descending publication dates")
+    check("ghbtns.com/github-btn.html" not in home_html and "flic.kr/p/omaQ4C" not in home_html,
+          "Legacy homepage embed or header remains")
+    check("CLOUD INFRASTRUCTURE" in home_html, "Cloud Infrastructure navigation label missing")
     about_html = (site / "about/index.html").read_text()
     about_text = html.unescape(" ".join(parse(about_html).text))
     for word in ("Tech Architect", "Video and Software", "Buenos Aires", "gdavilarevelo"):
         check(word in about_html or word in about_text, f"Profile field missing: {word}")
-    nav = [a.get("href") for tag, a in parse(home_html).tags if tag == "a"]
+    nav = [a.get("href") for tag, a in home_doc.tags if tag == "a"]
     for item in MANIFEST["profile_fields"]["navigation"]:
         check(item["url"] in nav, f"Navigation route missing: {item['url']}")
 

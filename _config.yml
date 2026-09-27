@@ -16,7 +16,7 @@ timezone: America/Argentina/Buenos_Aires
 
 title: Gabriel Davila
 
-tagline: Video, Software and Data Communications
+tagline: Video, Cloud Infrastructure and Data Communications
 
 description: >- # used by seo meta and the atom feed
   A tech blog to share some thoughts about Video, Software development and Data Communications issues.
@@ -25,8 +25,8 @@ description: >- # used by seo meta and the atom feed
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://gdavila.github.io"
 
-# Retained source profile data for the Phase 3 About/homepage adapter.
-name: Video, Software and Data Communications
+# Retained source profile data for the About page.
+name: Video, Cloud Infrastructure and Data Communications
 author:
   bio: "Tech Architect <br/> Video and Software"
   location: Buenos Aires
