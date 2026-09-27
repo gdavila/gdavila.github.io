@@ -1,0 +1,212 @@
+[
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "image https://render.githubusercontent.com/render/math?math=T does not have an alt attribute",
+    "status": null,
+    "element": "<img src=\"https://render.githubusercontent.com/render/math?math=T\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "image https://render.githubusercontent.com/render/math?math=T_{tcp}= \\dfrac{mss}{rtt}*\\dfrac{1}{\\sqrt{p}} does not have an alt attribute",
+    "status": null,
+    "element": "<img src=\"https://render.githubusercontent.com/render/math?math=T_{tcp}= \\dfrac{mss}{rtt}*\\dfrac{1}{\\sqrt{p}}\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "image https://render.githubusercontent.com/render/math?math=mss does not have an alt attribute",
+    "status": null,
+    "element": "<img src=\"https://render.githubusercontent.com/render/math?math=mss\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "image https://render.githubusercontent.com/render/math?math=n_{ch} does not have an alt attribute",
+    "status": null,
+    "element": "<img src=\"https://render.githubusercontent.com/render/math?math=n_{ch}\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "image https://render.githubusercontent.com/render/math?math=p \\approx cer*\\dfrac{ip_{size}}{codeword{size}} *\\dfrac{1}{n_{ch}} \\approx \\dfrac {7 * cer}{n_{ch}} does not have an alt attribute",
+    "status": null,
+    "element": "<img src=\"https://render.githubusercontent.com/render/math?math=p \\approx cer*\\dfrac{ip_{size}}{codeword{size}} *\\dfrac{1}{n_{ch}} \\approx \\dfrac {7 * cer}{n_{ch}}\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "image https://render.githubusercontent.com/render/math?math=p does not have an alt attribute",
+    "status": null,
+    "element": "<img src=\"https://render.githubusercontent.com/render/math?math=p\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "image https://render.githubusercontent.com/render/math?math=p does not have an alt attribute",
+    "status": null,
+    "element": "<img src=\"https://render.githubusercontent.com/render/math?math=p\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "image https://render.githubusercontent.com/render/math?math=rtt does not have an alt attribute",
+    "status": null,
+    "element": "<img src=\"https://render.githubusercontent.com/render/math?math=rtt\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "internal image /broadcast/PartialService/interferencia1CH-1.png does not exist",
+    "status": null,
+    "element": "<img src=\"/broadcast/PartialService/interferencia1CH-1.png\" alt=\"Partial Service A\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "internal image /broadcast/PartialService/interferencia2CH-1.png does not exist",
+    "status": null,
+    "element": "<img src=\"/broadcast/PartialService/interferencia2CH-1.png\" alt=\"Partial Service A\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "internal image /broadcast/PartialService/table.png does not exist",
+    "status": null,
+    "element": "<img src=\"/broadcast/PartialService/table.png\" alt=\"CER vs Throughput vs Bonding teorico\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "internal image /broadcast/PartialService/unnamed-chunk-1-1.png does not exist",
+    "status": null,
+    "element": "<img src=\"/broadcast/PartialService/unnamed-chunk-1-1.png\" alt=\"CER vs Throughput vs Bonding practico\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "internal image /broadcast/PartialService/unnamed-chunk-2-1.png does not exist",
+    "status": null,
+    "element": "<img src=\"/broadcast/PartialService/unnamed-chunk-2-1.png\" alt=\"CER vs CCER\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Images",
+    "description": "internal image /broadcast/PartialService/unnamed-chunk-3-1.png does not exist",
+    "status": null,
+    "element": "<img src=\"/broadcast/PartialService/unnamed-chunk-3-1.png\" alt=\"CER vs Throughput vs Bonding teorico\" loading=\"lazy\">"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Links > Internal",
+    "description": "internally linking to /broadcast/PartialService/interferencia1CH-1.png, which does not exist",
+    "status": null,
+    "element": "<a href=\"/broadcast/PartialService/interferencia1CH-1.png\" class=\"popup img-link shimmer\"><img src=\"/broadcast/PartialService/interferencia1CH-1.png\" alt=\"Partial Service A\" loading=\"lazy\"></a>"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Links > Internal",
+    "description": "internally linking to /broadcast/PartialService/interferencia2CH-1.png, which does not exist",
+    "status": null,
+    "element": "<a href=\"/broadcast/PartialService/interferencia2CH-1.png\" class=\"popup img-link shimmer\"><img src=\"/broadcast/PartialService/interferencia2CH-1.png\" alt=\"Partial Service A\" loading=\"lazy\"></a>"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Links > Internal",
+    "description": "internally linking to /broadcast/PartialService/table.png, which does not exist",
+    "status": null,
+    "element": "<a href=\"/broadcast/PartialService/table.png\" class=\"popup img-link shimmer\"><img src=\"/broadcast/PartialService/table.png\" alt=\"CER vs Throughput vs Bonding teorico\" loading=\"lazy\"></a>"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Links > Internal",
+    "description": "internally linking to /broadcast/PartialService/unnamed-chunk-1-1.png, which does not exist",
+    "status": null,
+    "element": "<a href=\"/broadcast/PartialService/unnamed-chunk-1-1.png\" class=\"popup img-link shimmer\"><img src=\"/broadcast/PartialService/unnamed-chunk-1-1.png\" alt=\"CER vs Throughput vs Bonding practico\" loading=\"lazy\"></a>"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Links > Internal",
+    "description": "internally linking to /broadcast/PartialService/unnamed-chunk-2-1.png, which does not exist",
+    "status": null,
+    "element": "<a href=\"/broadcast/PartialService/unnamed-chunk-2-1.png\" class=\"popup img-link shimmer\"><img src=\"/broadcast/PartialService/unnamed-chunk-2-1.png\" alt=\"CER vs CCER\" loading=\"lazy\"></a>"
+  },
+  {
+    "file": "internet/PartialService/2018-02-01-PartialService/index.html",
+    "check": "Links > Internal",
+    "description": "internally linking to /broadcast/PartialService/unnamed-chunk-3-1.png, which does not exist",
+    "status": null,
+    "element": "<a href=\"/broadcast/PartialService/unnamed-chunk-3-1.png\" class=\"popup img-link shimmer\"><img src=\"/broadcast/PartialService/unnamed-chunk-3-1.png\" alt=\"CER vs Throughput vs Bonding teorico\" loading=\"lazy\"></a>"
+  },
+  {
+    "file": "internet/rttReporte/2017-09-01-rttReporte/index.html",
+    "check": "Links",
+    "description": "'a' tag is missing a reference",
+    "status": null,
+    "element": "<a href=\"\">anteriores</a>"
+  },
+  {
+    "file": "internet/rttReporte/2017-09-01-rttReporte/index.html",
+    "check": "Links",
+    "description": "'a' tag is missing a reference",
+    "status": null,
+    "element": "<a id=\"table1\"></a>"
+  },
+  {
+    "file": "internet/rttReporte/2017-09-01-rttReporte/index.html",
+    "check": "Links",
+    "description": "'a' tag is missing a reference",
+    "status": null,
+    "element": "<a id=\"table1\"></a>"
+  },
+  {
+    "file": "internet/rttReporte/2017-09-01-rttReporte/index.html",
+    "check": "Links",
+    "description": "'a' tag is missing a reference",
+    "status": null,
+    "element": "<a id=\"table2\"></a>"
+  },
+  {
+    "file": "internet/rttReporte/2017-09-01-rttReporte/index.html",
+    "check": "Links",
+    "description": "'a' tag is missing a reference",
+    "status": null,
+    "element": "<a id=\"table3\"></a>"
+  },
+  {
+    "file": "internet/rttReporte/2017-09-01-rttReporte/index.html",
+    "check": "Links",
+    "description": "'a' tag is missing a reference",
+    "status": null,
+    "element": "<a id=\"table3\"></a>"
+  },
+  {
+    "file": "internet/rttReporte/2017-09-01-rttReporte/index.html",
+    "check": "Links",
+    "description": "'a' tag is missing a reference",
+    "status": null,
+    "element": "<a id=\"table3\"></a>"
+  },
+  {
+    "file": "internet/rttReporte/2017-09-01-rttReporte/index.html",
+    "check": "Links",
+    "description": "'a' tag is missing a reference",
+    "status": null,
+    "element": "<a id=\"table3\"></a>"
+  },
+  {
+    "file": "internet/rttReporte/2017-09-01-rttReporte/index.html",
+    "check": "Links",
+    "description": "http://www.tracebox.org/ is not an HTTPS link",
+    "status": null,
+    "element": "<a href=\"http://www.tracebox.org/\"><em>tracebox</em></a>"
+  },
+  {
+    "file": "video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/index.html",
+    "check": "Images",
+    "description": "image https://render.githubusercontent.com/render/math?math=\\frac{vmaf}{20} does not have an alt attribute",
+    "status": null,
+    "element": "<img src=\"https://render.githubusercontent.com/render/math?math=\\frac{vmaf}{20}\" loading=\"lazy\">"
+  }
+]
