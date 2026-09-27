@@ -6,12 +6,12 @@ order: 4
 icon: fas fa-user
 ---
 
-This is my personal tech blog!
+I'm Gabriel Dávila, an engineer based in Buenos Aires. My work sits at the intersection of video streaming, cloud infrastructure, and networking.
 
-I'm a Tech Architect with experience in video streaming, cloud architectures, virtualized frameworks (kubernetes, docker) and with great interest in software development.
+What interests me most is understanding how systems work beyond the surface: how media is encoded and delivered, how networks affect user experience, how applications behave at scale, and how architectural decisions affect performance, reliability, and cost.
 
-Throughout my career I've had the opportunity to work on a wide range of technologies and services. Currently, I'm focused on cutting edge technologies for the video Industry and additionally I'm a passionate open source project contributor in my free time.
+This blog is a place to document technical investigations, experiments, and things I learn along the way. Most of them start with real problems I encounter in my work, but I try to explore them from a broader technical perspective so they remain useful beyond a specific product, vendor, or customer.
 
-Finally, I have experience in academic research on the Data Communications and Internet Topology field by collaborating (2013-2017) to [CoNexDat](https://cnet.fi.uba.ar/) Research Group at Buenos Aires University, where I got my MS in Telecommunications Engineering.
+Much of that perspective comes from my experience at Bitmovin and Personal Flow, as well as from my earlier research on Internet measurements and network topology with the [CoNexDat](https://cnet.fi.uba.ar/) group at the University of Buenos Aires, where I also completed my Master's degree in Telecommunications.
 
-In this way and I feel comfortable with new technical challenges that requires out of the box thinking, strong  data analysis tools (R, SQL, mongoDB) and solid knowledge of  programming languages (C++, Python, javascript).
+That research experience still shapes how I approach technical problems: measure first, then be clear about what the data supports and what it does not.
