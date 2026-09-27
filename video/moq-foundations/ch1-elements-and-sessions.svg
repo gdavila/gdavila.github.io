@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 215" role="img" aria-label="Publisher and subscriber each initiate a session toward the relay on solid lines; objects flow publisher to relay to subscriber on dashed lines">
+<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 215" width="900" height="215" role="img" aria-label="Publisher and subscriber each initiate a session toward the relay on solid lines; objects flow publisher to relay to subscriber on dashed lines">
   <style>
     svg.d{
       --surface:#FFFFFF; --surface-2:#F5F8F7;

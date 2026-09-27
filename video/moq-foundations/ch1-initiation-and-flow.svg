@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 300" role="img" aria-label="Two stacked rows over the same three elements: in the first, both session initiation arrows converge on the relay; in the second, media flow traverses publisher to relay to subscriber">
+<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 300" width="900" height="300" role="img" aria-label="Two stacked rows over the same three elements: in the first, both session initiation arrows converge on the relay; in the second, media flow traverses publisher to relay to subscriber">
   <style>
     svg.d{
       --surface:#FFFFFF; --surface-2:#F5F8F7;

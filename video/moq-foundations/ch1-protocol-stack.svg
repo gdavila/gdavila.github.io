@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 405" role="img" aria-label="MOQT, WebTransport and HTTP/3 shown side by side at the application layer, above QUIC, UDP and IP">
+<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 405" width="900" height="405" role="img" aria-label="MOQT, WebTransport and HTTP/3 shown side by side at the application layer, above QUIC, UDP and IP">
   <style>
     svg.d{
       --surface:#FFFFFF; --surface-2:#F5F8F7;

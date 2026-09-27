@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 330" role="img" aria-label="Inside one QUIC connection the control channel spans the figure and stays open while three data streams run; one data stream is interrupted and marked abandoned, and an abandonment signal reaches the subscriber while the session stays established">
+<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 330" width="900" height="330" role="img" aria-label="Inside one QUIC connection the control channel spans the figure and stays open while three data streams run; one data stream is interrupted and marked abandoned, and an abandonment signal reaches the subscriber while the session stays established">
   <style>
     svg.d{
       --surface:#FFFFFF; --surface-2:#F5F8F7;

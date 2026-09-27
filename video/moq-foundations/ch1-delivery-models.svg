@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 480" role="img" aria-label="Four media distribution paths compare what an HTTP CDN, a WebRTC SFU, multicast routers, and a MoQ relay handle between a source and receivers">
+<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 480" width="900" height="480" role="img" aria-label="Four media distribution paths compare what an HTTP CDN, a WebRTC SFU, multicast routers, and a MoQ relay handle between a source and receivers">
   <style>
     svg.d{
       --surface:#FFFFFF; --surface-2:#F5F8F7;

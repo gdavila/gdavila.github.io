@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 590" role="img" aria-label="Three lifelines show two MOQT sessions, a publication of namespace /bbb, and two subscriptions for the same Full Track Name /bbb plus 0.mp4">
+<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 590" width="900" height="590" role="img" aria-label="Three lifelines show two MOQT sessions, a publication of namespace /bbb, and two subscriptions for the same Full Track Name /bbb plus 0.mp4">
   <style>
     svg.d{
       --surface:#FFFFFF; --surface-2:#F5F8F7;

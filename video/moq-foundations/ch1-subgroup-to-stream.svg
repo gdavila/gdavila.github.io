@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 340" role="img" aria-label="One group whose objects are assigned to two subgroups, each subgroup carried on its own stream; one stream completes and the other is abandoned, removing the set of objects assigned to it">
+<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 340" width="900" height="340" role="img" aria-label="One group whose objects are assigned to two subgroups, each subgroup carried on its own stream; one stream completes and the other is abandoned, removing the set of objects assigned to it">
   <style>
     svg.d{
       --surface:#FFFFFF; --surface-2:#F5F8F7;

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 352" role="img" aria-label="Three mappings from fragmented MP4 units to MOQT objects: ftyp and moov form the initialization object, while separate moof and mdat pairs carry one video frame or one AAC frame per object">
+<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 352" width="900" height="352" role="img" aria-label="Three mappings from fragmented MP4 units to MOQT objects: ftyp and moov form the initialization object, while separate moof and mdat pairs carry one video frame or one AAC frame per object">
   <style>
     svg.d{--surface:#FFFFFF;--surface-2:#F5F8F7;--ink:#141C1B;--ink-2:#485654;--ink-3:#6F7D7B;--paper:#EEF1F0;--rule:#D2DAD8;--object:#A0335E;--object-bg:#F8E4EC;color:var(--ink)}
     @media (prefers-color-scheme: dark){svg.d{--surface:#151E1C;--surface-2:#1A2422;--ink:#E7EDEB;--ink-2:#A9B7B4;--ink-3:#81908D;--paper:#0E1413;--rule:#2B3735;--object:#EE85AA;--object-bg:#3A1A26}}

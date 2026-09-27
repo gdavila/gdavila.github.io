@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 400" role="img" aria-label="After track subscription on control streams, catalog, initialization, and media objects use separate unidirectional data streams across publisher-relay and relay-subscriber sessions">
+<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 400" width="900" height="400" role="img" aria-label="After track subscription on control streams, catalog, initialization, and media objects use separate unidirectional data streams across publisher-relay and relay-subscriber sessions">
   <style>
     svg.d{
       --surface:#FFFFFF; --surface-2:#F5F8F7;

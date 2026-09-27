@@ -1,5 +1,5 @@
 ---
-title: "MOQT Foundations: From Session Setup to Object Delivery"
+title: "MOQ Foundations: From Session Setup to Object Delivery"
 excerpt: "How a Media over QUIC publisher, relay, and subscriber establish sessions, select tracks on the control stream, and deliver objects on data streams, traced with moq-rs and draft-ietf-moq-transport-16."
 layout: post
 permalink: /video/moq-foundations/
