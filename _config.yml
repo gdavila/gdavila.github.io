@@ -221,6 +221,8 @@ exclude:
   - "*.gemspec"
   - docs
   - tools
+  - AGENTS.md
+  - CLAUDE.md
   - README.md
   - LICENSE
   - purgecss.js
