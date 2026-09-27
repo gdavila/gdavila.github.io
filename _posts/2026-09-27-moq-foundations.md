@@ -18,7 +18,7 @@ This first installment follows connection establishment and the first object flo
 
 The distribution approaches familiar from broadcast make different trade-offs. HLS and DASH scale through HTTP caches, but live latency depends on how quickly segments or parts are published and how much the player buffers; low-latency HLS narrows that delay without removing the trade-off ([Apple's Low-Latency HLS guide](https://developer.apple.com/documentation/http-live-streaming/enabling-low-latency-http-live-streaming-hls)). WebRTC supports interactive latency, while distribution to a large audience commonly adds selective forwarding units (SFUs) and per-session forwarding state ([RFC 7667 §3.7](https://www.rfc-editor.org/rfc/rfc7667#section-3.7)). Managed Internet Protocol (IP) multicast efficiently replicates one flow to many receivers, but a multicast tree cannot adapt its sending rate to each receiver; loss handling and receiver differences need additional design ([RFC 8085 §4.1](https://www.rfc-editor.org/rfc/rfc8085#section-4.1)).
 
-We find MoQ interesting because it proposes a standardized relay overlay where subscribers request named tracks and relays can aggregate demand and cache individual objects [draft-16 §2.2] [draft-16 §8.4]. This could offer a different balance between latency and scale. The table and Figure 1.1 compare what each intermediary handles; they do not rank measured performance. Our connection-establishment case measures neither latency nor scale, so those properties remain open for later study.
+We find MoQ interesting because it proposes a standardized relay overlay where subscribers request named tracks and relays can aggregate demand and cache individual objects [draft-16 §2.2] [draft-16 §8.4]. This could offer a different balance between latency and scale. The table and Figure 1 compare what each intermediary handles; they do not rank measured performance. Our connection-establishment case measures neither latency nor scale, so those properties remain open for later study.
 
 | Approach | What the intermediary handles | Strength | Main constraint for this comparison |
 |---|---|---|---|
@@ -29,7 +29,7 @@ We find MoQ interesting because it proposes a standardized relay overlay where s
 
 ![Distribution models considered in this guide](/video/moq-foundations/ch1-delivery-models.svg)
 
-**Figure 1.1** — Four intermediaries and the information they use to distribute media. The drawing makes no measured performance claim.
+**Figure 1** — Four intermediaries and the information they use to distribute media. The drawing makes no measured performance claim.
 
 ### Reference architecture
 
@@ -43,9 +43,9 @@ Publisher and subscriber are roles relative to a particular track, not fixed kin
 
 ![Elements and sessions of the reference deployment](/video/moq-foundations/ch1-elements-and-sessions.svg)
 
-**Figure 1.2** — Solid arrows show each client initiating a separate session toward the relay; dashed arrows show object delivery from publisher through relay to subscriber.
+**Figure 2** — Solid arrows show each client initiating a separate session toward the relay; dashed arrows show object delivery from publisher through relay to subscriber.
 
-Figure 1.2 separates session initiation from object delivery. The subscriber initiates toward the relay even though the objects travel toward the subscriber. To follow its request, we first need the MOQT naming hierarchy.
+Figure 2 separates session initiation from object delivery. The subscriber initiates toward the relay even though the objects travel toward the subscriber. To follow its request, we first need the MOQT naming hierarchy.
 
 ## The MOQT data model
 
@@ -67,9 +67,9 @@ The video mappings in the last three rows are **examples**, not definitions of M
 
 ![The MOQT data model](/video/moq-foundations/ch1-object-model-decisions.svg)
 
-**Figure 1.3** — An illustrative video mapping shows the named track, two groups, and alternative ways to deliver their objects. The grouping is an example from the draft, not a measurement of this deployment.
+**Figure 3** — An illustrative video mapping shows the named track, two groups, and alternative ways to deliver their objects. The grouping is an example from the draft, not a measurement of this deployment.
 
-Figure 1.3 follows a track into groups, subgroups, and objects. Its alternative delivery paths show why MOQT defines these units separately; they do not describe the media packaging observed below.
+Figure 3 follows a track into groups, subgroups, and objects. Its alternative delivery paths show why MOQT defines these units separately; they do not describe the media packaging observed below.
 
 An HTTP cache can obtain an uncached file from an upstream cache or origin, then serve later requests locally. MoQ has a similar demand-driven shape, but a subscriber requests a Full Track Name rather than a file. The track is the requested live sequence; if a relay caches, the individual objects are identified by Full Track Name, Group ID, and Object ID [draft-16 §2.4.1] [draft-16 §8.1] [draft-16 §8.4]. A relay can aggregate downstream interest into an upstream subscription, but caching is optional. With only one subscriber in this case, we can observe the upstream request, not aggregation across subscribers or a cache hit.
 
@@ -101,25 +101,25 @@ The input MP4 contains two encoded streams:
 | Video | H.264 | 1280×720; 24 frames per second |
 | Audio | AAC | Stereo; 44.1 kHz sample rate |
 
-The publisher wrapper copies these streams into CMAF-style fragmented MP4. FFmpeg's [`separate_moof` and `frag_every_frame` options](https://ffmpeg.org/ffmpeg-formats.html) produce separate video and audio fragments, with one encoded video frame or AAC frame per fragment in this run. As Figure 1.4 shows, the initialization boxes (`ftyp` and `moov`) describe the file and its tracks; in each media fragment, `moof` describes the coded sample and `mdat` holds its encoded bytes. The publisher places these units into MOQT objects, as we examine in [The data streams](#the-data-streams).
+The publisher wrapper copies these streams into CMAF-style fragmented MP4. FFmpeg's [`separate_moof` and `frag_every_frame` options](https://ffmpeg.org/ffmpeg-formats.html) produce separate video and audio fragments, with one encoded video frame or AAC frame per fragment in this run. As Figure 4 shows, the initialization boxes (`ftyp` and `moov`) describe the file and its tracks; in each media fragment, `moof` describes the coded sample and `mdat` holds its encoded bytes. The publisher places these units into MOQT objects, as we examine in [The data streams](#the-data-streams).
 
 ![Fragmented MP4 and MOQT objects in the reference deployment](/video/moq-foundations/ch1-cmaf-object-mapping.svg)
 
-**Figure 1.4** — In this run, the initialization boxes form one object; each video or audio `moof`/`mdat` pair forms another. The encoded video frame or AAC frame is carried in `mdat`, not `moof`.
+**Figure 4** — In this run, the initialization boxes form one object; each video or audio `moof`/`mdat` pair forms another. The encoded video frame or AAC frame is carried in `mdat`, not `moof`.
 
 ## Session establishment and flow direction
 
-Session setup crosses several protocol boundaries, which Figure 1.5 separates before we read the trace. IP and UDP carry QUIC packets. QUIC establishes the secure connection and supplies independent streams. In this `moq-rs` deployment, HTTP/3 runs over QUIC, and an HTTP extended `CONNECT` establishes a WebTransport session. MOQT uses that session's streams for its own setup, subscriptions, and objects [draft-16 §3.1.1] [draft-16 §3.3]. MOQT and HTTP/3 both operate at the application layer, but they have different roles here: MOQT defines the media delivery protocol, while HTTP/3 helps establish its WebTransport carrier. MOQT can also run directly over QUIC [draft-16 §3.1.2].
+Session setup crosses several protocol boundaries, which Figure 5 separates before we read the trace. IP and UDP carry QUIC packets. QUIC establishes the secure connection and supplies independent streams. In this `moq-rs` deployment, HTTP/3 runs over QUIC, and an HTTP extended `CONNECT` establishes a WebTransport session. MOQT uses that session's streams for its own setup, subscriptions, and objects [draft-16 §3.1.1] [draft-16 §3.3]. MOQT and HTTP/3 both operate at the application layer, but they have different roles here: MOQT defines the media delivery protocol, while HTTP/3 helps establish its WebTransport carrier. MOQT can also run directly over QUIC [draft-16 §3.1.2].
 
 ![Protocol stack used by the moq-rs example](/video/moq-foundations/ch1-protocol-stack.svg)
 
-**Figure 1.5** — MOQT and HTTP/3 occupy the application layer but serve different purposes. The WebTransport session carries MOQT streams; HTTP/3 establishes that session over QUIC, UDP, and IP.
+**Figure 5** — MOQT and HTTP/3 occupy the application layer but serve different purposes. The WebTransport session carries MOQT streams; HTTP/3 establishes that session over QUIC, UDP, and IP.
 
-Both clients initiate toward the relay. This leaves the reachability requirement at the relay in the simple deployment: it needs an address the two clients can contact, while the clients may be behind network address translation (NAT). Figure 1.6 separates the directions into two rows: the subscriber initiates toward the relay although objects arrive from it. A larger overlay can add relays, but their routing and initiation choices need their own design; this case has only one relay.
+Both clients initiate toward the relay. This leaves the reachability requirement at the relay in the simple deployment: it needs an address the two clients can contact, while the clients may be behind network address translation (NAT). Figure 6 separates the directions into two rows: the subscriber initiates toward the relay although objects arrive from it. A larger overlay can add relays, but their routing and initiation choices need their own design; this case has only one relay.
 
 ![Initiation and flow direction](/video/moq-foundations/ch1-initiation-and-flow.svg)
 
-**Figure 1.6** — Session initiation converges on the relay; media flows from publisher to subscriber.
+**Figure 6** — Session initiation converges on the relay; media flows from publisher to subscriber.
 
 In the relay trace for this deployment, the publisher's QUIC connection and WebTransport session are established first. The publisher opens MOQT's bidirectional control stream and exchanges `CLIENT_SETUP` and `SERVER_SETUP`. Only after that setup does it advertise the Track Namespace `/bbb` with `PUBLISH_NAMESPACE`; this advertises available tracks under `/bbb`, not a particular Full Track Name. The subscriber then establishes a **separate** connection and WebTransport session, completes its own MOQT setup, and requests a specific track. MOQT calls the underlying carrier a *Transport Session*: it can be a raw QUIC connection or a WebTransport session. One MOQT session is established on that carrier in this example [draft-16 §1.2] [draft-16 §3.1] [draft-16 §3.3] [draft-16 §9.20].
 
@@ -161,7 +161,7 @@ moq_transport::control: MoQT control message direction="recv" msg_type="SUBSCRIB
 moq_transport::control: MoQT control message direction="sent" msg_type="SUBSCRIBE_OK" subscribe_id=2 track_alias=2
 ```
 
-Each `SUBSCRIBE` carries a Track Namespace and a Track Name. In the first line, `/bbb` and `0.mp4` together form the Full Track Name `(/bbb, 0.mp4)`: the subscriber asks for that track, not for the whole namespace. The relay sends its own `SUBSCRIBE` for the **same Full Track Name** toward the publisher. Figure 1.7 places these requests on separate sessions. The downstream request uses ID `0` and receives alias `0`; the upstream request uses ID `1` and receives alias `1`.
+Each `SUBSCRIBE` carries a Track Namespace and a Track Name. In the first line, `/bbb` and `0.mp4` together form the Full Track Name `(/bbb, 0.mp4)`: the subscriber asks for that track, not for the whole namespace. The relay sends its own `SUBSCRIBE` for the **same Full Track Name** toward the publisher. Figure 7 places these requests on separate sessions. The downstream request uses ID `0` and receives alias `0`; the upstream request uses ID `1` and receives alias `1`.
 
 Likewise, `(/bbb, 1.m4s)` uses request ID `2` and alias `2` downstream, but ID `3` and alias `3` upstream. The log calls the request identifier `subscribe_id`; the draft calls it a Request ID. These IDs pair each `SUBSCRIBE` with its `SUBSCRIBE_OK`, while Track Aliases identify tracks on data streams. Both are local to their session; the Full Track Name remains the same across the relay's two requests [draft-16 §2.4.1] [draft-16 §9.1] [draft-16 §9.9] [draft-16 §9.10] [draft-16 §10.1]. The relay thus acts as a subscriber on its publisher-facing session and as a publisher on its subscriber-facing session, as described in [MOQ Motivations](#moq-motivations). The audio confirmation is omitted for brevity.
 
@@ -174,7 +174,7 @@ moq_sub::media: using 2.m4s for audio
 
 ![Control exchange across the two sessions](/video/moq-foundations/ch1-control-sequence.svg)
 
-**Figure 1.7** — The relay requests the same Full Track Name on a second session after the publisher has announced its namespace.
+**Figure 7** — The relay requests the same Full Track Name on a second session after the publisher has announced its namespace.
 
 Alternatevely to using fragmented MP4 (fMP4) for initialization, `moq-rs` can use catalogs. A catalog can serve a discovery role analogous to a manifest in HLS or DASH: it describes available tracks and information a client can use to choose among them. MOQT itself does not require the `moq-rs` names or prescribe a universal catalog track. In this implementation, the publisher also offers `.catalog`. On the catalog-first path, the subscriber requests Full Track Name `(/bbb, .catalog)` first. On `moq-rs`, using `.catalog` or `0.mp4` is a suscriber choise:
 
@@ -282,33 +282,33 @@ The trace records one unidirectional stream for group `0`, subgroup `0`, with on
 
 ![Control decisions and data delivery in the reference deployment](/video/moq-foundations/ch1-data-flow.svg)
 
-**Figure 1.8** — Control requests select tracks; data streams carry the catalog, initialization, or media objects selected on each path.
+**Figure 8** — Control requests select tracks; data streams carry the catalog, initialization, or media objects selected on each path.
 
-Figure 1.8 brings the two paths together: a control request selects a track, while separate unidirectional streams carry its objects. This separation matters when packets are lost.
+Figure 8 brings the two paths together: a control request selects a track, while separate unidirectional streams carry its objects. This separation matters when packets are lost.
 
 ### Independent streams and head-of-line blocking
 
 QUIC delivers bytes in order **within** a stream, but loss on one stream does not prevent another stream's available bytes from being delivered to the application. This avoids the connection-wide head-of-line blocking of the Transmission Control Protocol (TCP) ([RFC 9000 §2](https://www.rfc-editor.org/rfc/rfc9000.html#section-2)); it does not remove dependencies within a subgroup or the need to retransmit data an application still wants. The application decides how to group related objects. The draft's example places temporal video layers in different subgroups so less important layers can be delayed or abandoned without necessarily blocking the base layer [draft-16 §2.2].
 
-The excerpts show `group_id`, `subgroup_id`, and opened unidirectional streams. They do **not** show a temporal-layer split or an abandoned stream. Figure 1.9 shows an illustrative packaging choice from the draft, not an observation from this deployment. A later congestion study could measure whether the implementation produces and discards such subgroups.
+The excerpts show `group_id`, `subgroup_id`, and opened unidirectional streams. They do **not** show a temporal-layer split or an abandoned stream. Figure 9 shows an illustrative packaging choice from the draft, not an observation from this deployment. A later congestion study could measure whether the implementation produces and discards such subgroups.
 
 ![Illustrative subgroup-to-stream mapping](/video/moq-foundations/ch1-subgroup-to-stream.svg)
 
-**Figure 1.9** — An application may place different dependencies in separate subgroups and streams; this mapping is illustrative, not observed here.
+**Figure 9** — An application may place different dependencies in separate subgroups and streams; this mapping is illustrative, not observed here.
 
 ### Control and data under congestion
 
 When a data stream becomes too late or unhelpful, either endpoint may cancel it without cancelling the subscription or closing the MOQT session [draft-16 §10.4.1]. A completed subgroup stream ends with QUIC `FIN`; one stopped before all required objects are sent uses `RESET_STREAM` or `RESET_STREAM_AT`, so the receiver can distinguish completion from interruption [draft-16 §10.4.3]. The draft also requires the sender to allocate connection flow-control credit to the control stream before data streams, avoiding a deadlock in which the receiver is waiting for the alias-confirming control message [draft-16 §10.4.2].
 
-Figure 1.10 illustrates this selective response to congestion while control state remains available. Whether the surviving media stays decodable depends on how the application packaged dependencies; MOQT does not guarantee that any arbitrary subgroup can be dropped safely. The traces here do not demonstrate congestion or a stream reset.
+Figure 10 illustrates this selective response to congestion while control state remains available. Whether the surviving media stays decodable depends on how the application packaged dependencies; MOQT does not guarantee that any arbitrary subgroup can be dropped safely. The traces here do not demonstrate congestion or a stream reset.
 
 ![State of each channel under a bandwidth reduction](/video/moq-foundations/ch1-channels-under-congestion.svg)
 
-**Figure 1.10** — Conceptual response to congestion: one data stream can be interrupted while the control stream and subscription remain open.
+**Figure 10** — Conceptual response to congestion: one data stream can be interrupted while the control stream and subscription remain open.
 
 ## Session lifecycle
 
-Figure 1.11 puts the initialization-first path on a timeline. The relay listens, and the publisher establishes a session and announces `/bbb`. The subscriber then establishes a separate session and requests `(/bbb, 0.mp4)`, followed by `(/bbb, 1.m4s)` and `(/bbb, 2.m4s)`. Objects cross the relay only after those requests, although the publisher is already processing media. Both sessions eventually end. This order distinguishes **announcing availability** from **transmitting objects**: the relay registers the namespace before the first subscriber request and starts its upstream subscriptions only after that request.
+Figure 11 puts the initialization-first path on a timeline. The relay listens, and the publisher establishes a session and announces `/bbb`. The subscriber then establishes a separate session and requests `(/bbb, 0.mp4)`, followed by `(/bbb, 1.m4s)` and `(/bbb, 2.m4s)`. Objects cross the relay only after those requests, although the publisher is already processing media. Both sessions eventually end. This order distinguishes **announcing availability** from **transmitting objects**: the relay registers the namespace before the first subscriber request and starts its upstream subscriptions only after that request.
 
 | Stage | Control state | Data state |
 |---|---|---|
@@ -336,7 +336,7 @@ This shows timeout-driven teardown and namespace deregistration, not an acknowle
 
 ![Timeline of both channels](/video/moq-foundations/ch1-channel-timeline.svg)
 
-**Figure 1.11** — Conceptual session lifecycle. The observed teardown was timeout-driven.
+**Figure 11** — Conceptual session lifecycle. The observed teardown was timeout-driven.
 
 ## Terminology, evidence, and outlook
 
