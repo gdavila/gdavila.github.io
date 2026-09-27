@@ -1,6 +1,6 @@
 ---
-title: Sobre el Comportamiento del RTT
-excerpt: Reporte técnico de algunas experiencias monitoreando el RTT sobre distintos escenarios de Internet
+title: On the Behavior of the RTT
+excerpt: A technical report on our experience monitoring the RTT across different Internet scenarios
 layout: post
 permalink: /internet/rttReporte/2017-09-01-rttReporte/
 categories: ["Data Communications"]
@@ -8,235 +8,235 @@ date: 2017-09-01 00:00:00 -0300
 ---
 
 
-# 1. Resumen
+# 1. Summary
 
-El presente documento es un breve reporte de las **investigaciones preliminares** realizadas para entender el comportamiento del *round-trip-time (rtt)* entre origen y destino, cuando la ruta entre estos dos puntos atraviesa: Túneles MPLS, Middleboxes, y tecnologías de acceso distintas desde los puntos de medición. A su vez, se pone a prueba una metodología de medición basada en *scamper* y *tracebox* que se implementa en la herramienta *rttExplorer*.
+This document is a short report on our **preliminary research** to understand the behavior of the *round-trip time (rtt)* between a source and a destination when the path between them traverses MPLS tunnels, middleboxes, or different access technologies at the vantage points. Additionally, we test a measurement methodology based on *scamper* and *tracebox*, implemented in the *rttExplorer* tool.
 
-Lastimosamente esta investigación preliminar tiene varias limitaciones, por ejemplo, pocos puntos de medición y complejidades  para interpretar los resultados, ya que cada resultado requiere un analisis puntual y exaustivo dificil de automatizar.
+Unfortunately, this preliminary study has several limitations: few vantage points, and results that are hard to interpret, since each one requires a specific and exhaustive analysis that is difficult to automate.
 
-Estos resultados parciales y tempranos, indican que no existe relación entre la presencia de tecnologías como MPLS o middleboxes con la distribución que muestra el *rtt*. Por otro lado, se encuentra  que la distribución de *rtt* varía entre un ISP y otro. No queda claro si esta diferencia se debe a la tecnología de acceso de cada uno o por otros factores. Adicionalmente se confirma trabajos preliminares que encuentran que la distribución de *rtt* parece seguir  una distribución *estable* de una sola componente, y el hecho de que eventualmente aparezca una segunda componente (distribución bimodal) se relaciona con cambios o problemas de red en la ruta entre el punto de medición y el hop analizado.
+These early, partial results suggest that there is no relation between the presence of technologies such as MPLS or middleboxes and the shape of the *rtt* distribution. On the other hand, we find that the *rtt* distribution differs from one ISP to another. It remains unclear whether this difference is due to the access technology of each ISP or to other factors. Additionally, our results corroborate previous work that found that the *rtt* seems to follow a *stable* distribution with a single component, and that the occasional appearance of a second component (i.e., a bimodal distribution) is related to changes or problems in the network along the path between the vantage point and the analyzed hop.
 
 
-# 2. Introducción
+# 2. Introduction
 
-La idea inicial de este trabajo surge al intentar analizar la distribución del *rtt* sobre distintos hops de internet. Dado que aparentemente el *rtt* tiene una distribución del tipo *estable*, se intentó encontrar porqué en algunas ocaciones esta distribución posee más de una componente modal. Basandose en trabajos anteriores, la sospecha  *a priori* fue que esta segunda componente modal podría originarse en la existencia de alguna tecnología invisible para la topología IP, como MPLS o middleboxes. Lastimosamente no se encontró evidencia suficiente para sustentar esta hipotesis.
+This work started as an attempt to analyze the distribution of the *rtt* across different Internet hops. Since the *rtt* appears to follow a *stable* distribution, we tried to find out why this distribution sometimes has more than one modal component. Based on previous work, our *a priori* suspicion was that this second modal component could originate from some technology invisible to the IP topology, such as MPLS or middleboxes. Unfortunately, we did not find enough evidence to support this hypothesis.
 
-En este sentido, en el resto de este documento se describen algunas observaciones y resultados producto de esta investigación preliminar. Inicialmente se describe brevemente la herramienta y la metodología usada para medir el *rtt* de un hop determinado. Se describe adicionalmente las características del experimento y finalmente se muestran los ejemplos que se consideran más relevantes de los resultados observados.
+In the remainder of this document, we describe some observations and results from this preliminary study. We first briefly describe the tool and the methodology used to measure the *rtt* of a given hop. We then describe the characteristics of the experiment, and finally we show the examples we consider most relevant among the observed results.
 
 # 3. Dataset
 
-La metodología para obtener el dataset consiste en realizar mediciones del *rtt* a cada uno de los hops descubiertos mediante una sonda basada en *paris-traceroute*. En la siguientes secciones se detallan las características de estas mediciones.
+To build the dataset, we measure the *rtt* to each of the hops discovered by a *paris-traceroute*-based probe. The following sections detail the characteristics of these measurements.
 
-## 3.1. Herramientas utilizadas
+## 3.1. Tools
 
-Los datos expuestos en el presente reporte técnico fueron obtenidos mediante [*rttExplorer*](https://github.com/gdavila/rttExplorer), que no es más que una herramienta basada en Python para realizar mediciones del *rtt (round-trip-time)*. Estas mediciones se realizan sobre los distintos saltos que atraviesa una sonda tipo *traceroute* entre origen y destino al viajar sobre el Internet. Especificamente *rttExplorer* usa [*scamper*](https://www.caida.org/tools/measurement/scamper/) y [*tracebox*](http://www.tracebox.org/) para garantizar que los paquetes enviados en cada sonda eviten en lo posible el balanceo de carga de los enrutadores del Internet.
+We obtained the data presented in this technical report with [*rttExplorer*](https://github.com/gdavila/rttExplorer), a Python-based tool for measuring the *rtt (round-trip time)*. These measurements target the different hops that a *traceroute*-like probe traverses between source and destination across the Internet. Specifically, *rttExplorer* uses [*scamper*](https://www.caida.org/tools/measurement/scamper/) and [*tracebox*](http://www.tracebox.org/) to ensure that the packets of each probe avoid, as far as possible, the load balancing performed by Internet routers.
 
-La metodología que implementa *rttExplorer* es simple:
+The methodology implemented by *rttExplorer* is simple:
 
-* Inicialmente se envía una sonda de *descubrimiento* hacia el destino deseado. Como resultado esta sonda revela todos los hops encontrados. Cada cierto intervalo de tiempo (típicamente en el orden de decenas de minutos), una sonda de similares características vuelve a enviarse para confirmar que la ruta previamente desubierta  se mantiene estable o revelar un nuevo camino. Este proceso se repite periodicamente mientras dura la exploración.
+* First, we send a *discovery* probe towards the chosen destination. As a result, this probe reveals all hops along the path. At a regular interval (typically in the order of tens of minutes), a similar probe is sent again to confirm that the previously discovered path remains stable or to reveal a new one. This process repeats periodically for the whole exploration.
 
-* El siguiente paso, una vez que se descubren los hops entre origen y destino, es enviar una sonda de *mediciones*. Esta segunda sonda tiene por objeto medir el *rtt* a cada hop previamente descubierto por la última sonda de *descubrimiento*. La herramienta *rttExplorer* trata en lo posible de medir el *rtt* para todos los hops de forma casi simultanea. Estas mediciones se repiten para todos los hops de cada ruta de forma periodica cada cierto intervalo de tiempo (típicamente en el orden de segundos), mientras dura la exploración.
+* Next, once the hops between source and destination are known, we send a *measurement* probe. This second probe measures the *rtt* to each hop discovered by the latest *discovery* probe. The *rttExplorer* tool tries, as far as possible, to measure the *rtt* to all hops almost simultaneously. These measurements repeat periodically for all hops of each path at a regular interval (typically in the order of seconds) for the whole exploration.
 
-* Finalmente los resultados son almacenados localmente en formato json y son expuestos en una mongoDB en donde se almacena de forma definitiva los resultados de las mediciones.
+* Finally, the results are stored locally in JSON format and pushed to a MongoDB database, where the measurement results are stored permanently.
 
 
-## 3.2. Selección de puntos de prueba y destinos
+## 3.2. Selection of vantage points and destinations
 
-Debido a limitaciones para ubicar puntos de prueba, el presente dataset solamente utiliza  ubicaciones que se encuentran en puntos domiciliarios de internet pertenecientes a los siguientes operadores:
+Due to constraints in finding vantage points, this dataset only uses residential Internet connections from the following operators:
 
-* Telecom: Servicio sobre tecnología Docsis (Fibertel)
-* Telefónica: Servicio sobre tecnología DSL (Speedy)
-* Personal: Servicio sobre tecnología LTE
+* Telecom: DOCSIS service (Fibertel)
+* Telefónica: DSL service (Speedy)
+* Personal: LTE service
 
-Los destinos se eligen al azar, sin ningún criterio específico e intentando que se ubiquen en distintas zonas geográficas.
+We pick the destinations at random, without any specific criterion, while trying to place them in different geographic regions.
 
-## 3.3. Detalles de la sonda
+## 3.3. Probe details
 
-Se realizan exploraciones y mediciones usando indistintamente sondas TCP o UDP. En cada uno de los resultados mostrados en las siguientes secciones se describirá el protocolo utizado.
+We run explorations and measurements with either TCP or UDP probes. For each result shown in the following sections, we state the protocol used.
 
 
 <a id="table1"></a>
 
-| Protocolo                   	| tcp/udp              	|
+| Protocol                    	| tcp/udp              	|
 |-----------------------------	|----------------------	|
-| Puerto origen               	| random               	|
-| Puerto destino              	| 443(tcp)/4444(udp)   	|
-| Método                      	| tcp-paris, udp-paris 	|
-| Intervalo de Descubrimiento 	| 10 min               	|
-| Intervalo de Mediciones     	| 1 sec                	|
+| Source port                 	| random               	|
+| Destination port            	| 443(tcp)/4444(udp)   	|
+| Method                      	| tcp-paris, udp-paris 	|
+| Discovery interval          	| 10 min               	|
+| Measurement interval        	| 1 sec                	|
 
 
-## 3.4. Limitaciones del experimento
+## 3.4. Limitations of the experiment
 
-* Limitados puntos de medición disponibles.
-* Resultados basados en pocos experimentos (Tres origenes a aproximadamente una decena de destinos).
+* Few vantage points available.
+* Results based on few experiments (three sources towards about ten destinations).
 
 
-# 4. Resultados
+# 4. Results
 
-La idea inicial del experimento fue entender con el mayor detalle posible el comportamiento del *rtt* sobre *links* de internet que enfrentan distintos escenarios, por ejemplo, que atraviesan *middle boxes*, túneles MPLS, o tecnologías subyacentes distintas (como distintas redes de acceso o redes de transporte). Desafortunadamente, dadas las limitaciones en esta fase para tener más puntos de medición, no todos los escenarios pudieron ser evaluados ni se hizo suficientes pruebas para obtener resultados concluyentes.
+The initial goal of the experiment was to understand, in as much detail as possible, the behavior of the *rtt* over Internet *links* in different scenarios, for instance, links that traverse *middleboxes*, MPLS tunnels, or different underlying technologies (e.g., different access or transport networks). Unfortunately, given the limited number of vantage points in this phase, we could not evaluate all scenarios, nor run enough tests to reach conclusive results.
 
-Sin embargo, preliminarmete se encuentró que el comportamiento del *rtt* no se ve afectado por la presencia de *middle boxes (MB)* o túneles MPLS. Asimismo se confirma la distribución del tipo *estable* del *rtt* como ya se había planteado en discusiones [anteriores](). Esta distribución típicamente presenta una sola componente modal. Aunque eventualmente pueden aparecer distribuciones *estables* bimodales.
+Nevertheless, our preliminary results show that the behavior of the *rtt* is not affected by the presence of *middleboxes (MB)* or MPLS tunnels. We also confirm that the *rtt* follows a *stable* distribution, as discussed in [previous]() work. This distribution typically has a single modal component, although bimodal *stable* distributions occasionally appear.
 
-La aparición de componentes modales adicionales parece no tener relación alguna con la presencia de MPLS o MB, sino más bien se relaciona con:
+The appearance of additional modal components does not seem to be related to the presence of MPLS or MB. Instead, it seems to be related to:
 
-* Cambios en el *path* que resultan imperceptibles en terminos de *hops*: Es decir, se observa que el *rtt* cambia aún cuando se mantienen tanto los *hops* hasta el destino (misma ruta) y la cantidad de *hops* desde el destino al punto de medición (```reply_ttl```).
+* Path changes that are invisible in terms of *hops*: i.e., we observe that the *rtt* changes even when both the *hops* to the destination (same route) and the number of *hops* from the destination back to the vantage point (```reply_ttl```) remain the same.
 
-* Una segunda componente modal en la distribución parece estar relacionada a la carga de la red. Esto es principalmente notorio cuando se hace analiza mediciones que tienen una duración prolongada (en el orden de varias horas).
+* Network load, which seems to be related to a second modal component in the distribution. This is especially noticeable when we analyze long measurements (in the order of several hours).
 
-En las siguientes secciones se muestran los resultados mas representativos de los distintos casos analizados.
+The following sections show the most representative results of the analyzed cases.
 
-## 4.1. Distribución *estable* con componente modal única.
+## 4.1. *Stable* distribution with a single modal component.
 
-### 4.1.1. Variación de *rtt* en función de horas pico de consumo del ISP.
+### 4.1.1. *rtt* variation driven by the ISP's peak hours.
 <a id="table1"></a>
 
-| parametro                   	| valor              	|
+| parameter                   	| value              	|
 |-----------------------------	|----------------------	|
-| ISP punto de medicion    		| Telecom		      	|
-| Tecn. Acceso punto de medición| Docsis		      	|
-| IP origen               		| 192.168.0.126       	|
-| IP destino              		| 187.102.77.237	   	|
-| hop IP                     	| 200.89.165.222	 	|
-| ttl inicial			 		| 5		              	|
-| hop AS			     		| AS10318 (Telecom)    	|
+| Vantage point ISP        		| Telecom		      	|
+| Vantage point access tech.    | DOCSIS		      	|
+| Source IP               		| 192.168.0.126       	|
+| Destination IP          		| 187.102.77.237	   	|
+| Hop IP                     	| 200.89.165.222	 	|
+| Initial TTL			 		| 5		              	|
+| Hop AS			     		| AS10318 (Telecom)    	|
 
 ![](/internet/rttReporte/unnamed-chunk-1-1.png)
 
-La distribución de *rtt*  presenta una sola componente modal.
-**No se observan túneles MPLS** en el path **ni middleboxes**.
+The *rtt* distribution has a single modal component.
+**We observe neither MPLS tunnels nor middleboxes** along the path.
 
-Adicionalmente se puede observar que el *rtt* varía en el tiempo en función de las horas de mayor consumo de la red de acceso.
+Additionally, we observe that the *rtt* varies over time following the peak hours of the access network.
 
 
-### 4.1.2. Variación de *rtt* por *outages* en la red.
+### 4.1.2. *rtt* variation caused by network *outages*.
 
 <a id="table2"></a>
 
-| parametro                   	| valor              	|
+| parameter                   	| value              	|
 |-----------------------------	|----------------------	|
-| ISP punto de medicion    		| Telefonica	      	|
-| Tecn. Acceso punto de medición| DSL		      		|
-| IP origen               		| 192.168.1.35       	|
-| IP destino              		| 185.45.165.14		   	|
-| hop IP                     	| 200.51.208.166	 	|
-| ttl inicial			 		| 4		              	|
-| hop AS			     		| AS22927 (Telefonica) 	|
+| Vantage point ISP        		| Telefónica	      	|
+| Vantage point access tech.    | DSL		      		|
+| Source IP               		| 192.168.1.35       	|
+| Destination IP          		| 185.45.165.14		   	|
+| Hop IP                     	| 200.51.208.166	 	|
+| Initial TTL			 		| 4		              	|
+| Hop AS			     		| AS22927 (Telefónica) 	|
 
 
 ![](/internet/rttReporte/unnamed-chunk-2-1.png)
 
-La distribución del *rtt*  presenta una sola componente modal.
-**El *hop* analizado es el *ingress* LSR de un túnel MPLS**. Finalmente, en el path **No se observan middleboxes**.
+The *rtt* distribution has a single modal component.
+**The analyzed *hop* is the *ingress* LSR of an MPLS tunnel**. **We observe no middleboxes** along the path.
 
-Adicionalmente se puede observar que la componente modal del *rtt* no cambia  con el tiempo a pesar de que se detectan cortos intervalos de *outage* durante el monitoreo.
+Additionally, we observe that the modal component of the *rtt* does not change over time, despite short *outage* intervals detected during the monitoring.
 
 
-## 4.2. Distribución *estable* con componente bimodal.
+## 4.2. Bimodal *stable* distribution.
 
-### 4.2.1. Variación de *rtt* por cambios leves y de larga duración.
+### 4.2.1. *rtt* variation caused by slight, long-lasting changes.
 
 <a id="table3"></a>
 
-| parametro                   	| valor              	|
+| parameter                   	| value              	|
 |-----------------------------	|----------------------	|
-| ISP punto de medicion    		| Telefonica	      	|
-| Tecn. Acceso punto de medición| DSL		      		|
-| IP origen               		| 192.168.1.35       	|
-| IP destino              		| 185.45.165.14		   	|
-| hop IP                     	| 201.179.128.1		 	|
-| ttl inicial			 		| 2		              	|
-| hop AS			     		| AS22927 (Telefonica) 	|
+| Vantage point ISP        		| Telefónica	      	|
+| Vantage point access tech.    | DSL		      		|
+| Source IP               		| 192.168.1.35       	|
+| Destination IP          		| 185.45.165.14		   	|
+| Hop IP                     	| 201.179.128.1		 	|
+| Initial TTL			 		| 2		              	|
+| Hop AS			     		| AS22927 (Telefónica) 	|
 
 ![](/internet/rttReporte/unnamed-chunk-3-1.png)
-La distribución del *rtt* presenta dos componentes modales que ocurren por cambios leves en el *rtt* durante intervalos prolongados. Este cambio puede notarse principalmente las *12:15* y *15:00*. Sin embargo, si se grafica la distribución resultante en intervalos más cortos de tiempo, solo se observaría una componente estable.
+The *rtt* distribution has two modal components, caused by slight changes in the *rtt* over long intervals. These changes are mainly visible at *12:15* and *15:00*. However, if we plot the resulting distribution over shorter time intervals, we observe only one stable component.
 
-Durante la ruta hasta el *hop* analizado, **no** se encuentran ni **túneles mpls** ni **middleboxes**.
-
-
+Along the path to the analyzed *hop*, we find **neither MPLS tunnels nor middleboxes**.
 
 
-### 4.2.2. Variación de *rtt* por cambios bruscos y de larga duración.
+
+
+### 4.2.2. *rtt* variation caused by abrupt, long-lasting changes.
 
 
 
 <a id="table3"></a>
 
-| parametro                   	| valor              	|
+| parameter                   	| value              	|
 |-----------------------------	|----------------------	|
-| ISP punto de medicion    		| Telefonica	      	|
-| Tecn. Acceso punto de medición| DSL		      		|
-| IP origen               		| 192.168.1.35       	|
-| IP destino              		| 187.49.218.114	   	|
-| hop IP                     	| 187.49.218.114	 	|
-| ttl inicial			 		| 19		           	|
-| hop AS			     		| AS28154 (Telecom)		|
+| Vantage point ISP        		| Telefónica	      	|
+| Vantage point access tech.    | DSL		      		|
+| Source IP               		| 192.168.1.35       	|
+| Destination IP          		| 187.49.218.114	   	|
+| Hop IP                     	| 187.49.218.114	 	|
+| Initial TTL			 		| 19		           	|
+| Hop AS			     		| AS28154 (Telecom)		|
 
 ![](/internet/rttReporte/unnamed-chunk-4-1.png)
 
-La distribución del *rtt* presenta dos componentes modales que ocurren por cambios bruscos en el *rtt* durante intervalos prolongados. Este cambio puede notarse principalmente las *04:30*. Sin embargo, si se grafica la distribución resultante haciendo un corte a las 04:30, solo se observaría una componente estable en la distribución.
+The *rtt* distribution has two modal components, caused by abrupt changes in the *rtt* over long intervals. The change is mainly visible at *04:30*. However, if we split the data at 04:30 and plot each part, we observe only one stable component in each distribution.
 
-Durante la ruta hasta el *hop*, se descubren **túneles mpls** antes de alcanzar el hop analizado y **no** se registran **middleboxes**. Sin embargo, los LSR (routers MPLS) en hops previos, no influyen en el cambio de comportameinto del *rtt*.
+Along the path, we discover **MPLS tunnels** before reaching the analyzed hop, and we record **no middleboxes**. However, the LSRs (MPLS routers) at previous hops do not influence the change in the *rtt* behavior.
 
-El cambio brusco del *rtt* en el dominio temporal podría significar que las sondas cambiaron de ruta, sin embargo no se detecta ningun indicio de esto analizando la ruta del traceroute (hops, ```probe_ttl``` y  ```reply_ttl```). Este comportamiento también se observa en el ejemplo siguiente (hop 190.216.88.34).
+The abrupt change of the *rtt* in the time domain could mean that the probes changed route. However, we find no evidence of this in the traceroute path (hops, ```probe_ttl``` and ```reply_ttl```). We also observe this behavior in the next example (hop 190.216.88.34).
 
 
 <a id="table3"></a>
 
-| parametro                   	| valor              	|
+| parameter                   	| value              	|
 |-----------------------------	|----------------------	|
-| ISP punto de medicion    		| Telefonica	      	|
-| Tecn. Acceso punto de medición| DSL		      		|
-| IP origen               		| 192.168.1.35       	|
-| IP destino              		| 181.30.134.68		   	|
-| hop IP                     	| 190.216.88.34		 	|
-| ttl inicial			 		| 11		           	|
-| hop AS			     		| AS4323 (Level 3 AR) 	|
+| Vantage point ISP        		| Telefónica	      	|
+| Vantage point access tech.    | DSL		      		|
+| Source IP               		| 192.168.1.35       	|
+| Destination IP          		| 181.30.134.68		   	|
+| Hop IP                     	| 190.216.88.34		 	|
+| Initial TTL			 		| 11		           	|
+| Hop AS			     		| AS4323 (Level 3 AR) 	|
 
 ![](/internet/rttReporte/unnamed-chunk-5-1.png)
 
-### 4.2.3. Variación de *rtt* por cambios bruscos y cortos.
+### 4.2.3. *rtt* variation caused by abrupt, short changes.
 
 <a id="table3"></a>
 
-| parametro                   	| valor              	|
+| parameter                   	| value              	|
 |-----------------------------	|----------------------	|
-| ISP punto de medicion    		| Telecom	    	  	|
-| Tecn. Acceso punto de medición| Docsis	      		|
-| IP origen               		| 192.168.0.126       	|
-| IP destino              		| 198.45.49.161		   	|
-| hop IP                     	| 200.89.165.222	 	|
-| ttl inicial			 		| 6		           		|
-| hop AS			     		| AS10318 (Telecom) 	|
+| Vantage point ISP        		| Telecom	    	  	|
+| Vantage point access tech.    | DOCSIS	      		|
+| Source IP               		| 192.168.0.126       	|
+| Destination IP          		| 198.45.49.161		   	|
+| Hop IP                     	| 200.89.165.222	 	|
+| Initial TTL			 		| 6		           		|
+| Hop AS			     		| AS10318 (Telecom) 	|
 
 
 ![](/internet/rttReporte/unnamed-chunk-6-1.png)
-La distribución del *rtt* presenta dos componentes modales que ocurren por cambios eleves en el *rtt* durante un intervalo corto de tiempo. Este cambio puede notarse principalmente antes de las *22:30*.
+The *rtt* distribution has two modal components, caused by slight changes in the *rtt* over a short time interval. The change is mainly visible just before *22:30*.
 
-**El *hop* analizado es el *ingress* LSR de un túnel MPLS**. Finalmente, en el path **No se observan middleboxes**.
+**The analyzed *hop* is the *ingress* LSR of an MPLS tunnel**. **We observe no middleboxes** along the path.
 
-En este caso, el cambio leve del *rtt* en el dominio temporal podría coincidir con saturación de la red del ISP.
+In this case, the slight change of the *rtt* in the time domain could coincide with congestion in the ISP network.
 
-### 4.3. variación de *rtt* por ISP
+### 4.3. *rtt* variation by ISP
 
-Lastimosamente no se tienen suficientes puntos de medición para entender porqué el comportamiento del *rtt* varía de ISP en ISP. Pero resulta importante remarcar la diferencia en las características de la distribición estable que surge al analizar los resultados desde diferentes ISPs. A continuación se muestran tres gráficas representativas de cada ISP.
+Unfortunately, we do not have enough vantage points to understand why the behavior of the *rtt* varies from one ISP to another. Still, it is worth highlighting the difference in the characteristics of the stable distribution when we analyze results from different ISPs. Below, we show three representative plots, one per ISP.
 
-Es caracerístico que las mediciones desde *Telecom* presentan mayores variaciones en el tiempo, mientras que las mediciones desde *Telefónica* parecen ser más planas. Esto se observa en las siguientes figuras.
+Interestingly, measurements from *Telecom* show larger variations over time, while measurements from *Telefónica* appear flatter. The following figures show this behavior.
 
 <p style="text-align: center;"> Personal (LTE) </p>
 ![](/internet/rttReporte/unnamed-chunk-7-1.png)
-<p style="text-align: center;"> Telecom (Docsis) </p>
+<p style="text-align: center;"> Telecom (DOCSIS) </p>
 ![](/internet/rttReporte/unnamed-chunk-8-1.png)
-<p style="text-align: center;"> Telefonica (DLS) </p>
+<p style="text-align: center;"> Telefónica (DSL) </p>
 ![](/internet/rttReporte/unnamed-chunk-9-1.png)
 
-# 5. Conclusiones
+# 5. Conclusions
 
-* De forma preliminar, la presencia de túneles MPLS o Middleboxes no caracterizan ningún comportamiento especial en la distribución del *rtt*.
-* La doble componente modal de la distribución estable parece estar más relacionada con cambios en la red, que con una característica propia de la distribución del *rtt*. Esto es, la distribución bimodal solamente aparecería si se mide el *rtt* durante un tiempo suficientemente grande (orde de varias horas) como para aumentar la probabilidad de que haya algún cambio en el comportamiento de la red.
+* Preliminarily, the presence of MPLS tunnels or middleboxes does not produce any particular behavior in the *rtt* distribution.
+* The second modal component of the stable distribution seems to be related to changes in the network rather than to an intrinsic property of the *rtt* distribution. That is, the bimodal distribution would only appear when the *rtt* is measured over a long enough time (in the order of several hours), which increases the probability of some change in the network behavior.
 
-# 6. Posibles investigaciones futuras
+# 6. Future work
 
-* Replicar las experiencias presentadas en este reporte preliminar con más puntos de medición.
-* Resultaría interesante si las características de la distribución *estable* permiten conocer la tecnología de subyacente de la red, por ejemplo, qué tipo de redes de acceso se usan (LTE, Docsis, DSL, etc).
-* No queda claro cuales son los fenómenos que causan que el *rtt* cambie bruscamente aún cuando no hay otros indicios de cambio de path. Probablemente esto se deba que hay tecnologías invisibles para la topología IP (MPLS, Ethernet, Tecnologías de Transporte, etc). Intentar explicar a qué se deben estas variaciones de *rtt* resultaría interesante, así mismo se podría analizar si los cambios bruscos de *rtt* podrían permitir inferir con precisión los cambios de ruta en un path.
+* Replicate the experiments presented in this preliminary report with more vantage points.
+* Study whether the characteristics of the *stable* distribution reveal the underlying network technology, for instance, the type of access network in use (LTE, DOCSIS, DSL, etc.).
+* It remains unclear which phenomena cause the *rtt* to change abruptly even when there is no other sign of a path change. This is likely due to technologies invisible to the IP topology (MPLS, Ethernet, transport technologies, etc.). Explaining these *rtt* variations would be worthwhile; we could also study whether abrupt *rtt* changes allow us to accurately infer route changes along a path.

@@ -4,7 +4,7 @@
     "check": "Links",
     "description": "'a' tag is missing a reference",
     "status": null,
-    "element": "<a href=\"\">anteriores</a>"
+    "element": "<a href=\"\">previous</a>"
   },
   {
     "file": "internet/rttReporte/2017-09-01-rttReporte/index.html",
