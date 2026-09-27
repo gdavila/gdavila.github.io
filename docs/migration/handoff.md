@@ -62,3 +62,30 @@ Coordinator review should confirm the Phase 1 exit condition and transfer these 
 ### Coordinator gate
 
 **Accepted.** I independently checked the frozen commit, verified the bundle, reviewed the manifest structure and counts, and read the Pages and known-issue evidence. The 11 expected routes, seven authored body hashes, 94 asset entries, backup, and recorded publication settings satisfy the Phase 1 exit condition. Agent 2 may start from this handoff.
+
+## Phase 2 — chirpy-setup (Agent 2)
+
+**Input:** Coordinator-accepted Phase 1 gate above; frozen legacy commit `ecf40cbb96ee4aa317f2724bd7522966c9293a78`; Chirpy Starter `main` commit `beffc88713242da8bf49325674be38d171071213` (upstream release update for Chirpy v7.6.0). No applicable `AGENTS.md` was present. This entry records local setup only.
+
+### Candidate identity and commits
+
+- Intended GitHub repository: `https://github.com/gdavila/site-chirpy`; **not created**. The candidate has no remote. GitHub's form confirmed `site-chirpy` was available before the creation attempt. Availability of `gdavila.github.io-legacy` was not confirmed.
+- Local checkout: `/Users/gabriel/gdavila.github.io/.migration-work/site-chirpy`, on `main` in a fresh independent Git repository. Starter files were downloaded from the upstream commit above, then the starter `.git` history was removed before `git init -b main`. The optional, uninitialized `assets/lib` submodule pointer and `.gitmodules` were omitted; the local build uses the theme's normal assets.
+- Phase 2 local setup commit: `782152c1d964dc83e7c644e0b78210cd03d8c999` (root commit; starter files, configuration, workflow, lockfile, and imported Phase 1 artifacts). This handoff entry follows in a documentation commit. The coordinator should record the final accepted checkout `HEAD` before assigning Agent 3.
+- `docs/chirpy-migration-plan.md` and the complete Phase 1 `docs/migration/` handoff were copied byte for byte before this Phase 2 entry was appended. The 38 MiB backup bundle remains at `/Users/gabriel/gdavila.github.io/.migration-backups/gdavila-legacy-ecf40cbb96ee4aa317f2724bd7522966c9293a78.bundle`; it was not imported. No `__pycache__` was imported. No legacy article, page, asset, or publication setting was changed.
+
+### Setup and dependencies
+
+- Retained the starter Gemfile and pinned its resolved dependencies in committed `Gemfile.lock`: `jekyll-theme-chirpy` 7.6.0, Jekyll 4.4.1, HTMLProofer 5.2.2, Bundler 4.0.21. The lockfile includes `x86_64-linux` and `x86_64-linux-gnu` for the Ubuntu Actions runner (plus other platforms).
+- Local runtime: Homebrew Ruby 3.4.11. System Ruby 2.6 is too old; Homebrew's existing portable Ruby 4.0.7 could not resolve Chirpy's `~> 3.1` Ruby requirement. Installed the official `ruby@3.4` Homebrew formula and resolved/install gems into ignored `vendor/bundle`.
+- `_config.yml` sets `url: "https://gdavila.github.io"`, `baseurl: ""`, `lang: en`, and `timezone: America/Argentina/Buenos_Aires`; it retains the source site title, name/tagline, description, bio, location, and LinkedIn profile, and points GitHub contact to `gdavila`. No unknown email or Twitter identity was invented. Both PWA installability and its offline cache are disabled. The generated site excludes `docs/`.
+- Removed the starter About prompt and empty post placeholder. Agent 3 owns all authored content, navigation, and original page routes. A small footer override prevents Chirpy's default CC BY 4.0 claim from appearing for the owner's posts while retaining theme attribution.
+- Replaced the starter Pages deployment workflow with `.github/workflows/build-check.yml`. It has only `contents: read`, a production root build, and HTMLProofer with external checks disabled. It has no Pages configuration, upload, deployment, environment, or write permissions, so this candidate workflow cannot publish the site.
+
+### Checks and constraints
+
+- `JEKYLL_ENV=production bundle exec jekyll build --destination _site`: **passed** with Ruby 3.4.11. `bundle exec htmlproofer _site --disable-external`: **passed**, 10 internal links across five generated HTML files. The HTMLProofer run is on the empty-content starter; Phase 4 must check the migrated content separately.
+- Generated root HTML has English UI, the original title, `https://gdavila.github.io/` canonical URL, LinkedIn and GitHub profile links, and no `site-chirpy` URL or CC BY claim. `_site/docs/` and `_site/sw.js` are absent. A brief loopback HTTP preview of `_site/` at `/` returned 200 with the expected title and canonical URL.
+- All six publication dates extracted from the planned `_posts/` filenames match the manifest, and midnight in `America/Argentina/Buenos_Aires` remains on each recorded calendar date. No posts were copied; Agent 3 must recheck actual rendered post dates after migration.
+- **GitHub creation block:** Automatic approval review rejected submitting the template form with Public visibility because the user's request did not specify candidate visibility. It then rejected selecting Private as an unapproved access-scope change and directed a stop rather than an indirect creation path. A later read-only attempt to check the archive-name field was also rejected as outside Phase 2. Coordinator direction is to make no further creation attempts in this phase. No GitHub write occurred, `site-chirpy` has no remote, and candidate Pages settings cannot be inspected or disabled until that repository exists. The production legacy Pages site remains untouched.
+- **Actions build:** not run because the GitHub candidate repository does not exist. The local build/check workflow is committed and ready for a later authorized repository creation and push. The Phase 2 exit condition's GitHub repository and Actions build are therefore still open; the coordinator should not release Phase 3 as fully accepted until resolving that prerequisite or explicitly recording a revised gate.
