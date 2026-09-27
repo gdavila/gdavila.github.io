@@ -122,3 +122,11 @@ The Phase 3 local exit condition is met. Phase 4 should independently build and 
 ### Coordinator gate
 
 **Accepted for independent validation.** I reviewed the content commit and handoff, inspected the small layouts and plugins, confirmed the candidate working tree is clean, and reran the manifest check. It passed for seven unchanged authored bodies, 94 source/candidate/output assets, eleven routes, section and search mappings, and the exact ParisTraceroute iframe document. The Phase 2 remote prerequisite remains open. Agent 4 may validate this local candidate; production work remains gated.
+
+## Phase 4 — independent local validation (Agent 4)
+
+**Input:** Coordinator gate commit `c2207ebb3f7801d9bccab7d0193b0c2792c3a735`; frozen legacy commit `ecf40cbb96ee4aa317f2724bd7522966c9293a78`. Agent 4 did not implement Phases 2 or 3. No applicable `AGENTS.md` was found. The candidate was clean at the gate commit.
+
+The Ruby 3.4 production build passed. The independent [Phase 4 audit](validate_phase4.py) recomputed all seven authored body and 94 asset hashes, fetched all 11 routes and 94 assets from a loopback server at `/`, and checked metadata, dates, categories, search, feed, sitemap, canonicals, homepage/profile, and exact decoded ParisTraceroute payload. The preservation and HTTP checks passed. Browser inspection covered all 11 routes at desktop/mobile widths and sampled light/dark appearance; screenshots and the complete evidence are in [validation.md](validation.md).
+
+**Gate recommendation: FAIL.** Clicking a ParisTraceroute `#table1` link in its `srcdoc` iframe loads a nested Chirpy article instead of scrolling to the table, which regresses the frozen rendered page. The three section tabs also have blank browser titles, and mobile top bars expose `Migration-home` and `Paris-document`. These are implementation findings for the coordinator to route to Agent 3; Agent 4 made no implementation edits. The full HTMLProofer run reported 30 precisely classified baseline-content failures, and the separate link scan found exactly the 12 pre-existing missing local targets, with no new missing route or asset. The Phase 2 candidate remote/Pages/Actions prerequisites remain blocked; Phase 4 was local only. Rerun Phase 4 after Agent 3 fixes the reported defects, then resolve the remote prerequisite before deployment.
