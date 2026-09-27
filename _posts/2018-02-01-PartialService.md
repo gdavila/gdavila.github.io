@@ -4,6 +4,7 @@ excerpt: "How codeword errors, channel bonding, and Partial Service shape TCP th
 layout: post
 permalink: /internet/PartialService/2018-02-01-PartialService/
 categories: ["Data Communications"]
+tags: [docsis, access-networks, tcp, throughput]
 date: 2018-02-01 00:00:00 -0300
 math: true
 ---

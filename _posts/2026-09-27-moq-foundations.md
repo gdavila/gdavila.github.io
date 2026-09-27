@@ -4,6 +4,7 @@ excerpt: "How a Media over QUIC publisher, relay, and subscriber establish sessi
 layout: post
 permalink: /video/moq-foundations/
 categories: ["Video & Media"]
+tags: [moq, quic]
 date: 2026-09-27 00:00:00 -0300
 ---
 

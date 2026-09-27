@@ -4,6 +4,7 @@ excerpt: A technical report on our experience monitoring the RTT across differen
 layout: post
 permalink: /internet/rttReporte/2017-09-01-rttReporte/
 categories: ["Data Communications"]
+tags: [internet-measurement, rtt, traceroute, mpls]
 date: 2017-09-01 00:00:00 -0300
 ---
 
