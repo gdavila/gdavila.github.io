@@ -150,3 +150,12 @@ The Ruby 3.4 production build passed. The independent [Phase 4 audit](validate_p
 4. Chrome browser tested the Tabla-1 interaction, the three section browser titles, and both affected top bars at 390 px width. The viewport override was reset after testing.
 
 Agent 4 should independently rerun Phase 4 against the new handoff commit and replace its validation recommendation. No Agent 4 script, report, or screenshot was edited. No remote creation or deployment was attempted; the Phase 2 remote prerequisite remains open.
+
+## Phase 2 rework — Chirpy post license claim (Agent 2)
+
+**Input:** Candidate `e1868525d89257bb18b31c74f3ffc54dd145aa51` and Agent 4's independent finding that all six posts displayed a new CC BY 4.0 claim. Agent 4's uncommitted `validate_phase4.py` edits and revalidation screenshots were left untouched.
+
+- Implementation commit: `ac74961cdabd07a7c8fd85b60ee5660e3c295b0b`. Chirpy 7.6's `_layouts/post.html` emits its license sentence from `site.data.locales[lang].copyright.license.template`. Added `_plugins/disable_chirpy_post_license.rb` to clear that template at Jekyll `post_read`, so the generated post HTML contains no content license assertion. The existing footer override continues to remove the separate footer claim. No post body, front matter, route, asset, or authored content was edited.
+- `JEKYLL_ENV=production bundle exec jekyll build --destination _site`: passed with Ruby 3.4.11. Inspected all six generated legacy post routes: each license wrapper is empty and each page lacks `CC BY 4.0`, `This post is licensed under`, and the Creative Commons license URL.
+- `ruby docs/migration/verify_phase3.rb /Users/gabriel/gdavila.github.io`: passed for seven authored body hashes, 94 source/candidate/generated asset hashes, 11 routes, metadata, sections/search, homepage/profile, and the exact ParisTraceroute iframe document.
+- GitHub candidate creation, Pages settings, and Actions build remain blocked as recorded above. No remote or production write was attempted. Agent 4 should independently rerun the affected post-page checks against this rework commit.
