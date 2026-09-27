@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 405" role="img" aria-label="MOQT, WebTransport and HTTP/3 shown side by side at the application layer, above QUIC, UDP and IP">
+  <style>
+    svg.d{
+      --surface:#FFFFFF; --surface-2:#F5F8F7;
+      --ink:#141C1B; --ink-2:#485654; --ink-3:#6F7D7B;
+      --paper:#EEF1F0; --rule:#D2DAD8;
+      --accent:#0B6B63; --accent-bg:#DBEDEA;
+      --track:#3B4EC0;   --track-bg:#E4E8FA;
+      --group:#0F7A83;   --group-bg:#DBEFF1;
+      --subgroup:#A65E00;--subgroup-bg:#F7EBD7;
+      --object:#A0335E;  --object-bg:#F8E4EC;
+      --warn:#A3441B;    --warn-bg:#F9E7DE;
+      color:var(--ink);
+    }
+    @media (prefers-color-scheme: dark){
+      svg.d{
+        --surface:#151E1C; --surface-2:#1A2422;
+        --ink:#E7EDEB; --ink-2:#A9B7B4; --ink-3:#81908D;
+        --paper:#0E1413; --rule:#2B3735;
+        --accent:#4FC7B8; --accent-bg:#11302C;
+        --track:#93A2F7;   --track-bg:#232B52;
+        --group:#54C3CE;   --group-bg:#123034;
+        --subgroup:#E0A354;--subgroup-bg:#37270F;
+        --object:#EE85AA;  --object-bg:#3A1A26;
+        --warn:#E39067;    --warn-bg:#3A2117;
+      }
+    }
+    .d text{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+            font-size:12px;fill:currentColor}
+    .d .t-s{font-size:10.5px}
+    .d .t-b{font-weight:600}
+    .d .mut{fill:var(--ink-3)}
+    .d .lbl{fill:var(--ink-2)}
+    .d .box{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.25}
+    .d .box-p{fill:var(--paper);stroke:var(--rule);stroke-width:1.25}
+    .d .ln{stroke:var(--rule);stroke-width:1.25;fill:none}
+    .d .ln-d{stroke:var(--rule);stroke-width:1.25;fill:none;stroke-dasharray:4 4}
+    .d .flow{stroke:var(--ink-2);stroke-width:1.4;fill:none}
+    .d .flow-hv{stroke:var(--ink-2);stroke-width:3;fill:none}
+    .d .flow-a{stroke:var(--accent);stroke-width:1.6;fill:none}
+    .d .flow-w{stroke:var(--warn);stroke-width:1.5;fill:none;stroke-dasharray:5 4}
+    .d .acc{fill:var(--accent-bg);stroke:var(--accent);stroke-width:1.4}
+    .d .acc-t{fill:var(--accent)}
+    .d .b-track{fill:var(--track-bg);stroke:var(--track);stroke-width:1.3}
+    .d .b-group{fill:var(--group-bg);stroke:var(--group);stroke-width:1.3}
+    .d .b-sub{fill:var(--subgroup-bg);stroke:var(--subgroup);stroke-width:1.3}
+    .d .b-obj{fill:var(--object-bg);stroke:var(--object);stroke-width:1.3}
+    .d .t-track{fill:var(--track)} .d .t-group{fill:var(--group)}
+    .d .t-sub{fill:var(--subgroup)} .d .t-obj{fill:var(--object)}
+    .d .warn{fill:var(--warn-bg);stroke:var(--warn);stroke-width:1.3}
+    .d .t-warn{fill:var(--warn)}
+  </style>
+
+  <text x="450" y="30" text-anchor="middle" class="t-b">Protocol roles in the reference deployment</text>
+  <rect x="125" y="60" width="650" height="142" rx="3" class="box-p"/>
+  <text x="145" y="81" class="mut t-s">APPLICATION LAYER</text>
+  <text x="225" y="106" text-anchor="middle" class="mut t-s">media + catalog</text>
+  <rect x="145" y="117" width="170" height="57" rx="3" class="b-track"/>
+  <text x="230" y="139" text-anchor="middle" class="t-track t-b">MOQT</text>
+  <text x="230" y="157" text-anchor="middle" class="t-track t-s">tracks + objects</text>
+  <rect x="365" y="117" width="170" height="57" rx="3" class="box"/>
+  <text x="450" y="139" text-anchor="middle" class="t-b">WebTransport</text>
+  <text x="450" y="157" text-anchor="middle" class="mut t-s">session + streams</text>
+  <rect x="585" y="117" width="170" height="57" rx="3" class="box"/>
+  <text x="670" y="139" text-anchor="middle" class="t-b">HTTP/3</text>
+  <text x="670" y="157" text-anchor="middle" class="mut t-s">SETTINGS + CONNECT</text>
+  <line x1="319" y1="145" x2="360" y2="145" stroke="var(--ink-2)" stroke-width="1.6"/>
+  <line x1="539" y1="145" x2="580" y2="145" stroke="var(--ink-2)" stroke-width="1.6"/>
+  <polygon points="365,145 357,141 357,149" fill="var(--ink-2)"/>
+  <polygon points="585,145 577,141 577,149" fill="var(--ink-2)"/>
+  <text x="450" y="192" text-anchor="middle" class="mut t-s">MOQT uses a WebTransport session established through HTTP/3</text>
+  <line x1="670" y1="204" x2="670" y2="220" stroke="var(--ink-2)" stroke-width="1.6"/>
+  <polygon points="670,224 666,216 674,216" fill="var(--ink-2)"/>
+  <text x="145" y="250" class="mut t-s">TRANSPORT</text>
+  <rect x="275" y="224" width="500" height="43" rx="3" class="box"/>
+  <text x="525" y="251" text-anchor="middle" class="t-b">QUIC · secure connection + independent streams</text>
+  <line x1="525" y1="270" x2="525" y2="279" stroke="var(--ink-2)" stroke-width="1.6"/>
+  <polygon points="525,282 521,274 529,274" fill="var(--ink-2)"/>
+  <text x="145" y="307" class="mut t-s">TRANSPORT</text>
+  <rect x="275" y="282" width="500" height="39" rx="3" class="box"/>
+  <text x="525" y="307" text-anchor="middle" class="t-b">UDP</text>
+  <line x1="525" y1="324" x2="525" y2="333" stroke="var(--ink-2)" stroke-width="1.6"/>
+  <polygon points="525,336 521,328 529,328" fill="var(--ink-2)"/>
+  <text x="145" y="361" class="mut t-s">NETWORK</text>
+  <rect x="275" y="336" width="500" height="39" rx="3" class="box"/>
+  <text x="525" y="361" text-anchor="middle" class="t-b">IP</text>
+  <text x="450" y="394" text-anchor="middle" class="mut t-s">MOQT can also use QUIC directly.</text>
+</svg>

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 480" role="img" aria-label="Four media distribution paths compare what an HTTP CDN, a WebRTC SFU, multicast routers, and a MoQ relay handle between a source and receivers">
+  <style>
+    svg.d{
+      --surface:#FFFFFF; --surface-2:#F5F8F7;
+      --ink:#141C1B; --ink-2:#485654; --ink-3:#6F7D7B;
+      --paper:#EEF1F0; --rule:#D2DAD8;
+      --accent:#0B6B63; --accent-bg:#DBEDEA;
+      --track:#3B4EC0;   --track-bg:#E4E8FA;
+      --group:#0F7A83;   --group-bg:#DBEFF1;
+      --subgroup:#A65E00;--subgroup-bg:#F7EBD7;
+      --object:#A0335E;  --object-bg:#F8E4EC;
+      --warn:#A3441B;    --warn-bg:#F9E7DE;
+      color:var(--ink);
+    }
+    @media (prefers-color-scheme: dark){
+      svg.d{
+        --surface:#151E1C; --surface-2:#1A2422;
+        --ink:#E7EDEB; --ink-2:#A9B7B4; --ink-3:#81908D;
+        --paper:#0E1413; --rule:#2B3735;
+        --accent:#4FC7B8; --accent-bg:#11302C;
+        --track:#93A2F7;   --track-bg:#232B52;
+        --group:#54C3CE;   --group-bg:#123034;
+        --subgroup:#E0A354;--subgroup-bg:#37270F;
+        --object:#EE85AA;  --object-bg:#3A1A26;
+        --warn:#E39067;    --warn-bg:#3A2117;
+      }
+    }
+    .d text{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+            font-size:12px;fill:currentColor}
+    .d .t-s{font-size:10.5px}
+    .d .t-b{font-weight:600}
+    .d .mut{fill:var(--ink-3)}
+    .d .lbl{fill:var(--ink-2)}
+    .d .box{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.25}
+    .d .box-p{fill:var(--paper);stroke:var(--rule);stroke-width:1.25}
+    .d .ln{stroke:var(--rule);stroke-width:1.25;fill:none}
+    .d .ln-d{stroke:var(--rule);stroke-width:1.25;fill:none;stroke-dasharray:4 4}
+    .d .flow{stroke:var(--ink-2);stroke-width:1.4;fill:none}
+    .d .flow-hv{stroke:var(--ink-2);stroke-width:3;fill:none}
+    .d .flow-a{stroke:var(--accent);stroke-width:1.6;fill:none}
+    .d .flow-w{stroke:var(--warn);stroke-width:1.5;fill:none;stroke-dasharray:5 4}
+    .d .acc{fill:var(--accent-bg);stroke:var(--accent);stroke-width:1.4}
+    .d .acc-t{fill:var(--accent)}
+    .d .b-track{fill:var(--track-bg);stroke:var(--track);stroke-width:1.3}
+    .d .b-group{fill:var(--group-bg);stroke:var(--group);stroke-width:1.3}
+    .d .b-sub{fill:var(--subgroup-bg);stroke:var(--subgroup);stroke-width:1.3}
+    .d .b-obj{fill:var(--object-bg);stroke:var(--object);stroke-width:1.3}
+    .d .t-track{fill:var(--track)} .d .t-group{fill:var(--group)}
+    .d .t-sub{fill:var(--subgroup)} .d .t-obj{fill:var(--object)}
+    .d .warn{fill:var(--warn-bg);stroke:var(--warn);stroke-width:1.3}
+    .d .t-warn{fill:var(--warn)}
+  </style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--ink-2)"/></marker><marker id="arrow-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker></defs>
+
+  <text x="28" y="28" class="t-b">Four paths to an audience</text>
+  <text x="28" y="49" class="mut t-s">The middle component determines how each path distributes media.</text>
+
+  <rect x="20" y="72" width="860" height="82" rx="4" class="box"/>
+  <text x="38" y="107" class="t-b">HLS / DASH</text>
+  <rect x="212" y="84" width="134" height="39" rx="3" class="box-p"/><text x="279" y="108" text-anchor="middle" class="t-s">packager</text>
+  <path d="M350 103 H407" class="flow" marker-end="url(#arrow)"/><text x="378" y="91" text-anchor="middle" class="mut t-s">HTTP</text>
+  <rect x="410" y="84" width="184" height="39" rx="3" class="box-p"/><text x="502" y="102" text-anchor="middle" class="t-b t-s">HTTP CDN</text><text x="502" y="116" text-anchor="middle" class="mut t-s">caches resources</text>
+  <path d="M598 103 H657" class="flow" marker-end="url(#arrow)"/>
+  <rect x="660" y="84" width="174" height="39" rx="3" class="box-p"/><text x="747" y="108" text-anchor="middle" class="t-s">players</text>
+  <text x="212" y="143" class="mut t-s">Segments or parts are published and cached; publication and buffering shape live delay.</text>
+
+  <rect x="20" y="160" width="860" height="82" rx="4" class="box"/>
+  <text x="38" y="195" class="t-b">WebRTC</text>
+  <rect x="212" y="172" width="134" height="39" rx="3" class="box-p"/><text x="279" y="196" text-anchor="middle" class="t-s">sender</text>
+  <path d="M350 191 H407" class="flow" marker-end="url(#arrow)"/><text x="378" y="179" text-anchor="middle" class="mut t-s">RTP</text>
+  <rect x="410" y="172" width="184" height="39" rx="3" class="box-p"/><text x="502" y="190" text-anchor="middle" class="t-b t-s">SFU</text><text x="502" y="204" text-anchor="middle" class="mut t-s">selects streams</text>
+  <path d="M598 191 H657" class="flow" marker-end="url(#arrow)"/>
+  <rect x="660" y="172" width="174" height="39" rx="3" class="box-p"/><text x="747" y="196" text-anchor="middle" class="t-s">participants</text>
+  <text x="212" y="231" class="mut t-s">Interactive delivery; forwarding state and topology grow with the audience.</text>
+
+  <rect x="20" y="248" width="860" height="82" rx="4" class="box"/>
+  <text x="38" y="282" class="t-b">IP multicast</text>
+  <rect x="212" y="260" width="134" height="39" rx="3" class="box-p"/><text x="279" y="284" text-anchor="middle" class="t-s">source</text>
+  <path d="M350 279 H407" class="flow" marker-end="url(#arrow)"/><text x="378" y="267" text-anchor="middle" class="mut t-s">UDP</text>
+  <rect x="410" y="260" width="184" height="39" rx="3" class="box-p"/><text x="502" y="278" text-anchor="middle" class="t-b t-s">multicast routers</text><text x="502" y="292" text-anchor="middle" class="mut t-s">replicate packets</text>
+  <path d="M598 279 H657" class="flow" marker-end="url(#arrow)"/>
+  <rect x="660" y="260" width="174" height="39" rx="3" class="box-p"/><text x="747" y="284" text-anchor="middle" class="t-s">receivers</text>
+  <text x="212" y="319" class="mut t-s">Efficient in a managed network; receiver-specific adaptation needs extra design.</text>
+
+  <rect x="20" y="336" width="860" height="82" rx="4" class="acc"/>
+  <text x="38" y="370" class="acc-t t-b">MoQ / MOQT</text>
+  <rect x="212" y="348" width="134" height="39" rx="3" class="box-p"/><text x="279" y="372" text-anchor="middle" class="t-s">publisher</text>
+  <path d="M350 367 H407" class="flow-a" marker-end="url(#arrow-a)"/><text x="378" y="355" text-anchor="middle" class="acc-t t-s">objects</text>
+  <rect x="410" y="348" width="184" height="39" rx="3" class="acc"/><text x="502" y="366" text-anchor="middle" class="acc-t t-b t-s">MoQ relay</text><text x="502" y="380" text-anchor="middle" class="acc-t t-s">routes named objects</text>
+  <path d="M598 367 H657" class="flow-a" marker-end="url(#arrow-a)"/>
+  <rect x="660" y="348" width="174" height="39" rx="3" class="box-p"/><text x="747" y="372" text-anchor="middle" class="t-s">subscribers</text>
+  <text x="212" y="407" class="acc-t t-s">Subscribes by track; relays may aggregate demand and cache individual objects.</text>
+
+  <path d="M28 441 H872" class="ln"/>
+  <text x="28" y="461" class="t-b t-s">The intermediary is present in every path; what it handles differs.</text>
+</svg>

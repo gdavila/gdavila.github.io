@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 352" role="img" aria-label="Three mappings from fragmented MP4 units to MOQT objects: ftyp and moov form the initialization object, while separate moof and mdat pairs carry one video frame or one AAC frame per object">
+  <style>
+    svg.d{--surface:#FFFFFF;--surface-2:#F5F8F7;--ink:#141C1B;--ink-2:#485654;--ink-3:#6F7D7B;--paper:#EEF1F0;--rule:#D2DAD8;--object:#A0335E;--object-bg:#F8E4EC;color:var(--ink)}
+    @media (prefers-color-scheme: dark){svg.d{--surface:#151E1C;--surface-2:#1A2422;--ink:#E7EDEB;--ink-2:#A9B7B4;--ink-3:#81908D;--paper:#0E1413;--rule:#2B3735;--object:#EE85AA;--object-bg:#3A1A26}}
+    .d text{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;fill:currentColor}
+    .d .t-s{font-size:11.5px}.d .t-b{font-weight:600}.d .mut{fill:var(--ink-3)}.d .lbl{fill:var(--ink-2)}
+    .d .box{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.25}.d .box-p{fill:var(--paper);stroke:var(--rule);stroke-width:1.25}
+    .d .flow{stroke:var(--ink-2);stroke-width:1.5;fill:none}.d .b-obj{fill:var(--object-bg);stroke:var(--object);stroke-width:1.3}.d .t-obj{fill:var(--object)}
+  </style>
+  <text x="27" y="29" class="t-b">From fragmented MP4 to MOQT objects</text>
+  <text x="27" y="48" class="mut t-s">This run: one initialization unit, then separate fragments for each video frame or AAC frame.</text>
+
+  <rect x="24" y="63" width="270" height="134" rx="4" class="box"/>
+  <text x="42" y="87" class="t-b">INITIALIZATION</text>
+  <text x="42" y="104" class="mut t-s">One unit before media fragments</text>
+  <rect x="42" y="116" width="98" height="53" rx="3" class="box-p"/>
+  <text x="91" y="138" text-anchor="middle" class="t-b">ftyp</text><text x="91" y="155" text-anchor="middle" class="mut t-s">format</text>
+  <rect x="148" y="116" width="128" height="53" rx="3" class="box-p"/>
+  <text x="212" y="138" text-anchor="middle" class="t-b">moov</text><text x="212" y="155" text-anchor="middle" class="mut t-s">track setup</text>
+  <text x="42" y="186" class="mut t-s">No encoded frame data</text>
+
+  <rect x="315" y="63" width="270" height="134" rx="4" class="box"/>
+  <text x="333" y="87" class="t-b">VIDEO FRAGMENT</text>
+  <text x="333" y="104" class="mut t-s">Repeated for each coded frame</text>
+  <rect x="333" y="116" width="98" height="53" rx="3" class="box-p"/>
+  <text x="382" y="138" text-anchor="middle" class="t-b">moof</text><text x="382" y="155" text-anchor="middle" class="mut t-s">metadata</text>
+  <rect x="439" y="116" width="128" height="53" rx="3" class="box-p"/>
+  <text x="503" y="138" text-anchor="middle" class="t-b">mdat</text><text x="503" y="155" text-anchor="middle" class="mut t-s">coded frame</text>
+  <text x="333" y="186" class="mut t-s">moof + mdat = CMAF chunk</text>
+
+  <rect x="606" y="63" width="270" height="134" rx="4" class="box"/>
+  <text x="624" y="87" class="t-b">AUDIO FRAGMENT</text>
+  <text x="624" y="104" class="mut t-s">Repeated for each AAC frame</text>
+  <rect x="624" y="116" width="98" height="53" rx="3" class="box-p"/>
+  <text x="673" y="138" text-anchor="middle" class="t-b">moof</text><text x="673" y="155" text-anchor="middle" class="mut t-s">metadata</text>
+  <rect x="730" y="116" width="128" height="53" rx="3" class="box-p"/>
+  <text x="794" y="138" text-anchor="middle" class="t-b">mdat</text><text x="794" y="155" text-anchor="middle" class="mut t-s">AAC frame</text>
+  <text x="624" y="186" class="mut t-s">moof + mdat = CMAF chunk</text>
+
+  <text x="159" y="214" text-anchor="middle" class="lbl t-s">published as</text><line x1="159" y1="220" x2="159" y2="236" class="flow"/><polygon points="159,241 155,233 163,233" fill="var(--ink-2)"/>
+  <text x="450" y="214" text-anchor="middle" class="lbl t-s">published as</text><line x1="450" y1="220" x2="450" y2="236" class="flow"/><polygon points="450,241 446,233 454,233" fill="var(--ink-2)"/>
+  <text x="741" y="214" text-anchor="middle" class="lbl t-s">published as</text><line x1="741" y1="220" x2="741" y2="236" class="flow"/><polygon points="741,241 737,233 745,233" fill="var(--ink-2)"/>
+  <rect x="42" y="243" width="234" height="59" rx="4" class="b-obj"/>
+  <text x="159" y="265" text-anchor="middle" class="t-obj t-b">0.mp4 · one object</text><text x="159" y="284" text-anchor="middle" class="t-obj t-s">Initialization data</text>
+  <rect x="333" y="243" width="234" height="59" rx="4" class="b-obj"/>
+  <text x="450" y="265" text-anchor="middle" class="t-obj t-b">1.m4s · one object</text><text x="450" y="284" text-anchor="middle" class="t-obj t-s">One coded video frame</text>
+  <rect x="624" y="243" width="234" height="59" rx="4" class="b-obj"/>
+  <text x="741" y="265" text-anchor="middle" class="t-obj t-b">2.m4s · one object</text><text x="741" y="284" text-anchor="middle" class="t-obj t-s">One AAC frame</text>
+  <path d="M27 322 H873" stroke="var(--rule)" stroke-width="1.25"/>
+  <text x="450" y="340" text-anchor="middle" class="t-b t-s">The box-to-object mapping is this publisher's choice, not a MOQT rule.</text>
+</svg>

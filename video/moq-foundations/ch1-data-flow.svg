@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="d" viewBox="0 0 900 400" role="img" aria-label="After track subscription on control streams, catalog, initialization, and media objects use separate unidirectional data streams across publisher-relay and relay-subscriber sessions">
+  <style>
+    svg.d{
+      --surface:#FFFFFF; --surface-2:#F5F8F7;
+      --ink:#141C1B; --ink-2:#485654; --ink-3:#6F7D7B;
+      --paper:#EEF1F0; --rule:#D2DAD8;
+      --accent:#0B6B63; --accent-bg:#DBEDEA;
+      --track:#3B4EC0;   --track-bg:#E4E8FA;
+      --group:#0F7A83;   --group-bg:#DBEFF1;
+      --subgroup:#A65E00;--subgroup-bg:#F7EBD7;
+      --object:#A0335E;  --object-bg:#F8E4EC;
+      --warn:#A3441B;    --warn-bg:#F9E7DE;
+      color:var(--ink);
+    }
+    @media (prefers-color-scheme: dark){
+      svg.d{
+        --surface:#151E1C; --surface-2:#1A2422;
+        --ink:#E7EDEB; --ink-2:#A9B7B4; --ink-3:#81908D;
+        --paper:#0E1413; --rule:#2B3735;
+        --accent:#4FC7B8; --accent-bg:#11302C;
+        --track:#93A2F7;   --track-bg:#232B52;
+        --group:#54C3CE;   --group-bg:#123034;
+        --subgroup:#E0A354;--subgroup-bg:#37270F;
+        --object:#EE85AA;  --object-bg:#3A1A26;
+        --warn:#E39067;    --warn-bg:#3A2117;
+      }
+    }
+    .d text{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+            font-size:12px;fill:currentColor}
+    .d .t-s{font-size:10.5px}
+    .d .t-b{font-weight:600}
+    .d .mut{fill:var(--ink-3)}
+    .d .lbl{fill:var(--ink-2)}
+    .d .box{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.25}
+    .d .box-p{fill:var(--paper);stroke:var(--rule);stroke-width:1.25}
+    .d .ln{stroke:var(--rule);stroke-width:1.25;fill:none}
+    .d .ln-d{stroke:var(--rule);stroke-width:1.25;fill:none;stroke-dasharray:4 4}
+    .d .flow{stroke:var(--ink-2);stroke-width:1.4;fill:none}
+    .d .flow-hv{stroke:var(--ink-2);stroke-width:3;fill:none}
+    .d .flow-a{stroke:var(--accent);stroke-width:1.6;fill:none}
+    .d .flow-w{stroke:var(--warn);stroke-width:1.5;fill:none;stroke-dasharray:5 4}
+    .d .stream-mark-a{stroke:var(--accent);stroke-width:3;fill:none}
+    .d .stream-mark{stroke:var(--ink-2);stroke-width:3;fill:none}
+    .d .acc{fill:var(--accent-bg);stroke:var(--accent);stroke-width:1.4}
+    .d .acc-t{fill:var(--accent)}
+    .d .b-track{fill:var(--track-bg);stroke:var(--track);stroke-width:1.3}
+    .d .b-group{fill:var(--group-bg);stroke:var(--group);stroke-width:1.3}
+    .d .b-sub{fill:var(--subgroup-bg);stroke:var(--subgroup);stroke-width:1.3}
+    .d .b-obj{fill:var(--object-bg);stroke:var(--object);stroke-width:1.3}
+    .d .t-track{fill:var(--track)} .d .t-group{fill:var(--group)}
+    .d .t-sub{fill:var(--subgroup)} .d .t-obj{fill:var(--object)}
+    .d .warn{fill:var(--warn-bg);stroke:var(--warn);stroke-width:1.3}
+    .d .t-warn{fill:var(--warn)}
+  </style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--ink-2)"/></marker><marker id="arrow-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker></defs>
+
+  <text x="145" y="28" text-anchor="middle" class="t-b">publisher</text><text x="450" y="28" text-anchor="middle" class="acc-t t-b">relay</text><text x="755" y="28" text-anchor="middle" class="t-b">subscriber</text>
+  <path d="M145 42 V340 M450 42 V340 M755 42 V340" class="ln-d"/>
+  <text x="297" y="64" text-anchor="middle" class="mut t-s">publisher session</text><text x="602" y="64" text-anchor="middle" class="mut t-s">subscriber session</text>
+  <path d="M32 82 V178" class="stream-mark-a"/>
+  <text x="43" y="120" class="acc-t t-s t-b">bidirectional</text>
+  <text x="43" y="136" class="acc-t t-s t-b">control streams</text>
+  <path d="M755 91 H457" class="flow-a" marker-end="url(#arrow-a)"/><text x="602" y="82" text-anchor="middle" class="acc-t t-s">control: SUBSCRIBE track</text>
+  <path d="M450 121 H152" class="flow-a" marker-end="url(#arrow-a)"/><text x="297" y="112" text-anchor="middle" class="acc-t t-s">control: SUBSCRIBE track</text>
+  <path d="M145 151 H443 M450 170 H748" class="flow-a" marker-end="url(#arrow-a)"/><text x="297" y="143" text-anchor="middle" class="acc-t t-s">SUBSCRIBE_OK</text><text x="602" y="162" text-anchor="middle" class="acc-t t-s">SUBSCRIBE_OK</text>
+  <path d="M32 224 V308" class="stream-mark"/>
+  <text x="43" y="257" class="lbl t-s t-b">unidirectional</text>
+  <text x="43" y="273" class="lbl t-s t-b">data streams</text>
+  <path d="M145 238 H443 M450 238 H748" class="flow" marker-end="url(#arrow)"/><text x="297" y="231" text-anchor="middle" class="t-s">catalog object</text><text x="602" y="231" text-anchor="middle" class="t-s">catalog object</text>
+  <path d="M145 268 H443 M450 268 H748" class="flow" marker-end="url(#arrow)"/><text x="297" y="261" text-anchor="middle" class="t-s">initialization object</text><text x="602" y="261" text-anchor="middle" class="t-s">initialization object</text>
+  <path d="M145 298 H443 M450 298 H748" class="flow" marker-end="url(#arrow)"/><text x="297" y="291" text-anchor="middle" class="t-s">video / audio objects</text><text x="602" y="291" text-anchor="middle" class="t-s">video / audio objects</text>
+  <text x="450" y="367" text-anchor="middle" class="mut t-s">The catalog-first path requests .catalog; the other path starts at 0.mp4.</text>
+  <text x="450" y="384" text-anchor="middle" class="mut t-s">One arrow represents a subgroup stream, not one stream per object.</text>
+</svg>
