@@ -201,12 +201,5 @@
     "description": "http://www.tracebox.org/ is not an HTTPS link",
     "status": null,
     "element": "<a href=\"http://www.tracebox.org/\"><em>tracebox</em></a>"
-  },
-  {
-    "file": "video/vmaf_vs_p1203/2020-10-07-vmaf_vs_p1203/index.html",
-    "check": "Images",
-    "description": "image https://render.githubusercontent.com/render/math?math=\\frac{vmaf}{20} does not have an alt attribute",
-    "status": null,
-    "element": "<img src=\"https://render.githubusercontent.com/render/math?math=\\frac{vmaf}{20}\" loading=\"lazy\">"
   }
 ]
