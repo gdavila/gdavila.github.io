@@ -26,7 +26,7 @@ This post examines five practical questions:
 and (v) how those time differences can translate into infrastructure cost.
 
 
-To investigate these questions, we ran a small, deliberately economical set of experiments with different model families, HD and 4K content, two instance sizes, and single-instance and distributed processing. The results provide a practical starting point for a broader analysis, with one execution per case rather than repeated measurements of variability.
+To investigate these questions, we did not design a dedicated infrastructure benchmark. Instead, we reuse the tests we ran while updating [easyVMAF](https://github.com/gdavila/easyVmaf) to validate its workflows. These tests cover different model families, HD and 4K content, two instance sizes, and single-instance and distributed processing. However, they are not exhaustive: each case ran once, without repeated measurements of variability, and some configurations were not tested. Still, the results provide a practical starting point for a broader infrastructure analysis.
 
 ## Key findings
 
