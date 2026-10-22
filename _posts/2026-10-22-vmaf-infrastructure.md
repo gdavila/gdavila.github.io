@@ -6,6 +6,10 @@ permalink: /cloud-infrastructure/vmaf-infrastructure/
 categories: ["Cloud Infrastructure"]
 tags: [vmaf, video-quality, gpu, aws]
 math: true
+image:
+  path: /video/vmaf-infrastructure/00-summary.png
+  alt: "Summary: pick the instance by VMAF model, and scale for turnaround rather than savings"
+  social_only: true
 date: 2026-10-22 00:00:00 -0300
 ---
 
